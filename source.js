@@ -1,0 +1,19 @@
+var sourceArr=[
+	'fish1.png',
+	'fish2.png',
+	'fish3.png',
+	'fish4.png',
+	'fish5.png',
+	'bottom.png',
+	'cannon1.png',
+	'cannon2.png',
+	'cannon3.png',
+	'cannon4.png',
+	'cannon5.png',
+	'cannon6.png',
+	'cannon7.png',
+	'bullet.png',
+	'coinAni1.png',
+	'coinAni2.png',
+	'web.png'
+];
