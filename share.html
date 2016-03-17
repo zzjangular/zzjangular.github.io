@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+<script src="js/index.js"></script>
+<script>
+	
+	
+	window.onload=function(){
+		var oBtn1=document.getElementById('btn1');
+		var oBtn2=document.getElementById('btn2');
+		var oP=document.getElementById('p1');
+		var oP2=document.getElementById('p2');
+		
+		
+				
+				amcfm_utils.showShare(json);
+			
+						
+		
+		
+		
+		oBtn2.onclick=function(){
+			
+				amcfm_utils.share(json)
+			
+				
+			
+		
+		
+		};
+
+	
+	};
+
+
+</script>
+<body>
+	<p id="p1"></p>
+
+	<br><br><br><br>
+     <input type="button" value="标题的分享" name="btn1" id="btn1">
+     <br><br><br><br><br><br><br><br>
+     <input type="button" value="内容的分享" name="btn2" id="btn2">
+     <p id="p2"></p>
+</body>
+</html>
