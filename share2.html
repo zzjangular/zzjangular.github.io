@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>本地分享</title>
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<style>
+.p1{ margin-left:100px; margin-bottom:50px;}
+.div1{ width:200px; height:200px; margin:0 auto;}
+.div1 a{  margin:10px; width:50px; height:50px; font-size:20px; display:inline-block;}
+.p2{ width:400px; margin:0 auto; text-align:center;}
+
+.p3{ height:50px; font-size:30px; color:red; text-align:center;}
+.p2 input{ height:100px; width:100px;}
+</style>
+</head>
+
+<body>
+	<p class="p3">这里是本地分享</p>
+	<p class="p1"><a href="share1.html">跳转到页面分享</a></p>
+     <div class="div1">
+     	<a href="javascript:;">图片</a>
+          <a href="javascript:;">视频</a>
+          <a href="javascript:;">音频</a>
+          <a href="javascript:;">url</a>
+     </div>
+     
+     <p class="p2">
+     	<input type="text">
+     	<input type="button" value="提交自定义分享">
+     </p>
+
+
+</body>
+<script src="js/index.js"></script>
+<script>
+	var oDiv=document.getElementsByClassName('div1')[0];
+	var aA=oDiv.getElementsByTagName('a');
+	for(var i=0;i<aA.length;i++)
+	{
+		(function(index){
+			aA[0].onclick=function(){
+			
+				amcfm_utils.showShare(json0);
+			};
+				aA[1].onclick=function(){
+
+				amcfm_utils.showShare(json1);
+			};
+				aA[2].onclick=function(){
+
+				amcfm_utils.showShare(json2);
+			};
+				aA[3].onclick=function(){
+
+				amcfm_utils.showShare(json3);
+			};
+
+		})(i);
+		
+	}
+	
+	var aInp=document.getElementsByTagName('input');
+	aInp[1].onclick=function(){
+		
+		amcfm_utils.showShare(aInp[0].value);
+	};
+
+
+</script>
+
+</html>
