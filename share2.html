@@ -36,25 +36,28 @@
 </body>
 <script src="js/index.js"></script>
 <script>
-	/*var oDiv=document.getElementsByClassName('div1')[0];
+
+var oDiv=document.getElementsByClassName('div1')[0];
 	var aA=oDiv.getElementsByTagName('a');
-	for(var i=0;i<aA.length;i++)
-	{
-		(function(index){
-			aA[i].onclick=function(){
-			
-				showShare('json'+index);
+
+			aA[0].onclick=function(){
+				amcfm_utils.share(json0);
 			};
-			
-		})(i);
-		
-	}
-	
-	var aInp=document.getElementsByTagName('input');
-	aInp[1].onclick=function(){
-		
-		showShare(aInp[0].value);
-	};*/
+				aA[1].onclick=function(){
+				amcfm_utils.share(json1);
+			};
+				aA[2].onclick=function(){
+
+				amcfm_utils.share(json2);
+			};
+				aA[3].onclick=function(){
+
+				amcfm_utils.share(json3);
+			};
+
+
+
+
 
 	function callShowShare(str)
 
@@ -71,6 +74,5 @@
 
 <script>
 
-	window.location='amcfm://javascript/callShowShare?a=1';
+	window.location='amcfm://script/callShowShare?a=1';
 </script>
-
