@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>开会/绑定</title>
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<style>
+*{ margin:0; padding:0; list-style: none;  border:0; text-decoration:none;}
+html,body{height:100%;}
+html{font-size: 20px;font-family: Microsoft YaHei,SimHei;}
+#wrap{ width:16rem; background:#ECEDEF; height:100%;}
+.div1{ padding-top:2.65rem;}
+.div1 img{width:2.5rem;}
+.div1 img:nth-child(2){margin:20px 1.25rem; }
+.div1 p{ text-align:center;}
+.content{margin:1.75rem 0.75rem 0;}
+form{ width:100%;}
+form div{ width:100%;color:#9E9E9E;border:1px solid #CBCBCD; background:#fff;}
+form div p { height:1.95rem; border-bottom:1px solid #CBCBCD;}
+form div p span{ font-size:12px; margin-left:10px; width:2.85rem; display:inline-block; height:100%;}
+form div p input{ color:#9E9E9E; outline:none; border:0; margin-left:1.2rem; height:100%;}
+form div p img{height:100%; float:right;}
+.btn1{ display:block; width:100%; padding-top:1rem;}
+.btn1 img{ width:100%;}
+.regulations{ with:100%; margin:1rem 0 0 0; text-align:center;}
+.regulations a{ font-size:12px; color:#10B5F9; padding:0 20px;}
+.btn2{ display:block; width:100%; padding-top:1rem;}
+.btn2 img{ width:100%;}
+.footer{margin-top:1rem; font-size:14px; color:#B1B1B3; text-align:center;}
+.footer span{ font-size:20px;}
+.tishi{ font-size:9px; color:#333333; margin-top:0.5rem; vertical-align:bottom; }
+.tishi img{ width:14px;}
+</style>
+<script>
+window.onload=function(){
+    document.documentElement.style.fontSize=document.documentElement.clientWidth/16+'px';
+};
+
+</script>
+</head>
+
+<body>
+	<div id="wrap">
+     	<div class="div1">
+          	<p class="p1"><img src="images/user.png" class="img"><img src="images/lianjie.png" class="imgC"><img src="images/webchat.png" class="img"></p>
+          </div>
+          <div class="content">
+          	<form action="" method="post">
+               	<div>
+                         <p><span>姓名</span><input type="text" name="name" value="请输入您的姓名" ></p>
+                         <p><span>证件类型</span><input type="text" name="type" value="身份证" ><img src="images/select.png"></p>
+                         <p><span>证件号码</span><input type="text" name="tell" value="请输入您的证件号码" ></p>
+                         <p><span>密码</span><input type="text" name="password" value="请输入密码" ></p>
+               	</div>
+                    <p class="tishi"><img src="images/tishi.png">华夏基金管家现已对账户进行了全面的升级，为了您的账户安全及更安全的功能体验，请使用交易密码进行登录</p>
+                    <p class="tishi"><img src="images/tishi.png">您还未开通华夏基金交易账户，请先开户。</p>
+                    <a href="javascript:;" class="btn1"><img src="images/btn1.png"></a>
+                    <p class="regulations"><a href="##">安全指引</a><a href="##">免费条例</a></p>
+                    <a href="javascript:;" class="btn2"><img src="images/btn2.png"></a>
+               </form>
+               <p class="footer"><span>☏</span>  华夏基金客服电话 400-818 6666</p>
+          </div>
+     
+     
+     </div>
+</body>
+</html>
