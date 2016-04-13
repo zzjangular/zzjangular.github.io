@@ -24,11 +24,11 @@ section .download{position:absolute; left:0; top:0; z-index:9002;}
 
 .download .span{ float:left; position: relative;}
 
-.download .span1{ width:14%;}
+.download .span1{ width:15%;}
 
-.download .span1 img{ width:24px; vertical-align:text-top;}
+.download .span1 img{ width:22px; vertical-align:middle;}
 
-.download .span2{ width:57%; color:#fff; font-size:12px;}
+.download .span2{ width:56%; color:#fff; font-size:12px; line-height:14px;}
 
 .span a{color:#fff; width:54px; height:28px; background:#E2555B; display:inline-block; border-radius:5px; font-size:12px; line-height:28px; text-align:center;   padding: 0 3px;
 
@@ -55,7 +55,7 @@ position: absolute; left:0;top:0;}
 
                    <div class="download">       
 
-                        <span class="span1 span"><img src="close.png"></span>
+                        <span class="span1 span" id="span1"><img src="close.png"></span>
 
                         <span class="span2 span"><img src="logo.png" style="float:left">
 
@@ -99,7 +99,7 @@ position: absolute; left:0;top:0;}
 <!--js部分-->
 <script src="jquery-1.8.2.min.js"></script>
 <script>
-	$('.download span').eq(0).click(function(){
+	$('#span1').click(function(){
 		$('section div').css('display','none');
 	
 	});
