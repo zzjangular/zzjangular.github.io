@@ -13,7 +13,7 @@ html{font-size: 20px;}
 #wrap{ width:16rem; background:#eee; }
 .bg{ width:100%; display:block;}
 .information{ position:absolute;left:0; top:0; width:14.5rem; padding:1.2rem 0.75rem 0;}
-.information .inTop{ text-align:center; color:#fff; font-size:14px;}
+.information .inTop{ text-align:center; color:#fff; font-size:14px; opacity:0.7;}
 .information .inTop img{ width:16px; vertical-align:middle; margin-right:5px;}
 .information h3{ font-size:38px; color:#fff; text-align:center; margin-top:6px; font-weight:lighter; }
 .information .inBottom{ width:100%; height:2.25rem; background:rgba(0,0,0,0.2); margin-top:0.4rem; position:relative;}
@@ -38,7 +38,7 @@ html{font-size: 20px;}
 .spanR{ float:right; font-size:15px; color:#666;}
 .p1{  border-bottom:1px solid #e8e8e8; }
 .p1 .huaxia{ margin-left:8px; font-size:15px;}
-.pop {  position:fixed; top:0; left:0; width:100%; height:100%; }/*display*/
+.pop { display:none; position:fixed; top:0; left:0; width:100%; height:100%; }/*display*/
 .shadow { position:absolute; top:0; left:0; width:100%; height:100%; background:#000; opacity:0.3; }
 .prompt{position:absolute; left:50%; top:50%; margin-left:-7rem; margin-top:-100px; width:12.8rem; height:8rem; background:#F0F0F0; border-radius:10px; padding:0 0.6rem;}
 .prompt h5{ height:2rem; line-height:2rem; font-size:0.75rem; color:#333; text-align:center; border-bottom:1px solid #e8e8e8; font-weight:lighter;}
@@ -53,8 +53,13 @@ window.onload=function(){
     document.documentElement.style.fontSize=document.documentElement.clientWidth/16+'px';
 	var oBtn=document.getElementById('btn1');
 	var oPop=document.getElementById('pop');
+	var oInTop=document.getElementById('inTop');
 	oBtn.onclick=function(){
 		oPop.style.display='none';
+	};
+	oInTop.onclick=function(){
+	
+		oPop.style.display='block';
 	};
 	
 };
@@ -70,7 +75,7 @@ window.onload=function(){
         	<img src="images/bg.jpg" class="bg">
         </div>
           <div class="information">
-          		<p class="inTop"><img src="images/wenhao.png">全面基金账户总资产（元）</p>
+          		<p class="inTop" id="inTop"><img src="images/wenhao.png">全面基金账户总资产（元）</p>
                 <h3>888,888.68</h3>
                 <div class="inBottom">
                 	<span class="spanLeft">累积盈亏（03-14）<br /><span class="price">52.49</span></span>
