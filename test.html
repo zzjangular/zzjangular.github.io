@@ -22,13 +22,15 @@ span{ font-size:20px;}
 </body>
 </html>
 <script>
+alert(1)
 document.addEventListener('deviceready',show(),false);
 function show(){
-	
+	alert(2)
 	var oBtn=document.getElementById('btn1');
 	var oDiv=document.getElementById('div1');
 	
 	oBtn.onclick=function(){
+		alert(3)
 		oDiv.innerHTML='+++++++'+navigator.network.connection.type+'----------';
 	};
 
