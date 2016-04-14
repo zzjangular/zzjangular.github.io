@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en-US"><head>
 <meta charset="UTF-8">
-<title>智能社测试项目</title>
+<title>aaaa</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="default" />
@@ -9,30 +9,20 @@
 *{ margin:0; padding:0; list-style:none;}
 body{ text-align:center;}
 span{ font-size:20px;}
-#div1{ width:100%; height:300px; background:green;}
-#btn1{ padding:10px 20px;}
 </style>
 <script src="cordova-2.2.0.js"></script>
-
+<script>
+document.addEventListener('deviceready',function(){
+	var oBtn=document.getElementById('btn1');
+	
+	oBtn.onclick=function(){
+		alert(1);
+	};
+},false);
+</script>
 </head>
 
 <body>
-<input type="button" value="按钮 " id="btn1"><br>
-<div id="div1"></div>
+<input type="button" value="按钮 " id="btn1">
 </body>
 </html>
-<script>
-alert(1)
-document.addEventListener('deviceready',show(),false);
-function show(){
-	alert(2)
-	var oBtn=document.getElementById('btn1');
-	var oDiv=document.getElementById('div1');
-	
-	oBtn.onclick=function(){
-		alert(3)
-		oDiv.innerHTML='+++++++'+navigator.network.connection.type+'----------';
-	};
-
-};
-</script>
