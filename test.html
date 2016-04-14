@@ -13,16 +13,7 @@ span{ font-size:20px;}
 #btn1{ padding:10px 20px;}
 </style>
 <script src="cordova-2.2.0.js"></script>
-<script>
-document.addEventListener('deviceready',function(){
-	var oBtn=document.getElementById('btn1');
-	var oDiv=document.getElementById('div1');
-	
-	oBtn.onclick=function(){
-		oDiv.innerHTML=navigator.network.connection.type;
-	};
-},false);
-</script>
+
 </head>
 
 <body>
@@ -30,3 +21,16 @@ document.addEventListener('deviceready',function(){
 <div id="div1"></div>
 </body>
 </html>
+<script>
+document.addEventListener('deviceready',show(),false);
+function show(){
+	
+	var oBtn=document.getElementById('btn1');
+	var oDiv=document.getElementById('div1');
+	
+	oBtn.onclick=function(){
+		oDiv.innerHTML='+++++++'+navigator.network.connection.type+'----------';
+	};
+
+};
+</script>
