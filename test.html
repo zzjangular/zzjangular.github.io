@@ -3,12 +3,31 @@
 <head>
 <meta charset="utf-8">
 <title>无标题文档</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<style>
+	#div1{ width:100%; height:200px; background:red;}
+
+</style>
 </head>
 
 <body>
-<video src="mov_bbb.mp4" style="width:100%;" controls></video>
+	<div id="div1"></div>
 </body>
 </html>
+<script>
+var oDiv1=document.getElementById('div1');
+
+oDiv1.onclick=function(){
+	var connection = navigator.connection||navigator.mozConnection||navigator.webkitConnection||{tyep:'unknown'};
+	alert(connection.type)
+	//var network=connection.type.toLowerCase();
+	if(network.indexOf('2g')!=-1||network.indexOf('3g')!=-1||network.indexOf('4g')!=-1||network.indexOf('hspa')!=-1)
+	{
+		alert('你的网是流量')
+	}
+};
+
+
+</script>
