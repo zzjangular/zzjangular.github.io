@@ -2,61 +2,30 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>芹芹，你摇动下手机试试</title>
-<meta name="viewport" content="width=320">
+<title>智能社-http://www.zhinengshe.com</title>
 <style>
-@-webkit-keyframes test{
+@keyframes test{
 	0%{ -webkit-transform:rotate(0deg);}
 	25%{-webkit-transform:rotate(15deg);}
 	50%{-webkit-transform:rotate(0deg);}
 	75%{-webkit-transform:rotate(-15deg);}
 	100%{-webkit-transform:rotate(0deg);}	
 }
-
 #div1{ width:200px; height:200px; background:#ccc; margin:50px auto; text-align:center; line-height:200px; font-size:20px; color:#ff0;}
 .shake{ -webkit-animation:.2s test ease 3;}
-
 </style>
 <script>
-var lastX=0,
-	lastY=0,
-	lastZ=0;
-if(window.DeviceMotionEvent){
-	window.addEventListener('devicemotion',function(ev){
-		var acc=ev.accelerationIncludingGravity;
-		var oDiv=document.getElementById('div1');	
-		
-		var x=acc.x;
-		var y=acc.y;
-		var z=acc.z;
-		
-		if(
-			Math.abs(x-lastX)>20 ||
-			Math.abs(y-lastY)>20 ||
-			Math.abs(z-lastZ)>20
-		){
-			oDiv.innerHTML='芹芹下午好^_^！';
-			oDiv.style.background='rgb('+parseInt(Math.random()*256)+','+parseInt(Math.random()*256)+','+parseInt(Math.random()*256)+')';
-			oDiv.classList.add('shake');
-			
-			function aEnd(){
-				oDiv.removeEventListener('animationend',aEnd,false);	
-				oDiv.classList.remove('shake');
-			}
-			oDiv.addEventListener('webkitAnimationEnd',aEnd,false);
-		}
-		
-		lastX=x;
-		lastY=y;
-		lastZ=z;
+window.onload=function(){
+	var oDiv=document.getElementById('div1');	
+	
+	oDiv.addEventListener('webkitAnimationEnd',function(){
+		alert(1);
 	},false);
-}else{
-	alert('不支持重力感应');	
-}
+};
 </script>
 </head>
 
 <body>
-<div id="div1">^_^</div>
+<div id="div1" class="shake"></div>
 </body>
 </html>
