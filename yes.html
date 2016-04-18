@@ -2,10 +2,8 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>无标题文档</title>
+<title>智能社-http://www.zhinengshe.com</title>
 <style>
-p{height:500px; color:#000; font-size:100px;}
-span{color:red;}
 @keyframes test{
 	0%{ -webkit-transform:rotate(0deg);}
 	25%{-webkit-transform:rotate(15deg);}
@@ -14,13 +12,20 @@ span{color:red;}
 	100%{-webkit-transform:rotate(0deg);}	
 }
 #div1{ width:200px; height:200px; background:#ccc; margin:50px auto; text-align:center; line-height:200px; font-size:20px; color:#ff0;}
-.shake{ -webkit-animation:.2s test ease 3;}
-
+.shake{ -webkit-animation:.2s test ease 6;}
 </style>
+<script>
+window.onload=function(){
+	var oDiv=document.getElementById('div1');	
+	
+	oDiv.addEventListener('webkitAnimationEnd',function(){
+		alert(1);
+	},false);
+};
+</script>
 </head>
 
 <body>
-   <div id="div1" class="shake"><p><span>左芹芹，</span>下午好~，下午不上做在做啥/p></div>
-   
+<div id="div1" class="shake"></div>
 </body>
 </html>
