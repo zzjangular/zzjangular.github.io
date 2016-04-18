@@ -2,30 +2,21 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>sss</title>
-<style>
-@keyframes test{
-	0%{ -webkit-transform:rotate(0deg);}
-	25%{-webkit-transform:rotate(15deg);}
-	50%{-webkit-transform:rotate(0deg);}
-	75%{-webkit-transform:rotate(-15deg);}
-	100%{-webkit-transform:rotate(0deg);}	
-}
-#div1{ width:200px; height:200px; background:#ccc; margin:50px auto; text-align:center; line-height:200px; font-size:20px; color:#ff0;}
-.shake{ -webkit-animation:.2s test ease 3;}
-</style>
+<title>s</title>
+
 <script>
-window.onload=function(){
-	var oDiv=document.getElementById('div1');	
-	
-	oDiv.addEventListener('webkitAnimationEnd',function(){
-		alert(1);
-	},false);
-};
+
 </script>
 </head>
 
 <body>
-<div id="div1" class="shake"></div>
+<!--视频部分--><!--视频部分--><!--视频部分--><!--视频部分--><!--视频部分--><!--视频部分--><!--视频部分--><!--视频部分-->
+	<div id="player" style="width:100%;height:300px;">
+    	<script src="bcloud.js"></script>
+        <script>
+			 var player = new CloudVodPlayer();
+			player.init({uu:"qv290qhgzv",vu:"320fb9e135",autoplay:0,pic:'images/ss.png',type:'video',definition:0,controls:1,skinnable:0,dfull:1,playsinline:0,pa:0,posterType:2});
+    	</script>  
+    </div>
 </body>
 </html>
