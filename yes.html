@@ -4,13 +4,23 @@
 <meta charset="utf-8">
 <title>无标题文档</title>
 <style>
-p{height:500px; color:red; font-size:100px;}
-span{color:#000;}
+p{height:500px; color:#000; font-size:100px;}
+span{color:red;}
+@keyframes test{
+	0%{ -webkit-transform:rotate(0deg);}
+	25%{-webkit-transform:rotate(15deg);}
+	50%{-webkit-transform:rotate(0deg);}
+	75%{-webkit-transform:rotate(-15deg);}
+	100%{-webkit-transform:rotate(0deg);}	
+}
+#div1{ width:200px; height:200px; background:#ccc; margin:50px auto; text-align:center; line-height:200px; font-size:20px; color:#ff0;}
+.shake{ -webkit-animation:.2s test ease 3;}
 
 </style>
 </head>
 
 <body>
-   <p>肖雅那<span>傻狗</span>(#‵′)凸</p>
+   <div id="div1" class="shake"><p><span>左芹芹，</span>下午好~，下午不上做在做啥/p></div>
+   
 </body>
 </html>
