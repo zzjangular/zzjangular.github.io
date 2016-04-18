@@ -9,6 +9,14 @@
 <style>
 	*{ padding:0 margin:0; border:0;}
 	html,body{ height:2000px;}
+	#prompt{ height:30px; width:100%; position:fixed; left:0; bottom:100px; z-index:999; text-align:center; color:#fff; background:rgba(0,0,0,0.5); font-size:20px; line-height:30px; border-radius:10px;-webkit-animation:.2s test ease 3;}/*disliay控制部*/
+@keyframes test{
+	0%{ -webkit-transform:rotate(0deg);}
+	25%{-webkit-transform:rotate(5deg);}
+	50%{-webkit-transform:rotate(0deg);}
+	75%{-webkit-transform:rotate(-5deg);}
+	100%{-webkit-transform:rotate(0deg);}	
+}
 </style>
 </head>
 <script src="js/index.js"></script>
@@ -62,5 +70,6 @@
     </div>
 
 <h2>qwewr</h2>
+<p id="prompt">无可用wifi,使用移动网络播放</p>
 </body>
 </html>
