@@ -2,84 +2,30 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>测试</title>
-<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>智能社-http://www.zhinengshe.com</title>
 <style>
 @keyframes test{
 	0%{ -webkit-transform:rotate(0deg);}
-	25%{-webkit-transform:rotate(5deg);}
+	25%{-webkit-transform:rotate(15deg);}
 	50%{-webkit-transform:rotate(0deg);}
-	75%{-webkit-transform:rotate(-5deg);}
+	75%{-webkit-transform:rotate(-15deg);}
 	100%{-webkit-transform:rotate(0deg);}	
 }
-	*{ padding:0 margin:0; border:0;}
-	html,body{ height:2000px;}
-#prompt{ height:30px; width:100%; position:fixed; left:0; bottom:100px; z-index:999; text-align:center; color:#fff; background:rgba(0,0,0,0.5); font-size:20px; line-height:30px; border-radius:10px;}/*disliay控制部*/
+#div1{ width:200px; height:200px; background:#ccc; margin:50px auto; text-align:center; line-height:200px; font-size:20px; color:#ff0;}
 .shake{ -webkit-animation:.2s test ease 3;}
-
-
 </style>
-</head>
-<script src="js/index.js"></script>
 <script>
+window.onload=function(){
+	var oDiv=document.getElementById('div1');	
 	
-	window.addEventListener('devicemotion',function(ev){
-		var acc=ev.accelerationIncludingGravity;
-		var oPrompt=document.getElementById('prompt');
-		var oBtn2=document.getElementById('btn2');	
-		
-		var x=acc.x;
-		var y=acc.y;
-		var z=acc.z;
-		
-		if(
-			Math.abs(x-lastX)>20 ||
-			Math.abs(y-lastY)>20 ||
-			Math.abs(z-lastZ)>20
-		){
-			oPrompt.innerHTML='摇动手机了';
-			oPrompt.style.background='rgb('+parseInt(Math.random()*256)+','+parseInt(Math.random()*256)+','+parseInt(Math.random()*256)+')';
-			oPrompt.classList.add('shake');
-			
-			function aEnd(){
-				oPrompt.removeEventListener('animationend',aEnd,false);	
-				oPrompt.classList.remove('shake');
-			}
-			oPrompt.addEventListener('webkitAnimationEnd',aEnd,false);
-		}
-		
-		lastX=x;
-		lastY=y;
-		lastZ=z;
+	oDiv.addEventListener('webkitAnimationEnd',function(){
+		alert(1);
 	},false);
-	
-	
-	
-
-
-
+};
 </script>
+</head>
+
 <body>
-	<p id="p1"></p>
-
-	<br><br><br><br>
-     <input type="button" value="标题的分享" name="btn1" id="btn1">
-     <br><br><br><br><br><br><br><br>
-     <input type="button" value="内容的分享" name="btn2" id="btn2">
-     <br>
-     <p id="p2"></p>
-<!--视频部分--><!--视频部分--><!--视频部分--><!--视频部分--><!--视频部分--><!--视频部分--><!--视频部分--><!--视频部分-->
-	<div id="player" style="width:100%;height:300px;">
-    	<script src="zzzbcloud.js"></script>
-        <script>
-			 var player = new CloudVodPlayer();
-			player.init({uu:"qv290qhgzv",vu:"320fb9e135",autoplay:0,pic:'images/ss.png',type:'video',definition:0,controls:1,skinnable:0,dfull:0,playsinline:0,pa:0});
-    	</script>  
-    </div>
-
-<h2>qwewr</h2>
-<p id="prompt" class="">无可用wifi,使用移动网络播放</p>
+<div id="div1" class="shake"></div>
 </body>
 </html>
