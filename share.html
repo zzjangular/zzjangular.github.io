@@ -9,7 +9,8 @@
 <style>
 	*{ padding:0 margin:0; border:0;}
 	html,body{ height:2000px;}
-	#prompt{ height:30px; width:100%; position:fixed; left:0; bottom:100px; z-index:999; text-align:center; color:#fff; background:rgba(0,0,0,0.5); font-size:20px; line-height:30px; border-radius:10px;-webkit-animation:.2s test ease 3;}/*disliay控制部*/
+#prompt{ height:30px; width:100%; position:fixed; left:0; bottom:100px; z-index:999; text-align:center; color:#fff; background:rgba(0,0,0,0.5); font-size:20px; line-height:30px; border-radius:10px;}/*disliay控制部*/
+.shake{ -webkit-animation:.2s test ease 3;}
 @keyframes test{
 	0%{ -webkit-transform:rotate(0deg);}
 	25%{-webkit-transform:rotate(5deg);}
@@ -17,6 +18,7 @@
 	75%{-webkit-transform:rotate(-5deg);}
 	100%{-webkit-transform:rotate(0deg);}	
 }
+
 </style>
 </head>
 <script src="js/index.js"></script>
@@ -24,14 +26,14 @@
 	
 	
 	window.onload=function(){
-		var oBtn1=document.getElementById('btn1');
+		var oPrompt=document.getElementById('prompt');
 		var oBtn2=document.getElementById('btn2');
 		var oP=document.getElementById('p1');
 		var oP2=document.getElementById('p2');
 		
 		
 				
-				amcfm_utils.showShare(json);
+			
 			
 						
 		
@@ -39,7 +41,7 @@
 		
 		oBtn2.onclick=function(){
 			
-				amcfm_utils.share(json)
+			oDiv.classList.add('shake');
 			
 				
 			
@@ -70,6 +72,6 @@
     </div>
 
 <h2>qwewr</h2>
-<p id="prompt">无可用wifi,使用移动网络播放</p>
+<p id="prompt" class="">无可用wifi,使用移动网络播放</p>
 </body>
 </html>
