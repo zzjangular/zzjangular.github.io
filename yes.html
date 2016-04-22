@@ -1,31 +1,34 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>智能社-http://www.zhinengshe.com</title>
-<style>
-@-webkit-keyframes test{
-	0%{ -webkit-transform:rotate(0deg);}
-	25%{-webkit-transform:rotate(15deg);}
-	50%{-webkit-transform:rotate(0deg);}
-	75%{-webkit-transform:rotate(-15deg);}
-	100%{-webkit-transform:rotate(0deg);}	
-}
-#div1{ width:200px; height:200px; background:#ccc; margin:50px auto; text-align:center; line-height:200px; font-size:20px; color:#ff0;}
-.shake{ -webkit-animation:.2s test ease 3;}
-</style>
-<script>
-window.onload=function(){
-	var oDiv=document.getElementById('div1');	
-	
-	oDiv.addEventListener('webkitAnimationEnd',function(){
-		alert(1);
-	},false);
-}; 
-</script>
-</head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="http://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
+</head>
 <body>
-<div id="div1" class="shake"></div>
+
+<div data-role="page" id="pageone">
+  <div data-role="header">
+    <h1>swipeleft 事件</h1>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <p style="border:1px solid black;margin:5px;">向左滑动 - 不要超出边框！</p>
+  </div>
+
+  <div data-role="footer">
+    <h1>页脚文本</h1>
+  </div>
+</div> 
+
 </body>
 </html>
+<script>
+$(document).on("pagecreate","#pageone",function(){
+  $("p").on("swipeleft",function(){
+    alert("您向左滑动!");
+  });                       
+});
+</script>
