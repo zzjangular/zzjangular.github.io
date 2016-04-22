@@ -8,37 +8,42 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <style>
 *{ padding:0;margin:0;border:none; text-decoration:none; list-style:none;}
-html,body{ height:100%; overflow:hidden; background:#000;}
-section{ position:relative;line-height:0; font-size:0; margin-top:2px; height:100%;}
-section .img{width: 320px; height: 504px;overflow: hidden;}
-section a{ width:50%; position:absolute;top:83%; left:50%;margin-left:-25%; overflow:hidden;}
-section a img{ width:100%;}
-
-
-
+html,body{ height:100%;}
+.div1{ height:10%;}
+.div1 img{ height:45.6%; margin-top:3%; margin-left:3%;}
+.div2{ height:10.56%;  }
+.div2 p{height:20%;}
+.div2 img{ height:60%; margin:0 auto; display:block; }
+.div3{ height:56.3%;  position:relative;}
+.div3 img{ height:92%; width:100%; position:absolute; bottom:0;}
+.div4{ height:23%; background:#D9363B; text-align:center;}
+.div4 .p1{ height:16.6%;}
+.div4 .p2{ height:14.5%; color:#fff; font-size:16px; font-family:Verdana, Geneva, sans-serif; text-align:center;}
+.div4 img{ height:26.5%;}
+.div4 .p3{ font-size:12px; color:#fff;}
+.div4 .p4,.div4 .p5{ height:8%;}
 </style>
 </head>
 
 <body>
-	<section>
-     	<img src="images/background.png" class="img">
+	<div class="div1">
+    	<img src="h5/logo.png">
+    </div>
+    <div class="div2">
+    	<p></p>
+    	<img src="h5/slogen.png">
+    </div>
+    <div class="div3">
+    	<img src="h5/phone.png">
+    </div>
+    <div class="div4">
+    	<p class="p1"></p>
+        <p class="p2">最贴心的移动理财管家</p>
+        <p class="p4"></p>
+        <img src="h5/btn.png">
+        <p class="p5"></p>
+        <p class="p3">华夏基金管理有限公司</p>
+    </div>
     
-     	
-     	<a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.chinaamc.MainActivityAMC">
-          	<img src="images/btn.png">
-          </a>
-     
-     </section>
 </body>
 </html>
-<script type="text/javascript" src="js/zzpageResponse.min.js"></script>
-<script type="text/javascript">
-window.onload = window.onresize = function(){
-    pageResponse({
-        selectors : '.img',     //模块选择器，使用querySelectorAll的方法
-        mode : 'contain',     // auto || contain || cover ，默认模式为auto 
-        width : '320',      //输入页面的宽度，只支持输入数值，默认宽度为320px
-        height : '504'      //输入页面的高度，只支持输入数值，默认高度为504px
-    })
-}
-</script>
