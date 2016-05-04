@@ -1,53 +1,300 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<title>华夏基金管家</title>
-<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
-<style>
-*{ padding:0;margin:0;border:none; text-decoration:none; list-style:none;}
-html,body{ height:100%;}
-.div1{ height:10%;}
-.div1 img{ height:45.6%; margin-top:3%; margin-left:3%;}
-.div2{ height:10.56%;  }
-.div2 p{height:20%;}
-.div2 img{ height:60%; margin:0 auto; display:block; }
-.div3{ height:56.3%; text-align:center; position:relative;}
-.div3 p{ height:8%;}
-.div3 .img1{ height:80%; }
-.div3 .img2{ height:20%; width:100%;  position:absolute; bottom:0; left:0;}
-.div4{ height:23%; background:#D9363B; text-align:center;}
-.div4 .p1{ height:16.6%;}
-.div4 .p2{ height:14.5%; color:#fff; font-size:16px; font-family:Verdana, Geneva, sans-serif; text-align:center;}
-.div4 img{ height:26.5%;}
-.div4 .p3{ font-size:12px; color:#fff;}
-.div4 .p4,.div4 .p5{ height:8%;}
-</style>
+    <meta charset="GBK"/>
+    <meta http-equiv="pragma" content="no-cache"/>
+    <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+Remove this if you use the .htaccess -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+    <meta name="description" content="华夏基金管家手机版下载"/>
+    <title>华夏基金-交易规则</title>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <link rel="stylesheet" href="css.css"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=GBK">
 </head>
- 
-<body>
-	<div class="div1">
-    	<img src="h5/logo.png">
-    </div>
-    <div class="div2">
-    	<p></p>
-    	<img src="h5/slogen.png">
-    </div>
-    <div class="div3">
-    	<p></p>
-    	<img src="h5/phone0.png" class="img1">
-        <img src="h5/bg.png" class="img2">
-    </div>
-    <div class="div4">
-    	<p class="p1"></p>
-        <p class="p2">最贴心的移动理财管家</p>
-        <p class="p4"></p>
-        <img src="h5/btn.png">
-        <p class="p5"></p>
-        <p class="p3">华夏基金管理有限公司</p>
-    </div>
+<script src="jquery.min.js">
+
+</script>
+<script>
     
+    ;(function (win, doc) {
+        function change() {
+            document.documentElement.style.fontSize = document.documentElement.clientWidth / 16 + 'px';
+        }
+
+        doc.addEventListener('DOMContentLoaded', change, false);
+        win.addEventListener('resize', change, false);
+		
+		
+    })(window, document);
+    document.addEventListener('DOMContentLoaded', function () {
+        var aBtn = document.querySelectorAll('#BoxConent .p a');
+        var aDiv = document.querySelectorAll('#BoxConent .boxSun');
+        var oHtml = document.getElementsByTagName('html')[0];
+        var oBoxSun = document.getElementsByClassName('boxSun')[1];
+		var oBox=document.getElementsByClassName('box')[0];
+		
+        for (var i = 0; i < aBtn.length; i++) {
+			(function(index){	
+			   aBtn[index].onclick=function(){
+				   if(index==0)
+				   {
+					   oBox.style.left='0';
+					}
+					else
+					{
+						oBox.style.left='50%';
+					}
+				  for(var i = 0; i < aBtn.length; i++)
+				  {
+						aBtn[i].classList.remove('on');  
+						aDiv[i].classList.remove('on'); 
+				   }
+				  aBtn[index].classList.add('on');
+				  aDiv[index].classList.add('on');
+				 };
+			 })(i);
+		   
+		   
+		   /* aBtn[i].Dataindex = i;
+            aBtn[0].addEventListener('touchstart', function () {
+				oBox.style.left='0';
+                aDiv[1].classList.remove('on');          
+                aDiv[0].classList.add('on');
+            }, false);
+            aBtn[1].addEventListener('touchstart', function () {
+				oBox.style.left='50%';
+                aDiv[0].classList.remove('on');           
+                aDiv[1].classList.add('on');
+            }, false);*/
+        }
+    }, false);
+
+
+</script>
+<script type="text/javascript">
+    function cleanAllSelect() {
+        $(".fl_left2").removeClass("fl_left2").addClass("fl_left");
+        $(".fl_right2").removeClass("fl_right2").addClass("fl_right");
+    }
+    function hideAllList() {
+        $("#lists").children().each(function () {
+            $(this).hide();
+        });
+    }
+    function selectItem($item) {
+        cleanAllSelect();
+        hideAllList();
+        $item.children("div.fl_left").removeClass("fl_left").addClass("fl_left2");
+        $item.children("div.fl_right").removeClass("fl_right").addClass("fl_right2");
+        var listId = $item.attr("id") + "List";
+        $("#" + listId).show();
+    }
+
+    function selectedDefaultItem() {
+        var url = location.href;
+        var params = url.split("#");
+        if (params.length > 1) {
+            var $item = $("#" + params[1]);
+            if ($item.length > 0) {
+                selectItem($($item[0]));
+                return;
+            }
+        }
+        selectItem($("#buy"));
+    }
+    $(function () {
+        hideAllList();
+        $("div.fl a").on("click", function () {
+            selectItem($(this));
+            return false;
+        })
+        selectedDefaultItem();
+    })
+</script>
+
+<body>
+
+<div id="BoxConent">
+
+    <p class="p">
+        <a href="javascript:;" class="on">在线客服</a>
+        <a href="javascript:;">常见问题</a>
+        <span class="box"></span>
+    </p>
+    <!--第一个盒子-->
+    <div class="on oneDiv boxSun">
+        <img src="hxwx.jpg">
+
+        <p class="copy" id="copy">点击复制微信号</p>
+
+        <p class="p1">华夏基金官方微信服务号为您提供客户在线<br>服务功能，小夏欢迎您的关注</p>
+    </div>
+
+    <!--第二个盒子(所有body内容都放在面下这个div里)-->
+    <div class="boxSun">
+
+
+        <!--第二个盒子-->
+        <div class="top2">分类</div>
+        <div class="fl">
+            <a id="buy" href="#">
+                <div class="fl_left">活期通
+                    <div class="fl_jt2"><img src="h_07.png" width="10" height="17" class="gg_img"></div>
+                </div>
+            </a>
+            <a id="repayLoan" href="#">
+                <div class="fl_right">开户/银行卡
+                    <div class="xian"></div>
+                    <div class="fl_jt"><img src="h_07.png" width="10" height="17" class="gg_img"></div>
+                </div>
+            </a>
+        </div>
+
+        <div class="fl">
+            <a id="redeem" href="#">
+                <div class="fl_left">申购
+                    <div class="fl_jt2"><img src="h_07.png" width="10" height="17" class="gg_img"></div>
+                </div>
+            </a>
+            <a id="interBank" href="#">
+                <div class="fl_right">赎回
+                    <div class="xian"></div>
+                    <div class="fl_jt"><img src="h_07.png" width="10" height="17" class="gg_img"></div>
+                </div>
+            </a>
+        </div>
+        <div class="fl">
+            <a id="balance" href="#">
+                <div class="fl_left">定投
+                    <div class="fl_jt2"><img src="h_07.png" width="10" height="17" class="gg_img"></div>
+                </div>
+            </a>
+            <a id="bankCard" href="#">
+                <div class="fl_right">转换
+                    <div class="xian"></div>
+                    <div class="fl_jt"><img src="h_07.png" width="10" height="17" class="gg_img"></div>
+                </div>
+            </a>
+        </div>
+
+
+        <div class="fl">
+            <a id="creditCard" href="#">
+                <div class="fl_left">收益
+                    <div class="fl_jt2"><img src="h_07.png" width="10" height="17" class="gg_img"></div>
+                </div>
+            </a>
+
+            <a id="KZH" href="#">
+                <div class="fl_right">费用
+                    <div class="xian"></div>
+                    <div class="fl_jt"><img src="h_07.png" width="10" height="17" class="gg_img"></div>
+                </div>
+            </a>
+        </div>
+        <div class="fl">
+            <a id="password" href="#">
+                <div class="fl_left">密码与安全
+                    <div class="fl_jt2"><img src="h_07.png" width="10" height="17" class="gg_img"></div>
+                </div>
+            </a>
+            <a id="others" href="#">
+                <div class="fl_right">其他常见问题
+                    <div class="xian"></div>
+                    <div class="fl_jt"><img src="h_07.png" width="10" height="17" class="gg_img"></div>
+                </div>
+            </a>
+        </div>
+
+        <div style="padding-bottom:10px;border-top:1px;solid #e2e2e2;background-color:#f4f4f4;"></div>
+        <div id="lists">
+            <div id="buyList">
+                <div class="top2">活期通的常见问题</div>
+                <!--#include file="../include/hqt.shtml"-->
+            </div>
+            <div id="redeemList">
+                <div class="top2">申购的常见问题</div>
+                <!--#include file="../include/shengou.shtml"-->
+            </div>
+            <div id="bankCardList">
+                <div class="top2">转换的常见问题</div>
+                <!--#include file="../include/zhuanhuan.shtml"-->
+            </div>
+            <div id="creditCardList">
+                <div class="top2">收益的常见问题</div>
+                <!--#include file="../include/shouyi.shtml"-->
+            </div>
+            <div id="repayLoanList">
+                <div class="top2">开户/银行卡的常见问题</div>
+                <!--#include file="../include/kh-yhk.shtml"-->
+            </div>
+            <div id="interBankList">
+                <div class="top2">赎回的常见问题</div>
+                <!--#include file="../include/shuhui.shtml"-->
+            </div>
+            <div id="balanceList">
+                <div class="top2">定投的常见问题</div>
+                <!--#include file="../include/dingtou.shtml"-->
+            </div>
+            <div id="KZHList">
+                <div class="top2">费用的常见问题</div>
+                <!--#include file="../include/feiyong.shtml"-->
+            </div>
+
+
+            <div id="passwordList">
+                <div class="top2">密码与安全的常见问题</div>
+                <!--#include file="../include/mima-anquan.shtml"-->
+            </div>
+            <div id="othersList">
+                <div class="top2">其他常见问题</div>
+                <!--#include file="../include/qita.shtml"-->
+            </div>
+        </div>
+        <div>
+
+
+        </div>
+
+
+    </div>
+</div>
 </body>
 </html>
+<script>
+var oCopy=document.getElementById('copy');
+var timer=null;
+	
+oCopy.onclick=function(){
+	oCopy.style.background='#be222d';
+	timer=setTimeout(function(){
+		oCopy.style.background='#cc4047';
+	
+	},100)
+	amcfm_utils.copyClipBoard('{"text":"chinaamc_weixin", "succ":"copys"}')
+	
+	
+
+};
+
+function copys(){
+	amcfm_utils.toast('已复制成功')	
+	clearTimeout(timer);
+	
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
