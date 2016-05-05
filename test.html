@@ -23,8 +23,8 @@ html{ overflow-y:hidden;}
 #BoxConent{ width:100%;}
 #BoxConent .p{  width:100%; overflow:hidden; position:relative;}
 #BoxConent .p .box{ position:absolute; left:0; bottom:0; background-color:#CE2E3C; z-index:1;  height: 2px; width:50%;}
-#BoxConent .p span{  width:50%; box-sizing:border-box; float:left; text-align:center; line-height:2rem; height:2rem;border:none; border:1px solid #E1E0E0; font-size:0.6rem; text-decoration:none; color:#666;}
-#BoxConent .p span:nth-child(2){ border-left:none;}
+#BoxConent .p .span{  width:50%; box-sizing:border-box; float:left; text-align:center; line-height:2rem; height:2rem;border:none; border:1px solid #E1E0E0; font-size:0.6rem; text-decoration:none; color:#666;}
+#BoxConent .p .span:nth-child(2){ border-left:none;}
 #BoxConent .boxSun{ width:100%; height:calc(100% - 2rem); display:none;}
 #BoxConent .boxSun.on{ display:block;}
 #BoxConent .oneDiv {}
@@ -304,8 +304,8 @@ a .list:active{background-color:#f4f4f4;color:#3f3f3f;font-size:14px;}
 <div id="BoxConent">
 
     <p class="p">
-        <span href="javascript:;">在线客服</span>
-        <span href="javascript:;">常见问题</span>
+        <span class="span">在线客服</span>
+        <span class="span">常见问题</span>
         <span class="box"></span>
     </p>
     <!--第一个盒子-->
