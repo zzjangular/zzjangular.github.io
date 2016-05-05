@@ -23,7 +23,7 @@ html{ overflow-y:hidden;}
 #BoxConent{ width:100%;}
 #BoxConent .p{  width:100%; overflow:hidden; position:relative;}
 #BoxConent .p .box{ position:absolute; left:0; bottom:0; background-color:#CE2E3C; z-index:1;  height: 2px; width:50%;}
-#BoxConent .p .span{  width:50%; box-sizing:border-box; float:left; text-align:center; line-height:2rem; height:2rem;border:none; border:1px solid #E1E0E0; font-size:0.6rem; text-decoration:none; color:#666;}
+#BoxConent .p .span{ -webkit-tap-highlight-color: rgba(0,0,0,0); width:50%; box-sizing:border-box; float:left; text-align:center; line-height:2rem; height:2rem;border:none; border:1px solid #E1E0E0; font-size:0.6rem; text-decoration:none; color:#666;}
 #BoxConent .p .span:nth-child(2){ border-left:none;}
 #BoxConent .boxSun{ width:100%; height:calc(100% - 2rem); display:none;}
 #BoxConent .boxSun.on{ display:block;}
@@ -219,7 +219,7 @@ a .list:active{background-color:#f4f4f4;color:#3f3f3f;font-size:14px;}
         var oHtml = document.getElementsByTagName('html')[0];
         var oBoxSun = document.getElementsByClassName('boxSun')[1];
 		var oBox=document.getElementsByClassName('box')[0];
-		
+	/*	
         for (var i = 0; i < aBtn.length; i++) {
 			(function(index){	
 			   aBtn[index].onclick=function(){
@@ -241,9 +241,9 @@ a .list:active{background-color:#f4f4f4;color:#3f3f3f;font-size:14px;}
 				  aDiv[index].classList.add('on');
 				 };
 			 })(i);
+		   */
 		   
-		   
-		   /* aBtn[i].Dataindex = i;
+		   aBtn[i].Dataindex = i;
             aBtn[0].addEventListener('touchstart', function () {
 				oBox.style.left='0';
                 aDiv[1].classList.remove('on');          
@@ -253,7 +253,7 @@ a .list:active{background-color:#f4f4f4;color:#3f3f3f;font-size:14px;}
 				oBox.style.left='50%';
                 aDiv[0].classList.remove('on');           
                 aDiv[1].classList.add('on');
-            }, false);*/
+            }, false);
         }
     }, false);
 
