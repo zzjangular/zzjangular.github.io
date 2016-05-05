@@ -11,9 +11,10 @@ Remove this if you use the .htaccess -->
     <title>华夏基金-交易规则</title>
     <meta name="viewport" content="width=device-width; initial-scale=1.0"/>
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    
     <meta http-equiv="Content-Type" content="text/html; charset=GBK">
     <style>
-    /* CSS Document */
+    	/* CSS Document */
 @import url("reset.css");
 body,td,p,div,a{ font-family:"黑体";}
 /*body,hr{background-color:#e6e6e6;}*/
@@ -23,8 +24,8 @@ html{ overflow-y:hidden;}
 #BoxConent{ width:100%;}
 #BoxConent .p{  width:100%; overflow:hidden; position:relative;}
 #BoxConent .p .box{ position:absolute; left:0; bottom:0; background-color:#CE2E3C; z-index:1;  height: 2px; width:50%;}
-#BoxConent .p .span{ width:50%; box-sizing:border-box; float:left; text-align:center; line-height:2rem; height:2rem;border:none; border:1px solid #E1E0E0; font-size:0.6rem; text-decoration:none; color:#666;}
-#BoxConent .p .span:nth-child(2){ border-left:none;}
+#BoxConent .p a{  width:50%; box-sizing:border-box; float:left; text-align:center; line-height:2rem; height:2rem;border:none; border:1px solid #E1E0E0; font-size:0.6rem; text-decoration:none; color:#666;}
+#BoxConent .p a:nth-child(2){ border-left:none;}
 #BoxConent .boxSun{ width:100%; height:calc(100% - 2rem); display:none;}
 #BoxConent .boxSun.on{ display:block;}
 #BoxConent .oneDiv {}
@@ -190,12 +191,7 @@ a .list:active{background-color:#f4f4f4;color:#3f3f3f;font-size:14px;}
 .tablex{ border-bottom:#b1b1b1 solid 1px; padding:6px;}
 .tableexz{ border-bottom:#b1b1b1 solid 1px; border-left:#b1b1b1 solid 1px; padding:6px;}
 .tablebt{ color:#3f3f3f; font-size:14px;}
-
-
-
 	
-    	
-    	
     </style>
 </head>
 <script src="jquery.min.js">
@@ -214,16 +210,15 @@ a .list:active{background-color:#f4f4f4;color:#3f3f3f;font-size:14px;}
 		
     })(window, document);
     document.addEventListener('DOMContentLoaded', function () {
-        var aBtn = document.querySelectorAll('#BoxConent .p .span');
+        var aBtn = document.querySelectorAll('#BoxConent .p a');
         var aDiv = document.querySelectorAll('#BoxConent .boxSun');
         var oHtml = document.getElementsByTagName('html')[0];
         var oBoxSun = document.getElementsByClassName('boxSun')[1];
 		var oBox=document.getElementsByClassName('box')[0];
-	/*	
+		
         for (var i = 0; i < aBtn.length; i++) {
 			(function(index){	
 			   aBtn[index].onclick=function(){
-			   
 				   if(index==0)
 				   {
 					   oBox.style.left='0';
@@ -241,9 +236,9 @@ a .list:active{background-color:#f4f4f4;color:#3f3f3f;font-size:14px;}
 				  aDiv[index].classList.add('on');
 				 };
 			 })(i);
-		   */
 		   
-		   aBtn[i].Dataindex = i;
+		   
+		   /* aBtn[i].Dataindex = i;
             aBtn[0].addEventListener('touchstart', function () {
 				oBox.style.left='0';
                 aDiv[1].classList.remove('on');          
@@ -253,7 +248,7 @@ a .list:active{background-color:#f4f4f4;color:#3f3f3f;font-size:14px;}
 				oBox.style.left='50%';
                 aDiv[0].classList.remove('on');           
                 aDiv[1].classList.add('on');
-            }, false);
+            }, false);*/
         }
     }, false);
 
@@ -305,8 +300,8 @@ a .list:active{background-color:#f4f4f4;color:#3f3f3f;font-size:14px;}
 <div id="BoxConent">
 
     <p class="p">
-        <span class="span">在线客服1</span>
-        <span class="span">常见问题2</span>
+        <a href="javascript:;">在线客服</a>
+        <a href="javascript:;">常见问题</a>
         <span class="box"></span>
     </p>
     <!--第一个盒子-->
