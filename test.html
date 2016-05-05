@@ -11,8 +11,192 @@ Remove this if you use the .htaccess -->
     <title>华夏基金-交易规则</title>
     <meta name="viewport" content="width=device-width; initial-scale=1.0"/>
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
-    <link rel="stylesheet" href="css.css"/>
     <meta http-equiv="Content-Type" content="text/html; charset=GBK">
+    <style>
+    /* CSS Document */
+@import url("reset.css");
+body,td,p,div,a{ font-family:"黑体";}
+/*body,hr{background-color:#e6e6e6;}*/
+body,input,div,img,ul,li,hr,img,hr{ margin:0px; border:0px; padding:0px;}
+
+html{ overflow-y:hidden;}
+#BoxConent{ width:100%;}
+#BoxConent .p{  width:100%; overflow:hidden; position:relative;}
+#BoxConent .p .box{ position:absolute; left:0; bottom:0; background-color:#CE2E3C; z-index:1;  height: 2px; width:50%;}
+#BoxConent .p a{  width:50%; box-sizing:border-box; float:left; text-align:center; line-height:2rem; height:2rem;border:none; border:1px solid #E1E0E0; font-size:0.6rem; text-decoration:none; color:#666;}
+#BoxConent .p a:nth-child(2){ border-left:none;}
+#BoxConent .boxSun{ width:100%; height:calc(100% - 2rem); display:none;}
+#BoxConent .boxSun.on{ display:block;}
+#BoxConent .oneDiv {}
+#BoxConent .oneDiv img{ width:5.5rem; position:absolute; left:50%; top:4rem; margin-left:-2.75rem;}
+#BoxConent .copy{ text-align:center;  height:2rem; line-height:2rem; background:#cc3040; width:10rem; color:#fff; border-radius:10px; font-size:0.7rem; position:absolute; top:10.5rem; left:50%;margin-left:-5rem; }
+#BoxConent .p1{ text-align:center;  height:0.9rem; line-height:0.9rem;  color:#666; font-size:0.6rem;margin-top:11.35rem; width:100%;}
+
+
+
+a{ text-decoration:none;}
+
+.gg_pa{ padding-right:10px;}
+.gg_img{max-width:100%;	height: auto;	display:block; margin:0 auto;}
+.gg_img2{max-width:100%;	height: auto;	display:block; float:left;}
+.top{ background-color:#df463e; height:50px; line-height:50px; text-align:center; color:#FFFFFF; font-size:16px; position:relative}
+.top_img{
+    position:absolute;
+    left:2%;
+    top:10px;
+}
+.top2{
+    height:23px;
+    color:#040404;
+    font-size:14px;
+    padding:12px 4% 0;
+    width:92%;
+    border-bottom:#bb322e solid 1px;
+}
+.top3{
+    line-height:18px;
+    color:#555555;
+    font-size:14px;
+    padding:12px 4% 15px 4%;
+    width:96%;
+    border-bottom:#d7d7d7 solid 1px;
+}
+.top4{height:190px;line-height:18px;color:#555555;	font-size:12px;	padding:0 2% 15px;	width:96%;	border-bottom:#d7d7d7 solid 1px;}
+.top5{
+    line-height:18px;
+    color:#555555;
+    font-size:14px;
+    padding:0 2% 15px;
+    width:96%;
+    border-bottom:#d7d7d7 solid 1px;
+}
+.top6{
+    line-height:18px;
+    color:#555555;
+    font-size:14px;
+    padding:0 4% 15px;
+    width:92%;
+}
+.top3 p{ margin-top:8px}
+.top4 p{ margin-top:8px}
+.top5 p{ margin-top:8px}
+
+.bottom2{
+    height:23px;
+    color:#040404;
+    font-size:14px;
+    padding:12px 4% 0;
+    width:92%;
+    text-align: center;
+    border-bottom:#a7a7a7 solid 1px;
+    border-top:#a7a7a7 solid 1px;
+}
+.fl{width:100%; height:43px; border-bottom:#e2e2e2 solid 1px; background-color:#ffffff;}
+.fl_left{
+    width:46%;
+    float:left;
+    padding-left:4%;
+    line-height:43px;
+    color:#3f3f3f;
+    font-size:14px;
+    position:relative;
+}
+.fl_left2{
+    width:46%;
+    float:left;
+    padding-left:4%;
+    line-height:43px;
+    color:#cc0000;
+    font-size:14px;
+    position:relative; background-color:#f4f4f4;
+}
+a .fl_left:link{ text-decoration:none; color:#3f3f3f;}
+a .fl_left:visited{background-color:#f4f4f4; color:#3f3f3f;}
+a .fl_left:hover { background-color:#f4f4f4; color:#3f3f3f;}
+a .fl_left:active{ background-color:#f4f4f4; color:#3f3f3f;}
+
+
+.fl_right{
+    width:46%;
+    padding-left:4%;
+    float:left;
+    line-height:43px;
+    color:#3f3f3f;
+    font-size:14px;
+    position:relative;
+}
+.fl_right2{
+    width:46%;
+    padding-left:4%;
+    float:left;
+    line-height:43px;
+    color:#cc0000;
+    font-size:14px;
+    position:relative; background-color:#f4f4f4;
+}
+a .fl_right:link{ text-decoration:none; color:#3f3f3f;}
+a .fl_right:visited{background-color:#f4f4f4; color:#3f3f3f;}
+a .fl_right:hover { background-color:#f4f4f4; color:#3f3f3f;}
+a .fl_right:active{ background-color:#f4f4f4; color:#3f3f3f;}
+
+
+
+.xian{ width:10px; height:43px; border-left:#d7d7d7 solid 1px; position:absolute; top:0px; left:0px;}
+.fl_jt{
+    width:10px;
+    height:17px;
+    position:absolute;
+    top:13px;
+    right:8%;
+}
+.fl_jt2{width:10px;height:17px;position:absolute;top:13px;right:8%;}
+.qt{
+    height:50px;
+    border-bottom:#d7d7d7 solid 1px;
+    width:98%;
+    background-color:#fff;
+    margin:5px 0;
+    padding-left:2%;
+    line-height:50px;
+    position:relative; font-size:14px;color:#3f3f3f;
+}
+.qt_jt{width:10px;	height:17px; color:#3f3f3f; position:absolute;	top:15px;	right:2%;}
+a .qt:link{color:#3f3f3f;  font-size:14px;}
+a .qt:visited{background-color:#f4f4f4; color:#3f3f3f;font-size:14px;}
+a .qt:hover {background-color:#f4f4f4;  color:#3f3f3f;  font-size:14px;}
+a .qt:active{ background-color:#f4f4f4; color:#3f3f3f;  font-size:14px;}
+.list{
+    line-height:30px;
+    border-bottom:#cccccc solid 1px; line-height:43px; height:43px;
+    margin-left:4%;
+    font-size:14px;
+    position:relative;color:#3f3f3f;
+}
+.list_jt{
+    width:10px;
+    height:17px;
+    position:absolute;
+    top:13px;
+    right:4%;
+}
+
+
+
+a .list:link{color:#3f3f3f;  font-size:14px;}
+a .list:visited{background-color:#f4f4f4; color:#3f3f3f;font-size:14px;}
+a .list:hover {background-color:#f4f4f4;  color:#3f3f3f;  font-size:14px;}
+a .list:active{background-color:#f4f4f4;color:#3f3f3f;font-size:14px;}
+.ma10{ margin-top:10px;}
+.tablex{ border-bottom:#b1b1b1 solid 1px; padding:6px;}
+.tableexz{ border-bottom:#b1b1b1 solid 1px; border-left:#b1b1b1 solid 1px; padding:6px;}
+.tablebt{ color:#3f3f3f; font-size:14px;}
+
+
+
+	
+    	
+    	
+    </style>
 </head>
 <script src="jquery.min.js">
 
