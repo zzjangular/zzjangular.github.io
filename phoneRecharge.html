@@ -79,8 +79,8 @@
                         $('.h2l span').eq(2).css('left',leftLeft+'px');
                         $('.content').css('display','none');
                         $('.content2').css('display','block');
-                        $('.content2 ul li span').click(function(){
-                            $(this).css({'background':'#CE2E3C','color':'#fff'}).parent().siblings().children('span').css({'background':'#fff','color':'#CE2E3C'});
+                        $('.content2 ul li').click(function(){
+                            $(this).find('span').css({'background':'#CE2E3C','color':'#fff'}).parent().siblings().children('span').css({'background':'#fff','color':'#CE2E3C'});
                             jur=true;
                         });
                         $('#btn').click(function(){
@@ -90,6 +90,70 @@
                             }
                         });
                     });
+					//复制的官网
+					$(".select_box").click(function(event){
+					$('.option').show();
+					$("#floatBg").show();
+				  });
+				  $("#floatBg").click(function(event){
+					$('.option').hide();
+					$("#floatBg").hide();
+				  });
+				   /*赋值给文本框*/
+				  $(".option a").click(function(){
+					  var value1=$(this).children().eq(0).text();
+					  var value2=$(this).children().eq(1).text();
+					  
+					  $(".p1 .span2").text(value1);
+					  $(".p2 .span2").text(value2);
+					  $('.option').hide();
+					  $("#floatBg").hide();
+				
+					  $(this).siblings().removeClass("option_curr");
+					  $(this).addClass("option_curr");
+					  
+					  var trustChannelType = $(".option_curr input:eq(3)").val();
+					  if(trustChannelType == "1"){
+						$("#hqt_available").show();
+						$("#trustChannelAvailable").html($(".option_curr input:eq(5)").val());
+					  }else{
+						$("#hqt_available").hide();
+					  }
+					  try{
+						  if(checkAmount&&typeof(checkAmount)=="function"){
+							  checkAmount();
+						  }
+					  }catch(e){
+						  
+					  }
+				
+					  
+				  });
+				  $("#formLogin").submit(function(){
+							   var options = { 
+								 async: false,     
+								 url: '/mphone/mp/login', //提交给哪个执行 
+								 type: 'POST', 
+								 dataType: 'json',          
+								 success: function(msg){
+									 showAlert(msg);
+								 }}; 
+							 $("#formLogin").ajaxSubmit(options); 
+							 return false; //为了不刷新页面,返回false，反正都已经在后台执行完了，没事！ 
+						 });
+				/*  $("#info4_btn").click(function(){
+					  // if("填写正确"){
+				
+					  // }else{
+					  //     alert("账户名或密码不正确！");
+					  // }
+					  
+					  $("#formLogin").submit();
+				  });*/
+									
+					
+					
+					
         });
     </script>
 </head>
@@ -102,6 +166,10 @@
              <span></span>
          </header>
          <div class="block"></div>
+         
+         <form name="formLogin"  id="formLogin"  method="post">
+         
+         
          <div class="input">
          		<div>
                     <section>
@@ -114,8 +182,8 @@
 
          <div class="block block2"></div>
          <p class="h2l">
-         		<span class="active">冲话费</span>
-                <span>冲流量</span>
+         		<span class="active">充话费</span>
+                <span>充流量</span>
                 <span class="box"></span>
          </p>
          <div class="content">
@@ -155,11 +223,133 @@
             </ul>
         </div>
         <div class="block block2"></div>
-         <div class="payment">
+         <div class="payment select_box">
              <p class="p1"><span class="span1">付款渠道</span><span class="span2">活期通-建设银行[0326]</span></p>
              <p class="p2"><span class="span1">余额（元）<span class="span2">600.00</span></span></p>
              <img src="images/right_02.png">
          </div>
+         
+         
+         
+         <div id="floatBg"></div>
+			<div class="option">
+				<P>选择下方的证件类型</P>
+				<div class="option_btns">
+				
+						
+							
+								<a class="option_curr"><span class="span1">建设银行[0326]</span><span class="span2">600元</span>
+								<input type="hidden" value="0" />
+                                <input type="hidden" value="0.5" />
+								</a>
+							
+							
+						
+				
+						
+							
+							
+								<a><span>中国银行[8772]</span><span>2112443.42元</span>
+								<input type="hidden" value="1" />
+                                <input type="hidden" value="1.5" />
+								</a>
+							
+						
+				
+						
+							
+							
+								<a><span>工商银行[8772]</span><span>43.42元</span>
+								<input type="hidden" value="2" />
+								</a>
+							
+						
+				
+						
+							
+							
+								<a><span>农商银行[8772]</span><span>53.76元</span>
+								<input type="hidden" value="3" />
+								</a>
+							
+						
+				
+						
+							
+							
+								<a><span>瑞丰银行[8772]</span><span>523.76元</span>
+								<input type="hidden" value="4" />
+								</a>
+							
+						
+				
+						
+							
+							
+								<a> 户口本
+								<input type="hidden" value="5" />
+								</a>
+							
+						
+				
+						
+							
+							
+								<a> 外国护照
+								<input type="hidden" value="6" />
+								</a>
+							
+						
+				
+						
+							
+							
+								<a> 其它
+								<input type="hidden" value="7" />
+								</a>
+							
+						
+				
+						
+							
+							
+								<a> 台胞证
+								<input type="hidden" value="A" />
+								</a>
+							
+						
+				
+						
+							
+							
+								<a> 警官证
+								<input type="hidden" value="a" />
+								</a>
+							
+						
+				
+						
+							
+							
+								<a> 文职证
+								<input type="hidden" value="b" />
+								</a>
+							
+						
+				
+				<a><input type="hidden" value="TAACCOUNTNO">基金帐号</a>
+				</div>
+		 	</div>
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
         <footer>
 
             <P id="btn">确定充值</P>
@@ -178,7 +368,7 @@
 
 
 
-
+	 </form>
      </div>
 </body>
 </html>
