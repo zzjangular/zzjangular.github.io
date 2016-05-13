@@ -24,9 +24,9 @@ section .p1 input{  outline:none;font-size:24px; color:#999; border:0;}
 .h2l span.box{ position:absolute; left:0; bottom:0; background-color:#CE2E3C; z-index:1;  height: 4px;}
 section .p2{ font-size:14px; color:#999; display: none;}
 .content{ padding: 0 15px; overflow: hidden;}
-.content ul{ margin:10px auto; text-align: center; overflow: hidden; padding-bottom:10px; padding-top:10px;}
+.content ul{ margin:10px auto; text-align: center; overflow: hidden;}
 .content ul li{width:96px; border:1px solid #ccc; text-align: center; border-radius: 5px;/*; line-height: 60px*/
-    margin:10px 10px 0 0; box-sizing:border-box; display: inline-block; line-height: 60px; height:auto;}
+    margin:10px 10px 0 0; box-sizing:border-box; display: inline-block; line-height: 60px; height:auto; padding-bottom:10px; padding-top:10px;}
 .content ul li:nth-child(3),.content ul li:nth-child(6),.content ul li:nth-child(9),.content ul li:nth-child(12){ margin-right:0;}
 .content ul .lastLi{border: 0; font-size: 0; height: 0;}
 .content ul .lastLi p{ font-size: 0;}
