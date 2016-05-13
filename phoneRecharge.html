@@ -69,7 +69,7 @@
                         $(this).addClass('active').siblings().removeClass('active');
                         var leftLeft=$(this).offset().left;
 						
-                        $('.h2l span').eq(2).css('left','13%');
+                        $('.h2l span').eq(2).css('left','0');
                         $('.content').css('display','block');
                         $('.content2').css('display','none');
 
@@ -77,7 +77,7 @@
                     $('.h2l span').eq(1).click(function(){
                         $(this).addClass('active').siblings().removeClass('active');
                         var leftLeft=$(this).offset().left;
-                        $('.h2l span').eq(2).css('left','63%');
+                        $('.h2l span').eq(2).css('left','50%');
                         $('.content').css('display','none');
                         $('.content2').css('display','block');
                         $('.content2 ul li').click(function(){
@@ -91,6 +91,7 @@
                             }
                         });
                     });
+					
 					//复制的官网
 					$(".select_box").click(function(event){
 					$('.option').show();
@@ -190,7 +191,7 @@
          <div class="content">
              <ul>
                  <li>20元
-                    <p>活期通仅售999.99元</p>
+                    <p>活期通仅售**元</p>
                  </li>
                  <li>30元
                      <p>活期通仅售**元</p>
