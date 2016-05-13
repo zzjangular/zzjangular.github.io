@@ -1,0 +1,62 @@
+*{ margin:0; padding:0; list-style: none;}
+html{
+    font-size: 20px;
+    font-family: Microsoft YaHei,SimHei;
+    height: 100%;
+}
+body{height: 100%;}
+#wrap{ background-color: #fff; height: 100%;}/*overflow: hidden;*/
+.input{padding:0 15px;}
+header{height: 2rem;background:#C6373C;display:-webkit-box;}
+header span{
+    width: 2rem;height: 2rem; display: inline-block;}
+header img{ display: inline-block; width:2rem;}
+header h2{ -webkit-box-flex:1; font-size:18px;line-height: 2rem;color:white; font-weight: bold;
+    text-align: center;
+}
+.block{height:10px;background-color: #EEE; border-bottom:1px solid #e8e8e8;}
+.block2{margin-top:14px;}
+section .p1{ font-size:22px; font-weight:bold; color:#333; height:64px; line-height:80px;}
+section .p1 input{  outline:none;font-size:22px; color:#999; border:0;}
+.h2l{ height:70px; font-size: 20px; border-bottom: 1px solid #e8e8e8; position: relative;}
+.h2l span{ width: 50%; float:left; text-align: center; height: 50px; margin-top: 16px;line-height: 60px;}
+.h2l span.active{  color: #CE2E3C;}
+.h2l span.box{ position:absolute; left:0; bottom:0; background-color:#CE2E3C; z-index:1;  height: 4px;}
+section .p2{ font-size:14px; color:#999; display: none;}
+.content{ padding: 0 15px; overflow: hidden;}
+.content ul{ margin:10px auto; text-align: center; overflow: hidden;}
+.content ul li{width:90px; height:60px; border:1px solid #ccc; text-align: center; border-radius: 5px;/*; line-height: 60px*/
+    margin:10px 10px 0 0; box-sizing:border-box; display: inline-block; line-height: 60px;}
+.content ul .lastLi{border: 0; font-size: 0; height: 0;}
+.content ul .lastLi p{ font-size: 0;}
+.content ul li p{ font-size: 10px; display: none;}
+.payment{ padding: 8px 30px 0; position: relative; overflow: hidden;height: 60px;}
+.payment img{ position: absolute; right: 30px; top: 0;}
+.payment .p1 { font-size: 16px; height:28px; line-height: 28px; overflow: hidden;}
+.payment .p1 .span1{ color:#808080;}
+.payment .p1 .span2{ position: absolute; right: 80px; }
+.payment .p2{ font-size: 14px; height: 20px; line-height: 20px;}
+.payment .p2 .span1{position: absolute; right: 80px;color:#808080;}
+.payment .p2 .span2{ color: #CE2E3C;}
+footer{ padding:0 15px;background: #e8e8e8; height: 200px; overflow: hidden;}
+footer p{ width:292px; height:36px; background-color:#fff; border-radius: 5px; margin: 20px auto 0;
+    font-size: 16px; text-align: center; line-height:36px;color:#808080;
+}
+.pop{height: 100%; width: 100%; position: fixed;top:0; left: 0; display: none;}
+.shadow{ height: 100%; width: 100%;background: #000; opacity: .3;}
+.alert{ width:238px; border-radius: 5%;height: 164px;background: #F0F0F0; position: absolute;top:40%;left: 50%;
+    margin-left: -134px; text-align: center; padding: 0 15px; }
+.alert .p1{ border-bottom: 1px solid #ccc;height: 40px; line-height: 40px; font-size: 18px;    margin-top: 5px;}
+.alert .p2{background: #fff; height: 34px;width: 238px; border-radius:5px; position: relative; margin-top: 14px; overflow: hidden;}
+.alert .p2 input{ height: 100%; outline: none; border: none; position: absolute;top:0; left: 55px; font-size: 16px; line-height: 34px;color: #ccc;}
+.alert .p2 span{font-size: 18px; height:34px; float: left; line-height: 34px;padding-left: 10px;}
+.alert .p3 input{height:38px;width:114px; border-radius: 5px; margin-top: 14px;border: 1px solid #ccc; background: #fff;font-size: 16px;  }
+.alert .p3 .button1{background-color:#CE3E44;color: #fff;}
+/*³äÁ÷Á¿µÄcss*/
+
+.content2{ padding: 0 15px; overflow: hidden; display: none;}/*display:none*/
+.content2 ul{}
+.content2 ul li{ border-bottom: 1px solid #e8e8e8; color:#ccc; font-size: 20px; height: 44px; line-height: 44px; overflow: hidden;}
+.content2 ul .lastLi{ border: none;}
+.content2 ul li span{width:45px;height: 22px; border: 1px solid #CE2E3C; color: #CE2E3C; float: right; border-radius: 3px;
+ line-height: 22px; font-size: 12px; text-align: center; margin-top: 11px; font-weight: bold; display: none}/*display*/

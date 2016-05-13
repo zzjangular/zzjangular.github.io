@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>渠道选择</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <style>
+        *{ margin:0; padding:0; list-style: none;}
+        html{
+            font-size: 20px;
+            font-family: Microsoft YaHei,SimHei;
+            height: 100%;
+        }
+        body{height: 100%;}
+        #wrap{ background-color: #EEE; height: 100%;overflow: hidden; }/*overflow: hidden;*/
+        header{height: 2rem;background:#C6373C;display:-webkit-box;}
+        header span{
+            width: 2rem;height: 2rem; display: inline-block;}
+        header img{ display: inline-block; width:2rem;}
+        header h2{ -webkit-box-flex:1; font-size:18px;line-height: 2rem;color:white; font-weight: bold;
+            text-align: center;
+        }
+        #wrap p{background-color: #fff;height: 44px; width: 100%; border-top: 1px solid #e8e8e8;margin-top: 10px;
+            border-bottom: 1px solid #e8e8e8;padding: 0 15px; line-height: 44px; font-size: 14px; position: relative;}
+        #wrap p span{ color:#C6373C; margin-left: 10px;}
+        #wrap p img{ float: right; position: absolute; right: 55px; top: 0; }
+    </style>
+    <script>
+        window.onload=function(){
+            document.documentElement.style.fontSize=document.documentElement.clientWidth/16+'px';
+        };
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <span><img src="images/pro.png"></span>
+            <h2>渠道选择</h2>
+            <span></span>
+        </header>
+        <p>建设银行[0326]<span>600元</span><img src="images/select.png"></p>
+        <p>中国银行[8772]<span>2112443.42元</span><img src=""></p>
+    </div>
+</body>
+</html>

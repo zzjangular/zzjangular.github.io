@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>渠道选择</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <style>
+        *{ margin:0; padding:0; list-style: none;}
+        html{
+            font-size: 20px;
+            font-family: Microsoft YaHei,SimHei;
+            height: 100%;
+        }
+        body{height: 100%;}
+        #wrap{ background-color: #EEE; height: 100%;overflow: hidden; }/*overflow: hidden;*/
+        header{height: 2rem;background:#C6373C;display:-webkit-box;}
+        header span{
+            width: 2rem;height: 2rem; display: inline-block;}
+        header img{ display: inline-block; width:2rem;}
+        header h2{ -webkit-box-flex:1; font-size:18px;line-height: 2rem;color:white; font-weight: bold;
+            text-align: center;
+        }
+        .content{ margin-top: 77px; text-align: center;}
+        .content img{}
+        .content .p1{color: #cc3040; font-size: 16px; margin-top:20px; }
+        .content .p2{color: #B1B1B1; font-size: 16px; margin: 30px auto; }
+        .content .p2 span{color: #333;}
+        footer{ padding:0 15px;background: #eee;; height: 200px; overflow: hidden;}
+        footer p{ width:292px; height:40px; background-color:#cc3040; border-radius: 5px; margin: 40px auto 0;
+            font-size: 16px; text-align: center; line-height:40px;color:#fff;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            document.documentElement.style.fontSize=document.documentElement.clientWidth/16+'px';
+        };
+    </script>
+</head>
+<body>
+<div id="wrap">
+    <header>
+        <span><img src="images/pro.png"></span>
+        <h2>充值结果</h2>
+        <span></span>
+    </header>
+    <div class="content">
+        <img src="images/shibai.png">
+        <p class="p1">充值失败</p>
+        <p class="p2">抱歉，暂时无法提供服务</p>
+    </div>
+    <footer>
+        <P>完成</P>
+    </footer>
+
+</div>
+</body>
+</html>

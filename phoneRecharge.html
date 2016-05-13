@@ -1,0 +1,184 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>手机充值</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/phoneRecharge.css">
+<!--    <link rel="stylesheet" href="css/phoneRechargeOn.css">
+    <link rel="stylesheet" href="css/phoneRechargeOn2.css">-->
+    <script src="js/jquery-1.8.2.min.js"></script>
+    <script>
+
+        $(function(){
+            var cssURL = 'css/phoneRechargeOn.css';
+            var cssURL2 = 'css/phoneRechargeOn2.css';
+            //请输入手机号
+            $('section .p1 input').focus(function(){
+                if($(this).val()=='请输入手机号')
+                {
+                    $(this).val('')
+                }
+            }).blur(function(){
+                if($(this).val()=='')
+                {
+                    $(this).val('请输入手机号')
+                }
+            }).bind('input',function(){
+                if($(this).val().length=='11')
+                {
+                    $('section .p2').css('display','block')
+                    //面额和提交可选
+
+                    linkTag = $('<link href="' + cssURL + '" rel="stylesheet" type="text/css"  />');
+                    linkTag2 = $('<link href="' + cssURL2 + '" rel="stylesheet" type="text/css" />');
+                    $($('head')[0]).append(linkTag).append(linkTag2);
+                    //处理逻辑开始
+                    $('.content li').click(function(){
+
+                      $(this).css({'background':'#CE2E3C','color':'#fff'}).siblings().css({'background':'#fff','color':'#CE2E3C'});
+                        $('#btn').click(function(){
+                            alert('话费已经成功充值')
+                        });
+                    });
+
+
+                }
+                else
+                {
+                    $('section .p2').css('display','none');
+                        if($('link').length>1)
+                        {
+
+                            $(linkTag).remove();
+                            $(linkTag2).remove();
+                        }
+                }
+                //只能输入11个数
+                if($(this).val().length>='11')
+                {
+                   $(this).attr('readonly','readonly')
+                }
+            });
+
+            //充话费和充流量
+                    var jur=false;
+                    $('.h2l span').eq(0).click(function(){
+                        $(this).addClass('active').siblings().removeClass('active');
+                        var leftLeft=$(this).offset().left;
+                        $('.h2l span').eq(2).css('left',leftLeft+'px');
+                        $('.content').css('display','block');
+                        $('.content2').css('display','none');
+
+                    });
+                    $('.h2l span').eq(1).click(function(){
+                        $(this).addClass('active').siblings().removeClass('active');
+                        var leftLeft=$(this).offset().left;
+                        $('.h2l span').eq(2).css('left',leftLeft+'px');
+                        $('.content').css('display','none');
+                        $('.content2').css('display','block');
+                        $('.content2 ul li span').click(function(){
+                            $(this).css({'background':'#CE2E3C','color':'#fff'}).parent().siblings().children('span').css({'background':'#fff','color':'#CE2E3C'});
+                            jur=true;
+                        });
+                        $('#btn').click(function(){
+                            if(jur)
+                            {
+                                alert('流量已经成功充值')
+                            }
+                        });
+                    });
+        });
+    </script>
+</head>
+
+<body>
+	<div id="wrap">
+     	<header>
+             <span><img src="images/pro.png"></span>
+             <h2>手机充值</h2>
+             <span></span>
+         </header>
+         <div class="block"></div>
+         <div class="input">
+         		<div>
+                    <section>
+                         <p class="p1"><input type="tel" value="请输入手机号" id="input"></p>
+                         <p class="p2">中国移动</p>
+
+                    </section>
+         		</div>
+         </div>
+
+         <div class="block block2"></div>
+         <p class="h2l">
+         		<span class="active">冲话费</span>
+                <span>冲流量</span>
+                <span class="box"></span>
+         </p>
+         <div class="content">
+             <ul>
+                 <li>20元
+                    <p>活期通仅售**元</p>
+                 </li>
+                 <li>30元
+                     <p>活期通仅售**元</p>
+                 </li>
+                 <li>50元
+                     <p>活期通仅售**元</p>
+                 </li>
+                 <li>100元
+                     <p>活期通仅售**元</p>
+                 </li>
+                 <li>200元
+                     <p>活期通仅售**元</p>
+                 </li>
+                 <li>300元
+                     <p>活期通仅售**元</p>
+                 </li>
+                 <li>500元
+                     <p>活期通仅售**元</p>
+                 </li>
+                 <li class="lastLi">500元 <p>活期通仅售**元</p></li>
+                 <li class="lastLi">500元<p>活期通仅售**元</p></li>
+             </ul>
+         </div>
+        <div class="content2">
+            <ul>
+                <li>20M(当月生效)<span>3元</span></li>
+                <li>50M(当月生效)<span>6元</span></li>
+                <li>100M(当月生效)<span>10元</span></li>
+                <li>500M(当月生效)<span>30元</span></li>
+                <li class="lastLi">1G(当月生效)<span>50元</span></li>
+            </ul>
+        </div>
+        <div class="block block2"></div>
+         <div class="payment">
+             <p class="p1"><span class="span1">付款渠道</span><span class="span2">活期通-建设银行[0326]</span></p>
+             <p class="p2"><span class="span1">余额（元）<span class="span2">600.00</span></span></p>
+             <img src="images/right_02.png">
+         </div>
+        <footer>
+
+            <P id="btn">确定充值</P>
+        </footer>
+        <div class="pop">
+            <div class="shadow"></div>
+            <div class="alert">
+                <p class="p1">请输出交易密码</p>
+                <p class="p2"><span>密码:</span><input type="text" name="password" value="请输入6-8位交易密码"/></p>
+                <p class="p3">
+                    <input type="button" value="取消">
+                    <input type="button" value="确定" class="button1">
+                </p>
+            </div>
+        </div>
+
+
+
+
+     </div>
+</body>
+</html>
