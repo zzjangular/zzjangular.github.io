@@ -16,12 +16,12 @@ header h2{ -webkit-box-flex:1; font-size:18px;line-height: 2rem;color:white; fon
 }
 .block{height:10px;background-color: #EEE; border-bottom:1px solid #e8e8e8;}
 .block2{margin-top:14px;}
-section .p1{ font-size:22px; font-weight:bold; color:#333; height:64px; line-height:80px;}
-section .p1 input{  outline:none;font-size:24px; color:#999; border:0;}
-.h2l{ height:70px; font-size: 20px; border-bottom: 1px solid #e8e8e8; position: relative;}
-.h2l span{ width: 50%; float:left; text-align: center; height: 50px; margin-top: 16px;line-height: 60px;}
+section .p1{ font-size:22px; font-weight:bold; color:#333; height:54px; line-height:70px;}
+section .p1 input{  outline:none;font-size:24px; color:#999; border:0;-webkit-tap-highlight-color: rgba(0,0,0,0);}
+.h2l{ height:54px; font-size: 20px; border-bottom: 1px solid #e8e8e8; position: relative;}
+.h2l span{ width: 50%; float:left; text-align: center; height: 50px;line-height: 60px;}
 .h2l span.active{  color: #CE2E3C;}
-.h2l span.box{ position:absolute; left:0; bottom:0; background-color:#CE2E3C; z-index:1;  height: 4px;}
+.h2l span.box{width:25%; position:absolute; left:13%; bottom:0; background-color:#CE2E3C; z-index:1;  height: 4px;}
 section .p2{ font-size:14px; color:#999; display: none;}
 .content{ padding: 0 15px; overflow: hidden;}
 .content ul{ margin:10px auto; text-align: center; overflow: hidden;}
@@ -35,9 +35,9 @@ section .p2{ font-size:14px; color:#999; display: none;}
 .payment img{ position: absolute; right: 30px; top: 0;}
 .payment .p1 { font-size: 16px; height:28px; line-height: 28px; overflow: hidden;}
 .payment .p1 .span1{ color:#808080;}
-.payment .p1 .span2{ position: absolute; right: 80px; }
+.payment .p1 .span2{ position: absolute; right: 60px; }
 .payment .p2{ font-size: 14px; height: 20px; line-height: 20px;}
-.payment .p2 .span1{position: absolute; right: 80px;color:#808080;}
+.payment .p2 .span1{position: absolute; right: 60px;color:#808080;}
 .payment .p2 .span2{ color: #CE2E3C;}
 footer{ padding:0 15px;background: #e8e8e8; height: 200px; overflow: hidden;}
 footer p{ width:292px; height:36px; background-color:#fff; border-radius: 5px; margin: 20px auto 0;
@@ -57,10 +57,10 @@ footer p{ width:292px; height:36px; background-color:#fff; border-radius: 5px; m
 
 .content2{ padding: 0 15px; overflow: hidden; display: none;}/*display:none*/
 .content2 ul{}
-.content2 ul li{ border-bottom: 1px solid #e8e8e8; color:#ccc; font-size: 20px; height: 44px; line-height: 44px; overflow: hidden;}
+.content2 ul li{ border-bottom: 1px solid #e8e8e8; color:#ccc; font-size: 16px; height: 44px; line-height: 44px; overflow: hidden;}
 .content2 ul .lastLi{ border: none;}
 .content2 ul li span{width:45px;height: 22px; border: 1px solid #CE2E3C; color: #CE2E3C; float: right; border-radius: 3px;
- line-height: 22px; font-size: 12px; text-align: center; margin-top: 11px; font-weight: bold; display: none}/*display*/
+ line-height: 22px; font-size: 16px; text-align: center; margin-top: 11px; font-weight: bold; display: none}/*display*/
  #floatBg {
     position: fixed;
     width: 100%;
