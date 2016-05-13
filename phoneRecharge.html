@@ -37,7 +37,8 @@
                     $($('head')[0]).append(linkTag).append(linkTag2);
                     //处理逻辑开始
                     $('.content li').click(function(){
-
+						
+						if($(this).attr('class')=='disabled') return false;
                       $(this).css({'background':'#CE2E3C','color':'#fff'}).siblings().css({'background':'#fff','color':'#CE2E3C'});
                         $('#btn').click(function(){
                             alert('话费已经成功充值')
@@ -134,7 +135,7 @@
 				  $("#formLogin").submit(function(){
 							   var options = { 
 								 async: false,     
-								 url: '/mphone/mp/login', //提交给哪个执行 
+								 url: '', //提交给哪个执行 
 								 type: 'POST', 
 								 dataType: 'json',          
 								 success: function(msg){
@@ -169,7 +170,7 @@
          </header>
          <div class="block"></div>
          
-         <form name="formLogin"  id="formLogin"  method="post">
+         <form name="formLogin"  id="formLogin"  method="post" action="">
          
          
          <div class="input">
@@ -191,7 +192,7 @@
          <div class="content">
              <ul>
                  <li>20元
-                    <p>活期通仅售**元</p>
+                    <p>活期通仅售999.99元</p>
                  </li>
                  <li>30元
                      <p>活期通仅售**元</p>
@@ -205,10 +206,10 @@
                  <li>200元
                      <p>活期通仅售**元</p>
                  </li>
-                 <li>300元
+                 <li class="disabled">300元
                      <p>活期通仅售**元</p>
-                 </li>
-                 <li>500元
+                 </li class="disabled">
+                 <li class="disabled">500元
                      <p>活期通仅售**元</p>
                  </li>
                  <li class="lastLi">500元 <p>活期通仅售**元</p></li>
@@ -263,6 +264,7 @@
 							
 								<a><span>工商银行[8772]</span><span>43.42元</span>
 								<input type="hidden" value="2" />
+                                <input type="hidden" value="2.5" />
 								</a>
 							
 						
@@ -272,6 +274,7 @@
 							
 								<a><span>农商银行[8772]</span><span>53.76元</span>
 								<input type="hidden" value="3" />
+                                <input type="hidden" value="3.5" />
 								</a>
 							
 						
@@ -281,6 +284,7 @@
 							
 								<a><span>瑞丰银行[8772]</span><span>523.76元</span>
 								<input type="hidden" value="4" />
+                                <input type="hidden" value="4.5" />
 								</a>
 							
 						
@@ -290,6 +294,7 @@
 							
 								<a> 户口本
 								<input type="hidden" value="5" />
+                                <input type="hidden" value="5.5" />
 								</a>
 							
 						
@@ -299,6 +304,7 @@
 							
 								<a> 外国护照
 								<input type="hidden" value="6" />
+                                <input type="hidden" value="6.5" />
 								</a>
 							
 						
@@ -308,6 +314,7 @@
 							
 								<a> 其它
 								<input type="hidden" value="7" />
+                                <input type="hidden" value="7.5" />
 								</a>
 							
 						
@@ -316,7 +323,8 @@
 							
 							
 								<a> 台胞证
-								<input type="hidden" value="A" />
+								<input type="hidden" value="8" />
+                                <input type="hidden" value="8.5" />
 								</a>
 							
 						
@@ -325,7 +333,8 @@
 							
 							
 								<a> 警官证
-								<input type="hidden" value="a" />
+								<input type="hidden" value="9" />
+                                <input type="hidden" value="9.5" />
 								</a>
 							
 						
@@ -334,7 +343,8 @@
 							
 							
 								<a> 文职证
-								<input type="hidden" value="b" />
+								<input type="hidden" value="0" />
+                                <input type="hidden" value="0.5" />
 								</a>
 							
 						
@@ -343,14 +353,7 @@
 				</div>
 		 	</div>
          
-         
-         
-         
-         
-         
-         
-         
-         
+   
          
         <footer>
 
@@ -363,7 +366,7 @@
                 <p class="p2"><span>密码:</span><input type="text" name="password" value="请输入6-8位交易密码"/></p>
                 <p class="p3">
                     <input type="button" value="取消">
-                    <input type="button" value="确定" class="button1">
+                    <input type="submit" value="确定" class="button1">
                 </p>
             </div>
         </div>
