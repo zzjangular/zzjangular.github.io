@@ -25,8 +25,8 @@ section .p1 input{  outline:none;font-size:24px; color:#999; border:0;}
 section .p2{ font-size:14px; color:#999; display: none;}
 .content{ padding: 0 15px; overflow: hidden;}
 .content ul{ margin:10px auto; text-align: center; overflow: hidden;}
-.content ul li{width:90px; border:1px solid #ccc; text-align: center; border-radius: 5px;/*; line-height: 60px*/
-    margin:10px 10px 0 0; box-sizing:border-box; display: inline-block; line-height: 60px;}
+.content ul li{width:100px; border:1px solid #ccc; text-align: center; border-radius: 5px;/*; line-height: 60px*/
+    margin:10px 10px 0 0; box-sizing:border-box; display: inline-block; line-height: 60px; height:auto;}
 .content ul .lastLi{border: 0; font-size: 0; height: 0;}
 .content ul .lastLi p{ font-size: 0;}
 .content ul li p{ font-size: 10px; display: none;text-align: center;height: 10px;line-height: 10px;}
