@@ -100,13 +100,15 @@ footer p{ height:40px; background-color:#fff; border-radius: 5px; margin: 20px a
     display: block;
     height: 45px;
     line-height: 45px;
-    text-align: center;
+    text-align: left;
     width: 100%;
     background: #fff;
     border-bottom: 1px solid #b8b8b8;
     background: #e6e6e6;
 	font-size:13px;
+	padding-left: 30%;
 }
+.option a span{ margin-left:20px;}
 .option .option_curr {
     background: #fff;
     color: #bb322e;
