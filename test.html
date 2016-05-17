@@ -1,480 +1,383 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-    <meta charset="GBK"/>
-    <meta http-equiv="pragma" content="no-cache"/>
-    <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
-Remove this if you use the .htaccess -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta charset="utf-8">
+<title>手机充值</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/phoneRecharge.css">
+<!--    <link rel="stylesheet" href="css/phoneRechargeOn.css">
+    <link rel="stylesheet" href="css/phoneRechargeOn2.css">-->
+    <script src="js/jquery-1.8.2.min.js"></script>
+    <script>
+		var preClickIndex=-1
+        $(function(){
+            var cssURL = 'css/phoneRechargeOn.css';
+            var cssURL2 = 'css/phoneRechargeOn2.css';
+            //请输入手机号
+            $('section .p1 input').focus(function(){
+                if($(this).val()=='请输入手机号')
+                {
+                    $(this).val('')
+                }
+            }).blur(function(){
+                if($(this).val()=='')
+                {
+                    $(this).val('请输入手机号')
+                }
+            }).bind('input',function(){
+                if($(this).val().length=='11')
+                {
+                    $('section .p2').css('display','block')
+                    //面额和提交可选
 
-    <meta name="description" content="华夏基金管家手机版下载"/>
-    <title>华夏基金-交易规则</title>
-    <meta name="viewport" content="width=device-width; initial-scale=1.0"/>
-    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
-    
-    <meta http-equiv="Content-Type" content="text/html; charset=GBK">
-    <style>
-    	/* CSS Document */
-@import url("reset.css");
-body,td,p,div,a{ font-family:"黑体";}
-/*body,hr{background-color:#e6e6e6;}*/
-body,input,div,img,ul,li,hr,img,hr{ margin:0px; border:0px; padding:0px;}
-
-html{ overflow-y:hidden;}
-#BoxConent{ width:100%;}
-#BoxConent .p{  width:100%; overflow:hidden; position:relative;}
-#BoxConent .p .box{ position:absolute; left:0; bottom:0; background-color:#CE2E3C; z-index:1;  height: 2px; width:50%;}
-#BoxConent .p a{ -webkit-tap-highlight-color: rgba(0,0,0,0); width:50%; box-sizing:border-box; float:left; text-align:center; line-height:2rem; height:2rem;border:none; border:1px solid #E1E0E0; font-size:0.6rem; text-decoration:none; color:#666;}
-#BoxConent .p a:nth-child(2){ border-left:none;}
-#BoxConent .boxSun{ width:100%; height:calc(100% - 2rem); display:none;}
-#BoxConent .boxSun.on{ display:block;}
-#BoxConent .oneDiv {}
-#BoxConent .oneDiv img{ width:5.5rem; position:absolute; left:50%; top:4rem; margin-left:-2.75rem;}
-#BoxConent .copy{ text-align:center;  height:2rem; line-height:2rem; background:#cc3040; width:10rem; color:#fff; border-radius:10px; font-size:0.7rem; position:absolute; top:10.5rem; left:50%;margin-left:-5rem; }
-#BoxConent .p1{ text-align:center;  height:0.9rem; line-height:0.9rem;  color:#666; font-size:0.6rem;margin-top:11.35rem; width:100%;}
-
-
-
-a{ text-decoration:none;}
-
-.gg_pa{ padding-right:10px;}
-.gg_img{max-width:100%;	height: auto;	display:block; margin:0 auto;}
-.gg_img2{max-width:100%;	height: auto;	display:block; float:left;}
-.top{ background-color:#df463e; height:50px; line-height:50px; text-align:center; color:#FFFFFF; font-size:16px; position:relative}
-.top_img{
-    position:absolute;
-    left:2%;
-    top:10px;
-}
-.top2{
-    height:23px;
-    color:#040404;
-    font-size:14px;
-    padding:12px 4% 0;
-    width:92%;
-    border-bottom:#bb322e solid 1px;
-}
-.top3{
-    line-height:18px;
-    color:#555555;
-    font-size:14px;
-    padding:12px 4% 15px 4%;
-    width:96%;
-    border-bottom:#d7d7d7 solid 1px;
-}
-.top4{height:190px;line-height:18px;color:#555555;	font-size:12px;	padding:0 2% 15px;	width:96%;	border-bottom:#d7d7d7 solid 1px;}
-.top5{
-    line-height:18px;
-    color:#555555;
-    font-size:14px;
-    padding:0 2% 15px;
-    width:96%;
-    border-bottom:#d7d7d7 solid 1px;
-}
-.top6{
-    line-height:18px;
-    color:#555555;
-    font-size:14px;
-    padding:0 4% 15px;
-    width:92%;
-}
-.top3 p{ margin-top:8px}
-.top4 p{ margin-top:8px}
-.top5 p{ margin-top:8px}
-
-.bottom2{
-    height:23px;
-    color:#040404;
-    font-size:14px;
-    padding:12px 4% 0;
-    width:92%;
-    text-align: center;
-    border-bottom:#a7a7a7 solid 1px;
-    border-top:#a7a7a7 solid 1px;
-}
-.fl{width:100%; height:43px; border-bottom:#e2e2e2 solid 1px; background-color:#ffffff;}
-.fl_left{
-    width:46%;
-    float:left;
-    padding-left:4%;
-    line-height:43px;
-    color:#3f3f3f;
-    font-size:14px;
-    position:relative;
-}
-.fl_left2{
-    width:46%;
-    float:left;
-    padding-left:4%;
-    line-height:43px;
-    color:#cc0000;
-    font-size:14px;
-    position:relative; background-color:#f4f4f4;
-}
-a .fl_left:link{ text-decoration:none; color:#3f3f3f;}
-a .fl_left:visited{background-color:#f4f4f4; color:#3f3f3f;}
-a .fl_left:hover { background-color:#f4f4f4; color:#3f3f3f;}
-a .fl_left:active{ background-color:#f4f4f4; color:#3f3f3f;}
+                    linkTag = $('<link href="' + cssURL + '" rel="stylesheet" type="text/css"  />');
+                    linkTag2 = $('<link href="' + cssURL2 + '" rel="stylesheet" type="text/css" />');
+                    $($('head')[0]).append(linkTag).append(linkTag2);
+                    //处理逻辑开始
+                 
+						
+						
+						
+						
+						
+						
+                    /*  $(this).css({'background':'#CE2E3C','color':'#fff'}).siblings().css({'background':'#fff','color':'#CE2E3C'});*/
+                        $('#btn').click(function(){
+                            alert('话费已经成功充值')
+                        });
+                    
 
 
-.fl_right{
-    width:46%;
-    padding-left:4%;
-    float:left;
-    line-height:43px;
-    color:#3f3f3f;
-    font-size:14px;
-    position:relative;
-}
-.fl_right2{
-    width:46%;
-    padding-left:4%;
-    float:left;
-    line-height:43px;
-    color:#cc0000;
-    font-size:14px;
-    position:relative; background-color:#f4f4f4;
-}
-a .fl_right:link{ text-decoration:none; color:#3f3f3f;}
-a .fl_right:visited{background-color:#f4f4f4; color:#3f3f3f;}
-a .fl_right:hover { background-color:#f4f4f4; color:#3f3f3f;}
-a .fl_right:active{ background-color:#f4f4f4; color:#3f3f3f;}
+                }
+                else
+                {
+                    $('section .p2').css('display','none');
+                        if($('link').length>1)
+                        {
 
+                            $(linkTag).remove();
+                            $(linkTag2).remove();
+                        }
+                }
+                //只能输入11个数
+                if($(this).val().length>='11')
+                {
+                   $(this).attr('readonly','readonly')
+                }
+            });
 
+            //充话费和充流量
+                    var jur=false;
+                    $('.h2l span').eq(0).click(function(){
+                        $(this).addClass('active').siblings().removeClass('active');
+                        var leftLeft=$(this).offset().left;
+						
+                        $('.h2l span').eq(2).css('left','0');
+                        $('.content').css('display','block');
+                        $('.content2').css('display','none');
 
-.xian{ width:10px; height:43px; border-left:#d7d7d7 solid 1px; position:absolute; top:0px; left:0px;}
-.fl_jt{
-    width:10px;
-    height:17px;
-    position:absolute;
-    top:13px;
-    right:8%;
-}
-.fl_jt2{width:10px;height:17px;position:absolute;top:13px;right:8%;}
-.qt{
-    height:50px;
-    border-bottom:#d7d7d7 solid 1px;
-    width:98%;
-    background-color:#fff;
-    margin:5px 0;
-    padding-left:2%;
-    line-height:50px;
-    position:relative; font-size:14px;color:#3f3f3f;
-}
-.qt_jt{width:10px;	height:17px; color:#3f3f3f; position:absolute;	top:15px;	right:2%;}
-a .qt:link{color:#3f3f3f;  font-size:14px;}
-a .qt:visited{background-color:#f4f4f4; color:#3f3f3f;font-size:14px;}
-a .qt:hover {background-color:#f4f4f4;  color:#3f3f3f;  font-size:14px;}
-a .qt:active{ background-color:#f4f4f4; color:#3f3f3f;  font-size:14px;}
-.list{
-    line-height:30px;
-    border-bottom:#cccccc solid 1px; line-height:43px; height:43px;
-    margin-left:4%;
-    font-size:14px;
-    position:relative;color:#3f3f3f;
-}
-.list_jt{
-    width:10px;
-    height:17px;
-    position:absolute;
-    top:13px;
-    right:4%;
-}
-
-
-
-a .list:link{color:#3f3f3f;  font-size:14px;}
-a .list:visited{background-color:#f4f4f4; color:#3f3f3f;font-size:14px;}
-a .list:hover {background-color:#f4f4f4;  color:#3f3f3f;  font-size:14px;}
-a .list:active{background-color:#f4f4f4;color:#3f3f3f;font-size:14px;}
-.ma10{ margin-top:10px;}
-.tablex{ border-bottom:#b1b1b1 solid 1px; padding:6px;}
-.tableexz{ border-bottom:#b1b1b1 solid 1px; border-left:#b1b1b1 solid 1px; padding:6px;}
-.tablebt{ color:#3f3f3f; font-size:14px;}
-	
-    </style>
-</head>
-<script src="jquery.min.js">
-
-</script>
-<script>
-    
-    ;(function (win, doc) {
-        function change() {
-            document.documentElement.style.fontSize = document.documentElement.clientWidth / 16 + 'px';
-        }
-
-        doc.addEventListener('DOMContentLoaded', change, false);
-        win.addEventListener('resize', change, false);
-		
-		
-    })(window, document);
-    document.addEventListener('DOMContentLoaded', function () {
-        var aBtn = document.querySelectorAll('#BoxConent .p a');
-        var aDiv = document.querySelectorAll('#BoxConent .boxSun');
-        var oHtml = document.getElementsByTagName('html')[0];
-        var oBoxSun = document.getElementsByClassName('boxSun')[1];
-		var oBox=document.getElementsByClassName('box')[0];
-	
-        for (var i = 0; i < aBtn.length; i++) {
-			(function(index){	
-			   aBtn[index].onclick=function(){
-				   if(index==0)
-				   {
-					   oBox.style.left='0';
-					}
-					else
-					{
-						oBox.style.left='50%';
-					}
-				  for(var i = 0; i < aBtn.length; i++)
-				  {
-						//aBtn[i].classList.remove('on');  
-						aDiv[i].classList.remove('on'); 
-				   }
-				  //aBtn[index].classList.add('on');
-				  aDiv[index].classList.add('on');
-				 };
-			 })(i);
-		   
-		   /*
-		   aBtn[i].Dataindex = i;
-            aBtn[0].addEventListener('touchstart', function () {
-		oBox.style.left='0';
-                aDiv[1].classList.remove('on');          
-                aDiv[0].classList.add('on');
-            }, false);
-            aBtn[1].addEventListener('touchstart', function () {
-		oBox.style.left='50%';
-                aDiv[0].classList.remove('on');           
-                aDiv[1].classList.add('on');
-            }, false);*/
-        }
-    }, false);
-
-
-</script>
-<script type="text/javascript">
-    function cleanAllSelect() {
-        $(".fl_left2").removeClass("fl_left2").addClass("fl_left");
-        $(".fl_right2").removeClass("fl_right2").addClass("fl_right");
-    }
-    function hideAllList() {
-        $("#lists").children().each(function () {
-            $(this).hide();
+                    });
+                    $('.h2l span').eq(1).click(function(){
+                        $(this).addClass('active').siblings().removeClass('active');
+                        var leftLeft=$(this).offset().left;
+                        $('.h2l span').eq(2).css('left','50%');
+                        $('.content').css('display','none');
+                        $('.content2').css('display','block');
+                        $('.content2 ul li').click(function(){
+                            $(this).find('span').css({'background':'#CE2E3C','color':'#fff'}).parent().siblings().children('span').css({'background':'#fff','color':'#CE2E3C'});
+                            jur=true;
+                        });
+                        $('#btn').click(function(){
+                            if(jur)
+                            {
+                                alert('流量已经成功充值')
+                            }
+                        });
+                    });
+					
+					//复制的官网
+					$(".select_box").click(function(event){
+					$('.option').show();
+					$("#floatBg").show();
+				  });
+				  $("#floatBg").click(function(event){
+					$('.option').hide();
+					$("#floatBg").hide();
+				  });
+				   /*赋值给文本框*/
+				  $(".option a").click(function(){
+					  var value1=$(this).children().eq(0).text();
+					  var value2=$(this).children().eq(1).text();
+					  
+					  $(".p1 .span2").text(value1);
+					  $(".p2 .span2").text(value2);
+					  $('.option').hide();
+					  $("#floatBg").hide();
+				
+					  $(this).siblings().removeClass("option_curr");
+					  $(this).addClass("option_curr");
+					  
+					  var trustChannelType = $(".option_curr input:eq(3)").val();
+					  if(trustChannelType == "1"){
+						$("#hqt_available").show();
+						$("#trustChannelAvailable").html($(".option_curr input:eq(5)").val());
+					  }else{
+						$("#hqt_available").hide();
+					  }
+					  try{
+						  if(checkAmount&&typeof(checkAmount)=="function"){
+							  checkAmount();
+						  }
+					  }catch(e){
+						  
+					  }
+				
+					  
+				  });
+				  $("#formLogin").submit(function(){
+							   var options = { 
+								 async: false,     
+								 url: '', //提交给哪个执行 
+								 type: 'POST', 
+								 dataType: 'json',          
+								 success: function(msg){
+									 showAlert(msg);
+								 }}; 
+							 $("#formLogin").ajaxSubmit(options); 
+							 return false; //为了不刷新页面,返回false，反正都已经在后台执行完了，没事！ 
+						 });
+				/*  $("#info4_btn").click(function(){
+					  // if("填写正确"){
+				
+					  // }else{
+					  //     alert("账户名或密码不正确！");
+					  // }
+					  
+					  $("#formLogin").submit();
+				  });*/
+									
+					
+					
+					
         });
-    }
-    function selectItem($item) {
-        cleanAllSelect();
-        hideAllList();
-        $item.children("div.fl_left").removeClass("fl_left").addClass("fl_left2");
-        $item.children("div.fl_right").removeClass("fl_right").addClass("fl_right2");
-        var listId = $item.attr("id") + "List";
-        $("#" + listId).show();
-    }
-
-    function selectedDefaultItem() {
-        var url = location.href;
-        var params = url.split("#");
-        if (params.length > 1) {
-            var $item = $("#" + params[1]);
-            if ($item.length > 0) {
-                selectItem($($item[0]));
-                return;
-            }
-        }
-        selectItem($("#buy"));
-    }
-    $(function () {
-        hideAllList();
-        $("div.fl a").on("click", function () {
-            selectItem($(this));
-            return false;
-        })
-        selectedDefaultItem();
-    })
-</script>
+    </script>
+</head>
 
 <body>
+	<div id="wrap">
+     	<header>
+             <span><img src="images/pro.png"></span>
+             <h2>手机充值</h2>
+             <span></span>
+         </header>
+         <div class="block"></div>
+         
+         <form name="formLogin"  id="formLogin"  method="post" action="">
+         
+         
+         <div class="input">
+         		<div>
+                    <section>
+                         <p class="p1"><input type="tel" value="请输入手机号" id="input"></p>
+                         <p class="p2">中国移动</p>
 
-<div id="BoxConent">
+                    </section>
+         		</div>
+         </div>
 
-    <p class="p">
-        <a href="javascript:;">在线客12服</a>
-        <a href="javascript:;">常见问12题</a>
-        <span class="box"></span>
-    </p>
-    <!--第一个盒子-->
-    <div class="on oneDiv boxSun">
-        <img src="hxwx.jpg">
+         <div class="block block2"></div>
+         <p class="h2l">
+         		<span class="active">充话费</span>
+                <span>充流量</span>
+                <span class="box"></span>
+         </p>
+         <div class="content">
+             <ul>
+                 <li>20元
+                    <p>活期通仅售999.99元</p>
+                 </li>
+                 <li>30元
+                     <p>活期通仅售**元</p>
+                 </li>
+                 <li>50元
+                     <p>活期通仅售**元</p>
+                 </li>
+                 <li>100元
+                     <p>活期通仅售**元</p>
+                 </li>
+                 <li>200元
+                     <p>活期通仅售**元</p>
+                 </li>
+                 <li class="disabled">300元
+                     <p>活期通仅售**元</p>
+                 </li class="disabled">
+                 <li class="disabled">500元
+                     <p>活期通仅售**元</p>
+                 </li>
+                 <li class="lastLi">500元 <p>活期通仅售**元</p></li>
+                 <li class="lastLi">500元<p>活期通仅售**元</p></li>
+             </ul>
+         </div>
+        <div class="content2">
+            <ul>
+                <li>20M(当月生效)<span>3元</span></li>
+                <li>50M(当月生效)<span>6元</span></li>
+                <li>100M(当月生效)<span>10元</span></li>
+                <li>500M(当月生效)<span>30元</span></li>
+                <li class="lastLi">1G(当月生效)<span>50元</span></li>
+            </ul>
+        </div>
+        <div class="block"></div>
+         <div class="payment select_box">
+             <p class="p1"><span class="span1">付款渠道</span><span class="span2">活期通-建设银行[0326]</span></p>
+             <p class="p2"><span class="span1">余额（元）<span class="span2">600.00</span></span></p>
+             <img src="images/right_02.png">
+         </div>
+         
+         
+         
+         <div id="floatBg"></div>
+			<div class="option">
+				<P>选择下方的证件类型</P>
+				<div class="option_btns">
+				
+						
+							
+								<a class="option_curr"><span class="span1">建设银行[0326]</span><span class="span2">600元</span>
+								<input type="hidden" value="0" />
+                                <input type="hidden" value="0.5" />
+								</a>
+							
+							
+						
+				
+						
+							
+							
+								<a><span>中国银行[8772]</span><span>2112443.42元</span>
+								<input type="hidden" value="1" />
+                                <input type="hidden" value="1.5" />
+								</a>
+							
+						
+				
+						
+							
+							
+								<a><span>工商银行[8772]</span><span>43.42元</span>
+								<input type="hidden" value="2" />
+                                <input type="hidden" value="2.5" />
+								</a>
+							
+						
+				
+						
+							
+							
+								<a><span>农商银行[8772]</span><span>53.76元</span>
+								<input type="hidden" value="3" />
+                                <input type="hidden" value="3.5" />
+								</a>
+							
+						
+				
+						
+							
+							
+								<a><span>瑞丰银行[8772]</span><span>523.76元</span>
+								<input type="hidden" value="4" />
+                                <input type="hidden" value="4.5" />
+								</a>
+							
+						
+				
+						
+							
+							
+								<a> 户口本
+								<input type="hidden" value="5" />
+                                <input type="hidden" value="5.5" />
+								</a>
+							
+						
+				
+						
+							
+							
+								<a> 外国护照
+								<input type="hidden" value="6" />
+                                <input type="hidden" value="6.5" />
+								</a>
+							
+						
+				
+						
+							
+							
+								<a> 其它
+								<input type="hidden" value="7" />
+                                <input type="hidden" value="7.5" />
+								</a>
+							
+						
+				
+						
+							
+							
+								<a> 台胞证
+								<input type="hidden" value="8" />
+                                <input type="hidden" value="8.5" />
+								</a>
+							
+						
+				
+						
+							
+							
+								<a> 警官证
+								<input type="hidden" value="9" />
+                                <input type="hidden" value="9.5" />
+								</a>
+							
+						
+				
+						
+							
+							
+								<a> 文职证
+								<input type="hidden" value="0" />
+                                <input type="hidden" value="0.5" />
+								</a>
+							
+						
+				
+				<a><input type="hidden" value="TAACCOUNTNO">基金帐号</a>
+				</div>
+		 	</div>
+         
+   
+         
+        <footer>
 
-        <p class="copy" id="copy">点击复制微信号</p>
-
-        <p class="p1">华夏基金官方微信服务号为您提供客户在线<br>服务功能，小夏欢迎您的关注</p>
-    </div>
-
-    <!--第二个盒子(所有body内容都放在面下这个div里)-->
-    <div class="boxSun">
-
-
-        <!--第二个盒子-->
-        <div class="top2">分类</div>
-        <div class="fl">
-            <a id="buy" href="#">
-                <div class="fl_left">活期通
-                    <div class="fl_jt2"><img src="h_07.png" width="10" height="17" class="gg_img"></div>
-                </div>
-            </a>
-            <a id="repayLoan" href="#">
-                <div class="fl_right">开户/银行卡
-                    <div class="xian"></div>
-                    <div class="fl_jt"><img src="h_07.png" width="10" height="17" class="gg_img"></div>
-                </div>
-            </a>
+            <P id="btn">确定充值</P>
+        </footer>
+        <div class="pop">
+            <div class="shadow"></div>
+            <div class="alert">
+                <p class="p1">请输出交易密码</p>
+                <p class="p2"><span>密码:</span><input type="text" name="password" value="请输入6-8位交易密码"/></p>
+                <p class="p3">
+                    <input type="button" value="取消">
+                    <input type="submit" value="确定" class="button1">
+                </p>
+            </div>
         </div>
 
-        <div class="fl">
-            <a id="redeem" href="#">
-                <div class="fl_left">申购
-                    <div class="fl_jt2"><img src="h_07.png" width="10" height="17" class="gg_img"></div>
-                </div>
-            </a>
-            <a id="interBank" href="#">
-                <div class="fl_right">赎回
-                    <div class="xian"></div>
-                    <div class="fl_jt"><img src="h_07.png" width="10" height="17" class="gg_img"></div>
-                </div>
-            </a>
-        </div>
-        <div class="fl">
-            <a id="balance" href="#">
-                <div class="fl_left">定投
-                    <div class="fl_jt2"><img src="h_07.png" width="10" height="17" class="gg_img"></div>
-                </div>
-            </a>
-            <a id="bankCard" href="#">
-                <div class="fl_right">转换
-                    <div class="xian"></div>
-                    <div class="fl_jt"><img src="h_07.png" width="10" height="17" class="gg_img"></div>
-                </div>
-            </a>
-        </div>
 
 
-        <div class="fl">
-            <a id="creditCard" href="#">
-                <div class="fl_left">收益
-                    <div class="fl_jt2"><img src="h_07.png" width="10" height="17" class="gg_img"></div>
-                </div>
-            </a>
-
-            <a id="KZH" href="#">
-                <div class="fl_right">费用
-                    <div class="xian"></div>
-                    <div class="fl_jt"><img src="h_07.png" width="10" height="17" class="gg_img"></div>
-                </div>
-            </a>
-        </div>
-        <div class="fl">
-            <a id="password" href="#">
-                <div class="fl_left">密码与安全
-                    <div class="fl_jt2"><img src="h_07.png" width="10" height="17" class="gg_img"></div>
-                </div>
-            </a>
-            <a id="others" href="#">
-                <div class="fl_right">其他常见问题
-                    <div class="xian"></div>
-                    <div class="fl_jt"><img src="h_07.png" width="10" height="17" class="gg_img"></div>
-                </div>
-            </a>
-        </div>
-
-        <div style="padding-bottom:10px;border-top:1px;solid #e2e2e2;background-color:#f4f4f4;"></div>
-        <div id="lists">
-            <div id="buyList">
-                <div class="top2">活期通的常见问题</div>
-                <!--#include file="../include/hqt.shtml"-->
-            </div>
-            <div id="redeemList">
-                <div class="top2">申购的常见问题</div>
-                <!--#include file="../include/shengou.shtml"-->
-            </div>
-            <div id="bankCardList">
-                <div class="top2">转换的常见问题</div>
-                <!--#include file="../include/zhuanhuan.shtml"-->
-            </div>
-            <div id="creditCardList">
-                <div class="top2">收益的常见问题</div>
-                <!--#include file="../include/shouyi.shtml"-->
-            </div>
-            <div id="repayLoanList">
-                <div class="top2">开户/银行卡的常见问题</div>
-                <!--#include file="../include/kh-yhk.shtml"-->
-            </div>
-            <div id="interBankList">
-                <div class="top2">赎回的常见问题</div>
-                <!--#include file="../include/shuhui.shtml"-->
-            </div>
-            <div id="balanceList">
-                <div class="top2">定投的常见问题</div>
-                <!--#include file="../include/dingtou.shtml"-->
-            </div>
-            <div id="KZHList">
-                <div class="top2">费用的常见问题</div>
-                <!--#include file="../include/feiyong.shtml"-->
-            </div>
-
-
-            <div id="passwordList">
-                <div class="top2">密码与安全的常见问题</div>
-                <!--#include file="../include/mima-anquan.shtml"-->
-            </div>
-            <div id="othersList">
-                <div class="top2">其他常见问题</div>
-                <!--#include file="../include/qita.shtml"-->
-            </div>
-        </div>
-        <div>
-
-
-        </div>
-
-
-    </div>
-</div>
+	 </form>
+     </div>
 </body>
 </html>
-<script>
-var oCopy=document.getElementById('copy');
-var timer=null;
-	
-oCopy.onclick=function(){
-	oCopy.style.background='#be222d';
-	timer=setTimeout(function(){
-		oCopy.style.background='#cc4047';
-	
-	},100)
-	amcfm_utils.copyClipBoard('{"text":"chinaamc_weixin", "succ":"copys"}')
-	
-	
-
-};
-
-function copys(){
-	amcfm_utils.toast('已复制成功')	
-	clearTimeout(timer);
-	
-}
-
-
-</script>
-
-
-
-
-
-
-
-
-
-
