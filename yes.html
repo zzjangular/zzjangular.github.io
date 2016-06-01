@@ -14,9 +14,18 @@ input{ width:50%;}
 </head>
 
 <body>
-<input type="password" placeholder="撒大声地说的">
+<input type="password" placeholder="撒大声地说的" id="inp">
 </body>
 </html>
+<script>
+  var oInp=document.getElementById('inp');
+  oInp.focus();
+  oInp.value='';
+  setTimeout(function(){
+    alert(1)
+  },3000)
+  
+</script>
 
 
 
