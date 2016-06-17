@@ -2,30 +2,55 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>无标题文档</title>
-<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
-<style>
-*{ margin:0; padding:0;}
-img{ width:100%;}
-input{ width:50%;}
-</style>
+<title>温馨提示</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <style>
+    *{ padding:0; margin:0;}
+	html{ font-size:50px; font-family:Verdana, Geneva, sans-serif;}
+	.section{ padding:0 0.3rem; height:auto;}
+	.section h4{ border-bottom:1px solid #e8e8e8; font-size:0.3rem; height:0.9rem; line-height:0.9rem; font-weight:normal;}
+	.section h4 img{ width:0.3rem; vertical-align:middle; height:auto}
+	.section div{ font-size:0.26rem; padding:10px 0.4rem 5px;}
+	P{ height:30px;}
+    </style>
+    
+    <script>
+	window.onload=window.onresize=function(){
+		document.documentElement.style.fontSize=50*document.documentElement.clientWidth/320+'px';
+	};
+    	
+    </script>
 </head>
 
 <body>
-<input type="text" placeholder="撒大声地说的" id="inp">
+	<div class="section">
+    	<h4><img src="images/dot.png">什么是总资产</h4>
+        <div>此处只列示您通过华夏基金直销系统（包括华夏基金管家app、活期通app、微官网、微信公众号、官网）和投资理财中心办理的基金交易情况及持有份额。
+</div>
+    </div>
+     <div class="section" id="quanmian">
+    	<h4><img src="images/dot.png">什么是全面账户查询</h4>
+        <div>是指您的网上基金查询账户，可通过其查询所有渠道（包括华夏自有销售平台和其他代销渠道）基金持有情况、历史交易记录和盈利信息等。其中的相关数据可能有一定延迟。</div>
+    </div>
+    
+    
+    <div class="section">
+    	<h4><img src="images/dot.png">盈亏相关问题</h4>
+        <div>为您显示的当日盈亏数据根据净值估算而来，不包括当日交易的数据及货币基金收益，仅供参考。</div>
+    </div>
+    <div class="section">
+    	<h4><img src="images/dot.png">什么是在途资金</h4>
+        <div>在途资金是基金认申购(包括使用活期通支付)、定投、余额理财业务,在份额尚未确认前产生的资金。</div>
+    </div>
+    <div class="section">
+    	<h4><img src="images/dot.png">份额相关问题</h4>
+        <div>一般情况下，在您提交申购等份额增加类业务时，现有份额数据将会在交易确认日的早上8点左右(中登基金14点左右）进行更新，此时看到的现有份额数据为已增加后的数据，而可用份额数据将会在确认日的16点左右（正常情况）进行更新。在您提交赎回等份额减少类业务时，可用份额数据会立即减少，现有份额数据将会在交易确认日的早上8点左右（中登基金14点左右）进行更新，此时看到的现有份额数据为已减少后的数据，而冻结份额的数据将会在确认日的16点左右（正常情况）进行更新。
+（中登基金包括华夏中小板ETF、华夏蓝筹混合、华夏行业混合、华夏稳增混合、华夏兴华混合、华夏兴和混合共6支基金）</div>
+    </div>
+    
+   
+    <p></p>
 </body>
 </html>
-<script>
-  var oInp=document.getElementById('inp');
-
-  oInp.focus();
-  
-  oInp.placeholder='';
-  
-  
-</script> 
-
-
-
