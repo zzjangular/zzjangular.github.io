@@ -15,13 +15,14 @@ strong{ color:red;}
 $(document).ready(function(){
 
 	var ua= navigator.userAgent.toLowerCase();
+	alert(ua);
 	if(ua.indexOf('micromessenger')== -1)
 	{
-		$('a').attr('href','http://www.baidu.com');
+		$('a').attr('href','https://m.baidu.com/');
 	}
 	else
 	{
-		$('a').attr('href','https://m.chinaamc.com/');
+		$('a').attr('href','http://www.taobao.com');
 	}
 
 });
@@ -34,7 +35,7 @@ $(document).ready(function(){
 
 	<a href="###">测试</a>
     
-    <p>ps:如果不是微信内置浏览器，点击跳转<strong>百度</strong>，否则点击跳转<strong>华夏基金官网</strong></p>
+    <p>ps:如果不是微信内置浏览器，点击跳转<strong>百度</strong>，否则点击跳转<strong>淘宝</strong></p>
 
 </body>
 </html>
