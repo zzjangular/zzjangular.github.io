@@ -1,48 +1,180 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no,width=device-width,height=device-height">
-    <link rel="stylesheet" type="text/css" href="ionic.min.css">
+<meta charset="utf-8">
+<title>无标题文档</title>
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<style>
+*{ margin:0; padding:0; border:0;}
+#topHead{ height:30px; background:red;}
+#banner{ height:200px; background:yellow;}
+#leftRight{
+	height:50px;
+	display:-webkit-box;
+	display:box;
+	display:-webkit-flexbox;
+	display:flexbox;
+	display:-webkit-flex;
+	display:flex;
+}
+#left{
+	background:#36F;
+	
+	-webkit-box-flex:3;
+	box-flex:3;
+	-webkit-flexbox:3;
+	flexbox:3;
+	-webkit-flex:3;
+	flex:3;
+}
+#right{
+	background:#F63;
+	-webkit-box-flex:1;
+	box-flex:1;
+	-webkit-flexbox:1;
+	flexbox:1;
+	-webkit-flex:1;
+	flex:1;
+}
+#box{
+	height:100px;
+	display:-webkit-box;
+	display:box;
+	display:-webkit-flexbox;
+	display:flexbox;
+	display:-webkit-flex;
+	display:flex;
+	
+}
+#box div{
+	text-align:center;
+	font-size:30px;
+	line-height:100px;
+	-webkit-box-flex:1;
+	box-flex:1;
+	-webkit-flexbox:1;
+	flexbox:1;
+	-webkit-flex:1;
+	flex:1;	
+}
+#boxLeft{
+	background:#6F9;
+}
+#boxRight{
+	background:#606;
+}
+#font{
+	height:50px;
+	display:-webkit-box;
+	display:box;
+	display:-webkit-flexbox;
+	display:flexbox;
+	display:-webkit-flex;
+	display:flex;
+}
+#font div{
+	height:50px;
+	font-size:20px;
+	text-align:center;
+	line-height:50px;
+	color:red;
+	-webkit-box-flex:1;
+	box-flex:1;
+	-webkit-flexbox:1;
+	flexbox:1;
+	-webkit-flex:1;
+	flex:1;	
+}
+#fontL{ background:#090;}
+#fontC{ background:#00F;}
+#fontR{ background:#600;}
+
+#bar{
+	height:50px;
+	display:-webkit-box;
+	display:box;
+	display:-webkit-flexbox;
+	display:flexbox;
+	display:-webkit-flex;
+	display:flex;	
+}
+#barLeft{
+	background:#CFC;
+	-webkit-box-flex:1;
+	box-flex:1;
+	-webkit-flexbox:1;
+	flexbox:1;
+	-webkit-flex:1;
+	flex:1;
+}
+#barRight{
+	background:#C3F;
+	-webkit-box-flex:5;
+	box-flex:5;
+	-webkit-flexbox:5;
+	flexbox:5;
+	-webkit-flex:5;
+	flex:5;
+}
+#float{
+	height:120px;
+	width:90%;
+	margin:10px auto;
+	display:-webkit-box;
+	display:box;
+	display:-webkit-flexbox;
+	display:flexbox;
+	display:-webkit-flex;
+	display:flex;
+}
+#float div{
+	height:120px;
+	line-height:120px;
+	text-align:center;
+	font-size:20px;
+	color:#0C0;
+	background:#ccc;
+	-webkit-box-flex:1;
+	box-flex:1;
+	-webkit-flexbox:1;
+	flexbox:1;
+	-webkit-flex:1;
+	flex:1;
+}
+
+</style>
 </head>
+
 <body>
-	<div class="bar bar-header">
-		<h1 class="title">指定列偏移</h1>
-	</div>
-	<div class="scroll-content has-header">
-		<div class="row">
-			<div class="col col-33 col-offset-33 positive-bg">.col</div>
-			<div class="col">.col</div>
-		</div>
-
-		<div class="row">
-			<div class="col col-33 positive-bg">.col</div>
-			<div class="col col-33 col-offset-33 dark-bg">.col</div>
-		</div>
-
-		<div class="row">
-			<div class="col col-33 col-offset-67 positive-bg">.col</div>
-		</div>
-		<div class="row">
-			<div class="col col-50 positive-bg">.col.col-50  宽度50%</div>
-			<div class="col dark-bg">.col  25%</div>
-			<div class="col">.col 25%</div>
-		</div>
-
-		<div class="row">
-			<div class="col col-75">.col.col-75</div>
-			<div class="col positive-bg">.col</div>
-		</div>
-
-		<div class="row">
-			<div class="col">.col</div>
-			<div class="col col-75">.col.col-75</div>
-		</div>
-
-		<div class="row">
-			<div class="col">.col</div>
-			<div class="col">.col</div>
-		</div>
-	</div>
+	<div id="topHead"></div>
+    <div id="banner"></div>
+    <p id="leftRight">
+    	<span id="left"></span>
+        <span id="right"></span>
+    </p>
+    <div id="box">
+    	<div id="boxLeft">
+        	基金产品
+        </div>
+        <div id="boxRight">
+        	账户查询
+        </div>
+    </div>
+    <div id="font">
+    	<div id="fontL">活期必存</div>
+        <div id="fontC">主题基金</div>
+        <div id="fontR">指数基金</div>
+    </div>
+    <p id="bar">
+    	<span id="barLeft"></span>
+        <span id="barRight"></span>
+    </p>
+    <div id="float">
+    	<div id="floatL">七日年化</div>
+        <div id="floatC">万份收益</div>
+        <div id="floatR">过去一年</div>
+    </div>
 </body>
 </html>
