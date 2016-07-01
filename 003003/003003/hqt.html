@@ -1,0 +1,214 @@
+<!doctype html>
+<html font-size="50px">
+<head>
+<meta charset="utf-8">
+<title>活期通</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+     <style>
+    *{ margin:0; padding:0; list-style: none; border:0; text-decoration:none; font-family:"PingFang SC","幼圆","黑体",sans-serif;}
+    section{ width:100%;  text-align:center;  position:relative; font-size:0; line-height:0;} 
+    img{ width:100%; }
+    .img2,.img3{ overflow:hidden; }	
+    .a1{ width:30%; position:absolute; top:5px; left:50%; margin-left:-15%;}
+    .btn1{ width:100%;}
+    .btn2,.btn3{ width:50%; position:fixed; bottom:-0.5%;z-index:9999; }
+	.btn2 img,.btn3 img{align:absbottom}
+    .btn2{left:0.5%;}
+    .btn3{left:49.5%;}
+    .a{ height:250px; overflow:hidden; position:relative;}
+    .jzzsChartDiv_layer{
+       background: none repeat scroll 0 0 rgba(255, 255, 255, 0);
+       left: 0;
+       width: 100%;
+	   height:100%;
+	   z-index:999;
+	   position:absolute;
+	   top:0;
+    }
+    #jzzsChartDiv{
+        padding-left: 13px;
+        padding-right: 5px; 
+		margin-top: 6px;
+		  
+    }
+	.tableContentData{background:#F8F8F8;}
+	.seatBottom{ height:60px; }
+	.userPrompt{
+		padding:0 2.8%;
+		font-size:0.3rem;
+		color:#595757;
+		margin-top:5px;
+	}
+	.lastPrompt{
+		padding:0 2.8%;
+		font-size:0.3rem;
+		color:#595757;
+		margin-top:15px;
+		text-align:right;
+	}
+	.img4{margin-top:10px;}
+	table{
+		color:#595757;
+		width:94.4%;
+		text-align:center;
+		margin:5px 2.8%;
+		line-height:30px;
+		border-collapse:collapse;
+	
+	}
+	table tr{
+		
+	}
+	table td{
+		border:1px solid #ebebeb;
+		font-size: 1rem;
+	}
+	.zeroPicture{
+		background:#F8F8F8;
+		
+	}
+	.zeroPictureO{
+		padding:0 2.8%;
+		font-size:0.28rem;
+		color:#595757;
+		margin-top:5px;
+	}
+	.zeroPictureT{
+		padding:2.8% 2.8%;
+		font-size:0.28rem;
+		color:#000;
+		background:#EBEBEB;
+		border-radius:10px;
+		margin-top:5px;
+	}
+	.img5{
+		margin-top:25px;
+	
+	}
+    </style>
+    <script>
+        window.onload=function(){
+            document.documentElement.style.fontSize=50*document.documentElement.clientWidth/375+'px';
+        };
+    </script>
+    <script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="SevenData.js"></script>
+    <script>
+    //数据处理
+    var arr=SevenDataObj.sevenDayNavList;
+	var arr2=[];
+	for(var i=0;i<arr.length;i++)
+	{
+	    var Num=findInArr(arr[i],',');
+	    arr2.push(arr[i].substring(Num+1));
+	}
+	var arr3=arr2.toString().split(',').sort();
+	var ymax=parseFloat(arr3.pop())+0.05; 
+	var ymin=parseFloat(arr3.shift())-0.05;
+	function findInArr(arr, value)
+	{
+	    for (var i=0; i<arr.length; i++)
+	    {
+		   // 'a' == 'name'
+		   if (arr[i] == value)
+		   {
+			  return i;
+		   }
+	    }
+	    return -1;
+	}
+    </script>
+    <script type="text/javascript" src="highstock-1.3.9.js"></script>
+    <script type="text/javascript" src="HqtChat.js"></script>
+    <script type="text/javascript" src="syData.js"></script>
+ 
+
+<body>
+	<section class="sec1">
+     	<img src="images/bg_1.jpg" class="img1">
+         
+     </section>
+        <div class="a">
+            <div id="jzzsChartDiv"></div>
+            <div class="jzzsChartDiv_layer"></div>
+        </div>
+
+     <section>
+     	<a href="amcfm://fund/purchaseDetail?fundCode=003003&fundName=活期通" class="a1"><img src="images/b1.png" class="btn1"></a>
+     	<img src="images/bg_3.jpg" class="img2">
+     </section>
+     <div class="tableContentData">
+     	
+        <div class="zeroPicture">
+        	<img src="images/bg_07.jpg">
+            <div class="zeroPictureO">
+            1.买入：T日买入T+1日开始计算收益<br>
+            2.普通取出：T日取出，T+1日24:00前到账<br>
+            3.快速取出：T日取出，最快1分钟到账(具体以银行实际到账时间为准，晚上22点到凌晨2点提交的申请，将在凌晨2点后划款；基金管理人有权对业务规则进行调整，请以公告为准)
+            	<div class="zeroPictureT">
+                T日指交易日，以股市收市时间15点为界限，15点前为T日，15点后的交易按T+1日计算。周末和节假日都不属于交易日。“快速取出”单笔不超5万，单日累计不超20万。存入活期通即购买华夏现金增利货币基金。
+                </div>
+            </div>
+        </div>
+        <img src="images/bg_05.jpg" class="img5">
+        <p class="userPrompt">买入后，下一个交易日开始计算收益，如遇节假日顺延</p>
+        <table border="1" cellspacing="0">
+        	<tr bgcolor="#ebebeb"><td>买入时间</td><td>开始计算收益</td><td>收益到账时间</td></tr>
+            <tr><td>周一15:00至周二15:00</td><td>周三</td><td>周四</td></tr>
+            <tr><td>周二15:00至周三15:00</td><td>周四</td><td>周五</td></tr>
+            <tr><td>周三15:00至周四15:00</td><td>周五</td><td>周六</td></tr>
+            <tr><td>周四15:00至周五15:00</td><td>下周一</td><td>下周二</td></tr>
+            <tr><td>周五15:00至下周一15:00</td><td>下周二</td><td>下周三</td></tr>
+        </table>
+        <img src="images/bg_06.jpg" class="img4">
+        
+        <table border="1" cellspacing="0">
+        	<tr bgcolor="#ebebeb"><td>周期</td><td>收益率</td></tr>
+            <tr><td>今年以来</td><td class="everyData"></td></tr>
+            <tr><td>过去一月</td><td class="everyData"></td></tr>
+            <tr><td>过去一年</td><td class="everyData"></td></tr>
+            <tr><td>过去三年</td><td class="everyData"></td></tr>
+            <tr><td>过去五年</td><td class="everyData"></td></tr>
+            <tr><td>成立以来</td><td class="everyData"></td></tr>      
+        </table>
+        <p class="lastPrompt">数据来源：中国银河证券基金研究中心</p>
+        
+        <p class="seatBottom"></p>
+     </div>
+     <a href="amcfm://trade/hqtPurchase" class="btn2"><img src="images/left2.png" ></a>
+     <a href="javascript:;" class="btn3" id="btn3"><img src="images/right2.png" ></a>
+</body>
+</html>
+   <script>
+  
+		var oBtn3=document.getElementById('btn3');
+		oBtn3.onclick=function(){
+			if(navigator.userAgent.indexOf('amcfmapp')!=-1)
+			{
+				
+				window.location.href='amcfm://trade/regularDepositSalary';
+			}
+			else
+			{
+				window.location.href='amcfm://trade/regularPurchase?fundCode=003003&fundName=活期通';
+			}
+		};
+		var aData=document.getElementsByClassName('everyData');
+		var olastPrompt=document.getElementsByClassName('lastPrompt')[0];
+		olastPrompt.innerHTML='数据来源：中国银河证券基金研究中心  '+date.updateDate;
+		
+		for(var i=0;i<aData.length;i++)
+		{
+			var str=hqtSyDataObj.hqtSyNavList[i]
+			if(str==undefined)
+			{
+				str='';
+			}
+			aData[i].innerHTML=str;
+			
+		}
+		
+    </script>
+</head>

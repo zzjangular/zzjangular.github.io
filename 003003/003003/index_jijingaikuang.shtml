@@ -1,0 +1,47 @@
+<div id="tabs_1">
+	<div class="tabs_1_t">
+		<em>基金代码</em>
+		<span>003003</span>
+		<div class="clear"></div>
+	</div>
+	<div class="tabs_1_t" style="background:#fafafa">
+		<em>托管银行</em>
+		<span>中国建设银行股份有限公司</span>
+		<div class="clear"></div>
+	</div>
+	<div class="tabs_1_t">
+		<em>成立时间</em>
+		<span>2004-04-07</span>
+		<div class="clear"></div>
+	</div>
+	<div class="tabs_1_t" style="background:#fafafa">
+		<em>成立规模</em>
+		<span>6,426,134,798.32份</span>
+		<div class="clear"></div>
+	</div>
+	<div class="tabs_1_t">
+		<em>最新规模</em>
+		<span>80,543,633,727.49份(2016-03-31)</span>
+		<div class="clear"></div>
+	</div>
+	<div class="tabs_1_t" style="background:#fafafa">
+		<em>投资目标</em>
+		<span>在确保本金安全和高流动性的前提下，追求超过基准的较高收益。</span>
+		<div class="clear"></div>
+	</div>
+	<div class="tabs_1_t">
+		<em>投资策略</em>
+		<span>积极判断短期利率变动，合理安排期限，细致研究，谨慎操作，以实现本金的安全性、流动性和稳定超过基准的较高收益。</span>
+		<div class="clear"></div>
+	</div>
+	<div class="tabs_1_t" style="background:#fafafa">
+		<em>业绩比较<br/>标准</em>
+		<span>本基金的业绩比较基准为“同期7天通知存款利率”。</span>
+		<div class="clear"></div>
+	</div>
+	<div class="tabs_1_t">
+		<em>风险收益<br/>特征</em>
+		<span>本基金属于证券投资基金中低风险的品种，其长期平均的风险和预期收益率低于股票基金、混合基金和债券基金。</span>
+		<div class="clear"></div>
+	</div>
+</div>

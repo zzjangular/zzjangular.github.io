@@ -1,0 +1,52 @@
+<div id="tabs_3">
+	<div id="tabs_3_info1">
+		<div class="tabs_3_info1_title">申购费率</div>
+					<ul id="tabs_3_info1_ul1" class="qcfd">
+				<li class="color2">
+					<div class="tabs_3_info1_txt_t1">条件</div>
+					<div class="tabs_3_info1_txt_t2">费率</div>
+					<div class="clear"></div>
+				</li>
+				<li class="color1">
+					<div class="tabs_3_info1_txt_t1">&nbsp;</div>
+					<div class="tabs_3_info1_txt_t2">0.00%</div>
+					<div class="clear"></div>
+				</li>
+			</ul>
+	</div>
+	<div id="tabs_3_info2">
+		<div class="tabs_3_info1_title">赎回费率</div>
+		<ul id="tabs_3_info2_ul1" class="qcfd">
+			<li class="color2">
+				<div class="tabs_3_info1_txt_t1">条件</div>
+				<div class="tabs_3_info1_txt_t2">费率</div>
+				<div class="clear"></div>
+			</li>
+				<li class="color1">
+					<div class="tabs_3_info1_txt_t1">&nbsp;</div>
+					<div class="tabs_3_info1_txt_t2">0.00%</div>
+					<div class="clear"></div>
+				</li>
+		</ul>
+	</div>
+	<div id="tabs_3_info3">
+		<div class="tabs_3_info1_title">运作费</div>
+		<ul id="tabs_3_info3_ul1" class="qcfd">
+			<li class="color2"> 
+				<div class="tabs_3_info1_txt_t1">基金管理费</div>
+				<div class="tabs_3_info1_txt_t2">0.33%</div>
+				<div class="clear"></div>
+			</li>
+			<li class="color1">
+				<div class="tabs_3_info1_txt_t1">基金托管费</div>
+				<div class="tabs_3_info1_txt_t2">0.10%</div>
+				<div class="clear"></div>
+			</li>
+				<li class="color2"> 
+					<div class="tabs_3_info1_txt_t1">销售服务费</div>
+					<div class="tabs_3_info1_txt_t2">0.25%</div>
+					<div class="clear"></div>
+				</li>
+		</ul>
+	</div>
+</div>

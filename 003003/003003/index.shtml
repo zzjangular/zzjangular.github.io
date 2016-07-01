@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta id="viewport" name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+<meta content="telephone=no" name="format-detection" />
+<title>华夏现金增利货币A/E基金行情_优势_走势_评级 - 华夏基金</title>
+
+<link rel="stylesheet" type="text/css" href="../../css/global.css">
+<link rel="stylesheet" type="text/css" href="../../css/layout.css">
+<link rel="stylesheet" type="text/css" href="../../css/cpxq.css">
+<script type="text/javascript" src="../../js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="../../js/config.js"></script>
+<script type="text/javascript" src="../../js/socialUtils.js"></script>
+<!--<script type="text/javascript" src="../../dist/echarts.js"></script>-->
+<script type="text/javascript" src="../../js/cpxq.js"></script>
+<script>
+	$(document).ready(function(){
+	$('.download span').eq(0).click(function(){
+		$('#downloadCon').css('display','none');
+	
+	});
+});
+
+</script>
+
+</head>
+<body>
+	<div id="downloadCon" style="display:none">
+                   <section id="downloadBar">
+                     <div class="blockDiv"></div>
+                   <div class="download">       
+                        <span class="span1 span" id="span1"><img src="../../img/downloadAPP/close.png"></span>
+                        <span class="span2 span"><img src="../../img/downloadAPP/logo.png" style="float:left">
+                          <span>下载华夏基金管家<br>理财更便捷,投资更灵活</span>
+                        </span>
+                        <span class="span"><a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.chinaamc.MainActivityAMC">立即下载</a></span>
+                   </div>
+              </section>
+              <div style="height:50px"></div>
+     </div>
+     
+     
+    <!-- 头部 -->
+	<div id="headerBar" class="header">
+		<a href="javascript:history.back(-1);"></a>
+		<h1>基金详情</h1>
+		<img id="headerBarPic" src="../../img/icon/share.png">
+	</div>
+	
+	<!-- 页面内容 -->
+	<div id="main">
+		<!-- 分享部分 -->
+		<div id="share">
+			<div id="share_title">
+				<p>分享到</p>
+			</div>
+			<div id="share_info">
+				<ul>
+					<li id="share_info_t1">
+						<img class="sharePic" id="sharePic1" src="../../img/icon/share_sina.png">
+						<p class="shareTxt">新浪微博</p>
+					</li>
+					<li id="share_info_t2">
+						<img class="sharePic" id="sharePic2" src="../../img/icon/share_tengxun.png">
+						<p class="shareTxt">腾讯微博</p>
+					</li>
+					<li id="share_info_t3">
+						<img class="sharePic" id="sharePic3" src="../../img/icon/share_qq.png">
+						<p class="shareTxt">QQ空间</p>
+					</li>
+					<li id="share_info_t4">
+						<img class="sharePic" id="sharePic4" src="../../img/icon/share_renren.png">
+						<p class="shareTxt">人人网</p>
+					</li>
+					<li id="share_info_t5">
+						<img class="sharePic" id="sharePic5" src="../../img/icon/share_kaixin.png">
+						<p class="shareTxt">开心网</p>
+					</li>
+					<div class="clear"></div>
+				</ul>	
+			</div>
+		</div>
+		
+		<!-- 走势图部分 -->
+		<!--#include virtual="index_jingzhizoushi.shtml"-->
+
+		<!-- 基金表现 -->
+		<!--#include virtual="index_jijinbiaoxian.shtml"-->
+
+		<!-- 基金相关信息 -->
+		<div id="info3" class="info" style="border-top:solid 1px #dbdbdb">
+			<div class="tabs">
+				<ul class="tabs_btns qcfd">
+					<li><p class="tabs_btn_curr">基金概况</p></li>
+					<li><p>基金经理</p></li>
+					<li><p>费率结构</p></li>
+				</ul>
+				
+				<!-- 基金概况 -->
+				<!--#include virtual="index_jijingaikuang.shtml"-->
+
+				<!-- 基金经理 -->
+				<!--#include virtual="index_jijinjingli.shtml"-->
+				
+				<!-- 费率结构 -->
+				<!--#include virtual="index_feilvjiegou.shtml"-->
+				
+			</div>
+		</div>
+	</div>
+	
+	<!-- 尾部 -->
+	<div id="include_footer">
+		<script type="text/javascript">
+			$(function($){
+				$.ajaxSetup({'beforeSend':function(xhr){
+					 xhr.overrideMimeType('text/plain;charset=GBK');
+					}
+				});
+				var jspfile="../../include/buttom.shtml";
+				$.ajax({url:jspfile,
+					cache:false,
+					async:false,
+					success:function(html){
+					$("#include_footer").append(html);}
+				});
+			});
+		</script>
+	</div>
+	
+	<!-- 尾部2 -->
+	<div id="include_footer2" style="display:none;width:100%;height:45px">
+
+	</div>
+	
+	<script type="text/javascript">
+		$(function($){
+			$("#computer").attr("href","http://www.chinaamc.com/fund/003003/index.shtml");
+		});
+	
+		var url = document.URL;//取得当前页的URL
+		contextPath = url.substr(url.indexOf("=")+1);
+		if(contextPath.indexOf("&")!=-1){
+			contextPath = contextPath.substring(0,contextPath.indexOf("&"))
+		}
+		if(contextPath=='gjapp'){
+			document.getElementById("headerBar").style.display="none";
+			document.getElementById("include_footer").style.display="none";
+			document.getElementById("include_footer2").style.display="block";
+			document.getElementById("downloadCon").style.display="block";
+		}
+		else if(contextPath=='app'||contextPath=='wx'){
+			document.getElementById("headerBar").style.display="none";
+			document.getElementById("include_footer").style.display="none";
+			document.getElementById("include_footer2").style.display="block";
+		}
+
+	</script>
+	
+	<script type="text/javascript" src="../../js/layoutforFeilv.js"></script>
+	
+	<!--
+	<div id="crqx">
+		<ul>
+				<li><a id="crBtn" href="https://m.chinaamc.com/mphone/mp/purchase/deposit/003003/wgw">存入</a></li>
+				<li><a id="qxBtn" href="https://m.chinaamc.com/mphone/mp/redeem/deposit/003003/HQT/wgw">取现</a></li>
+		</ul>
+	</div>
+	-->
+	<div id="crqx">
+		<ul style="background:none;">
+				<li style="width:100%;"><a id="crBtn" href="https://m.chinaamc.com/mphone/mp/purchase/deposit/003003/wgw?tjsrc=fund_page">存入</a></li>
+		</ul>
+	</div>
+</body>
+</html>
+<script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>
+
+var wxData = {
+    "imgUrl" : "https://m.chinaamc.com/img/logo/3x.png",
+    "link" : "",
+    "desc" : "",
+    "title" : "我发现一只不错的基金，赶快来看看吧！"
+};
+wxData.desc=$('title').text();
+//加载配置文件
+var configUrl = "https://m.chinaamc.com/mphone/mp/wxshare/getWXShareConfigInfo/wgw?shareURL=" 
+                + encodeURIComponent(window.location.href.split('#')[0]);
+var data = null; 
+var configJson = null;
+if((typeof contextPath !== 'undefined')&&((contextPath=='gjapp')||(contextPath=='wx'))){
+	data = $.ajax({url : configUrl,async : false}).responseText;
+	
+	if (typeof(data) == "string") {
+    	configJson = JSON.parse(data);
+
+	} else {
+    	configJson = data;
+
+	}
+	wxData.link=configJson.shareURL;
+	
+	wx.config({
+    	debug : false,
+    	appId : configJson.appId,
+    	timestamp : configJson.timestamp,
+    	nonceStr : configJson.nonceStr,
+    	signature : configJson.signature,
+    	jsApiList : [
+        	'onMenuShareTimeline', 'onMenuShareAppMessage', 'onMenuShareQQ', 'onMenuShareWeibo'
+    	]
+	});
+}               
+
+
+
+
+wx.ready(function () {
+    setMenuShare();
+});
+
+function setMenuShare() {
+
+    wx.onMenuShareTimeline({
+        title : wxData.title,
+        link : wxData.link,
+	desc : wxData.desc,
+        imgUrl : wxData.imgUrl,
+        success : function () {},
+        cancel : function () {}
+    });
+
+    wx.onMenuShareAppMessage({
+        title : wxData.title,
+        desc : wxData.desc,
+        link : wxData.link,
+        imgUrl : wxData.imgUrl,
+        type : '',
+        dataUrl : '',
+        success : function () {},
+        cancel : function () {}
+    });
+
+    wx.onMenuShareQQ({
+        title : wxData.title,
+        desc : wxData.desc,
+        link : wxData.link,
+        imgUrl : wxData.imgUrl,
+        success : function () {},
+        cancel : function () {}
+    });
+
+    wx.onMenuShareWeibo({
+        title : wxData.title,
+        desc : wxData.desc,
+        link : wxData.link,
+        imgUrl : wxData.imgUrl,
+        success : function () {},
+        cancel : function () {}
+    });
+}	
+
+
+
+</script>
