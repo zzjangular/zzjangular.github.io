@@ -28,7 +28,7 @@ window.onload=function(){
 			gd.clearRect(0,0,oC.width,oC.height);
 			
 			//鱼出场
-			if(Math.random()<0.5){  //鱼出来算法
+			if(Math.random()<0.01){  //鱼出来算法
 				var f=new Fish(rnd(1,6));
 				f.y=rnd(100,oC.height-100);
 				
