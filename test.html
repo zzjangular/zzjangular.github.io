@@ -2,179 +2,83 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>无标题文档</title>
+<title>红包大放送</title>
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <style>
-*{ margin:0; padding:0; border:0;}
-#topHead{ height:30px; background:red;}
-#banner{ height:200px; background:yellow;}
-#leftRight{
-	height:50px;
-	display:-webkit-box;
-	display:box;
-	display:-webkit-flexbox;
-	display:flexbox;
-	display:-webkit-flex;
-	display:flex;
-}
-#left{
-	background:#36F;
-	
-	-webkit-box-flex:3;
-	box-flex:3;
-	-webkit-flexbox:3;
-	flexbox:3;
-	-webkit-flex:3;
-	flex:3;
-}
-#right{
-	background:#F63;
-	-webkit-box-flex:1;
-	box-flex:1;
-	-webkit-flexbox:1;
-	flexbox:1;
-	-webkit-flex:1;
-	flex:1;
-}
-#box{
-	height:100px;
-	display:-webkit-box;
-	display:box;
-	display:-webkit-flexbox;
-	display:flexbox;
-	display:-webkit-flex;
-	display:flex;
-	
-}
-#box div{
-	text-align:center;
-	font-size:30px;
-	line-height:100px;
-	-webkit-box-flex:1;
-	box-flex:1;
-	-webkit-flexbox:1;
-	flexbox:1;
-	-webkit-flex:1;
-	flex:1;	
-}
-#boxLeft{
-	background:#6F9;
-}
-#boxRight{
-	background:#606;
-}
-#font{
-	height:50px;
-	display:-webkit-box;
-	display:box;
-	display:-webkit-flexbox;
-	display:flexbox;
-	display:-webkit-flex;
-	display:flex;
-}
-#font div{
-	height:50px;
-	font-size:20px;
-	text-align:center;
-	line-height:50px;
-	color:red;
-	-webkit-box-flex:1;
-	box-flex:1;
-	-webkit-flexbox:1;
-	flexbox:1;
-	-webkit-flex:1;
-	flex:1;	
-}
-#fontL{ background:#090;}
-#fontC{ background:#00F;}
-#fontR{ background:#600;}
-
-#bar{
-	height:50px;
-	display:-webkit-box;
-	display:box;
-	display:-webkit-flexbox;
-	display:flexbox;
-	display:-webkit-flex;
-	display:flex;	
-}
-#barLeft{
-	background:#CFC;
-	-webkit-box-flex:1;
-	box-flex:1;
-	-webkit-flexbox:1;
-	flexbox:1;
-	-webkit-flex:1;
-	flex:1;
-}
-#barRight{
-	background:#C3F;
-	-webkit-box-flex:5;
-	box-flex:5;
-	-webkit-flexbox:5;
-	flexbox:5;
-	-webkit-flex:5;
-	flex:5;
-}
-#float{
-	height:120px;
-	width:90%;
-	margin:10px auto;
-	display:-webkit-box;
-	display:box;
-	display:-webkit-flexbox;
-	display:flexbox;
-	display:-webkit-flex;
-	display:flex;
-}
-#float div{
-	height:120px;
-	line-height:120px;
-	text-align:center;
-	font-size:20px;
-	color:#0C0;
-	background:#ccc;
-	-webkit-box-flex:1;
-	box-flex:1;
-	-webkit-flexbox:1;
-	flexbox:1;
-	-webkit-flex:1;
-	flex:1;
-}
-
+*{ padding:0; margin:0; border:0;}
+html{ font-size:20px;font-family:Verdana, Geneva, sans-serif; height:100%;}
+.wrap{ position:relative; height:100%;}
+body{ background:#e4e4e6; text-align:center; height:100%; background:#fff;}
+.img{ width:100%; display:block; height:78%;}
+.wrap a{ text-decoration:none; width:10.88rem; height:1.5rem; background:red; display:inline-block; line-height:1.5rem;
+border-radius:20px; font-size:1rem; color:white; position:absolute; left:50%; margin-left:-5.44rem;}
+.wrap .btnActive{ background:#EC3F38; bottom:4rem;}
+.wrap .btnBegin{ background:#36A3F5;bottom:2rem;}
+#pop { display:none;position:fixed; top:0; left:0; width:100%; height:100%;z-index: 99; }
+.shadow { position:absolute; top:0; left:0; width:100%; height:100%; background:#000; opacity:0.6; }
+.box img{ width:100%; position:absolute; z-index:2; left:0; top:0;}
+#language{ width:11.84rem; font-size:0.6rem; color:#313131; position:absolute; top:8rem; left:50%; margin-left:-5.92rem; z-index:4; text-align:left; line-height:1rem; max-height:15.5rem; overflow:scroll;}
+#language p{ height:1.5rem; border-bottom:1px solid #fbb628; padding:0 1.3rem; line-height:1.5rem;}
+#language p span{ float:right;}
+#money{  width:100%;text-align:center; font-size:1.8rem; color:#EC3F38; font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif; font-weight:bold; position:absolute; top:33%; z-index:16;}
 </style>
+<script>
+	window.onload=function(){
+		document.documentElement.style.fontSize=document.documentElement.clientWidth/16+'px';
+	
+	};
+</script>
 </head>
 
 <body>
-	<div id="topHead"></div>
-    <div id="banner"></div>
-    <p id="leftRight">
-    	<span id="left"></span>
-        <span id="right"></span>
-    </p>
-    <div id="box">
-    	<div id="boxLeft">
-        	基金产品
-        </div>
-        <div id="boxRight">
-        	账户查询
-        </div>
+	<div class="wrap">
+    	<img src="images/redBag/redBagBg.png" class="img">
+        <a href="javascript" class="btnActive">抽红包手气排行</a>
+        <a href="javascript" class="btnBegin">微信分享</a>   
     </div>
-    <div id="font">
-    	<div id="fontL">活期必存</div>
-        <div id="fontC">主题基金</div>
-        <div id="fontR">指数基金</div>
-    </div>
-    <p id="bar">
-    	<span id="barLeft"></span>
-        <span id="barRight"></span>
-    </p>
-    <div id="float">
-    	<div id="floatL">七日年化</div>
-        <div id="floatC">万份收益</div>
-        <div id="floatR">过去一年</div>
+    <p id="money">50000元</p>
+    <div id="pop">
+    	<div class="shadow"></div>
+        <div class="box">
+			<img src="images/redBag/redBagBgActive.png">
+             <div id="language">
+          		<p>23243243224342<span>23.31</span></p>
+                <p>2324324322434<span>23.31</span></p>
+                <p>23243243224342<span>2.331</span></p>
+                <p>2324324343<span>233.1</span></p>
+                <p>2324324243<span>23.31</span></p>
+                <p>232432434243<span>23.31</span></p>
+                <p>2324324343<span>233.1</span></p>
+                <p>2324324243<span>23.31</span></p>
+                <p>232432434243<span>23.31</span></p>
+                <p>2324324343<span>233.1</span></p>
+                <p>2324324243<span>23.31</span></p>
+                <p>232432434243<span>23.31</span></p>
+                <p>2324324243<span>23.31</span></p>
+                <p>232432434243<span>23.31</span></p>
+                <p>2324324343<span>233.1</span></p>
+                <p>2324324243<span>23.31</span></p>
+                <p>232432434243<span>23.31</span></p>
+                <p>2324324343<span>233.1</span></p>
+                <p>2324324243<span>23.31</span></p>
+                <p>232432434243<span>23.31</span></p>
+            </div>
+		</div>
     </div>
 </body>
 </html>
+<script>
+	var oPop=document.getElementById('pop');
+	var oShadow=document.getElementsByClassName('shadow')[0];
+	var aBtnActive=document.getElementsByClassName('btnActive')[0];
+	aBtnActive.onclick=function(){
+		oPop.style.display='block';
+		return false;
+	};
+	
+	oPop.onclick=function(){
+		this.style.display='none';
+	};
+</script>
