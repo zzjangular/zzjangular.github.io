@@ -1,19 +1,259 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>无标题文档</title>
-<style>
-	*{ padding:0; margin:0;}
-	div{width:calc( 100% - 30rem); background:red;    height: 0.7rem;
-    line-height: 0.7rem;
-    font-size: 0.28rem;
-    float: left;}
-</style>
+<!DOCTYPE html>
+<html><head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>定投通</title>
+    <!--<link rel="stylesheet" type="text/css" href="chinaamcfund_wgw/css/global.css">
+    <link rel="stylesheet" type="text/css" href="chinaamcfund_wgw/css/layout.css">
+    <link rel="stylesheet" type="text/css" href="chinaamcfund_wgw/css/hxjjcp.css">
+-->    <link href="css/style.css" rel="stylesheet">
+    <script src="js/jquery-1.8.2.min.js"></script>
+    <script>
+        window.onload=function(){
+            document.documentElement.style.fontSize=50*document.documentElement.clientWidth/375+'px';
+           
+        };
+    </script>
+    <script src="js/dingtoutong1.js"></script>
+
 </head>
+<body class="huoqitong1Body">
+    <div class="toptitle">
+        <p class="p1">我的财富之路</p>
+        <p class="p2">根据基金定投排名和您的投资习惯，向您推荐华夏旗下绩优基金</p>
+    </div>
+    <div class="middleContent">
+        <div>
+            <img src="images/dingtoutong1/circle03.png"/>
+            <p><span class="span1">定基金</span><span class="span2" id="whoBank">华夏收益债券(QDII)A</span></p>
+        </div>
+        <div id="forHide">
+            <div class="fund1 fund3">
+                <p class="p1">华夏收益债券（QDII）A</p>
+                <p class="p2">“你定，我投”定投排行版人气王</p>
+            </div>
+            <div class="fund1">
+                <p class="p1">华夏收益债券（QDII）B</p>
+                <p class="p2">“你定，我投”定投排行版人气王</p>
+            </div>
+            <div class="fund1">
+                <p class="p1">华夏收益债券（QDII）C</p>
+                <p class="p2">“你定，我投”定投排行版人气王</p>
+            </div>
 
-<body>
+        </div>
+    </div>
+    <div id="forHide1">
+        <div class="huadong">
+            <img src="images/dingtoutong1/huadong0.png" class="pullDown">
+        </div>
+    </div>
 
-	<div></div>
+    <p class="huadongBottom"></p>
+    <div class="cycle">
+        <div>
+            <img src="images/dingtoutong1/circle05.png"/>
+            <p><span class="span1">定金额</span><span class="span2" id="everMoney">每期1000元</span></p>
+            <ol class="seat"></ol>
+            <a href="javascript:;" class="money active">100元</a>
+            <a href="javascript:;" class="money">300元</a>
+            <a href="javascript:;" class="money">500元</a>
+            <ol class="seat"></ol>
+            <div class="boxInput3">
+                <span class="myMoney">自定义金额(元)</span>
+                <input type="number" placeholder="请在此输入自定义金额" max="10"/>
+            </div>
+            <ol class="seat2"></ol>
+        </div>
+    </div>
+    <div class="seat3"></div>
+    <div class="cycle">
+        <div>
+            <img src="images/dingtoutong1/circle04.png"/>
+            <p><span class="span1">定周期</span><span class="span2"  id="everyDay">每月1号</span></p>
+            <ol class="seat"></ol>
+            <a href="javascript:;" class="foundDate active">每月1号</a>
+            <a href="javascript:;" class="foundDate">每月15号</a>
+            <a href="javascript:;" class="foundDate">每月28号</a>
+            <ol class="seat5"></ol>
+
+            <p class="ownSelect">自选：</p>
+            <div class="boxInput">
+                <span class="selectWeek select_box1">每周</span>
+
+                <span class="selectMonth select_box">每月</span>
+            </div>                                  <!--这里等待修改-->
+            <ol class="seat2"></ol>
+        </div>
+    </div>
+    <div class="seat3"></div>
+
+    <div class="cycle">
+        <div>
+            <img src="images/dingtoutong1/circle06.png"/>
+            <p><span class="span1">定账户</span><span class="span2" id="everyBank">活期通-建设银行[3425]</span></p>
+            <ol class="seat"></ol>
+            <div class="boxInput2">
+                <p class="p1">活期通-建设银行</p>
+                <p class="p2">余额（元）：3424.23</p>
+                <a href="javascript:;"><img src="images/dingtoutong1/icon2.png"/></a>
+            </div>
+        </div>
+        <p class="lastP"><a href="javascript:;" class="a1">存入活期通</a><span class="span3">活期通余额支付<strong>1折起</strong></span></p>
+    </div>
+    <div class="seat4"></div>
+    <p class="btnSeat"></p>
+    
+    																					<!--here-->
+    
+    
+    <a href="javascript:;" id="btn">下一步</a>
+
+    <div id="pop">
+        <div class="shadow"></div>
+        <div class="box">
+           <img src="images/dingtoutong1/kaishikoukuan.png" class="begin">
+            <div class="createName">
+                <h5>我的定投梦想</h5>
+                <p>(20个字以内)</p>
+            </div>
+            <div class="smallBox">
+                <p class="user">
+                     <input type="text" class="userName"  value="我的定投" maxlength="20">
+                </p>
+                <hr/>
+                <ul>
+                    <li>送孩子上剑桥</li>
+                    <li>给媳妇买个貂</li>
+                    <li>一起去巴黎</li>
+                    <li>我想买辆车</li>
+                    <li>不拼颜值拼实力</li>
+                    <li>比老王有钱</li>
+                </ul>
+            </div>
+            <div class="lastDiv">
+                <a href="javascript:;" id="nextTohide">下一步</a>                                              
+
+            </div>
+        </div>
+    </div>
+    <div id="floatBg"></div>
+    <div class="option">
+       <p class="decision"><span class="cancel">取消</span><span class="determine">确定</span></p>
+        <p class="describe">每月扣款日期可多选，最多选28天</p>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+            <li>11</li>
+            <li>12</li>
+            <li>13</li>
+            <li>14</li>
+            <li>15</li>
+            <li>16</li>
+            <li>17</li>
+            <li>18</li>
+            <li>19</li>
+            <li>20</li>
+            <li>21</li>
+            <li>22</li>
+            <li>23</li>
+            <li>24</li>
+            <li>25</li>
+            <li>26</li>
+            <li>27</li>
+            <li>28</li>
+        </ul>
+    </div>
+    <div class="option1">
+        <p class="decision"><span class="cancel">取消</span><span class="determine">确定</span></p>
+        <p class="describe">每周扣款日期可多选，最多选4天</p>
+        <ul>
+            <li class="">周一</li>
+            <li>周二</li>
+            <li>周三</li>
+            <li>周四</li>
+            <li>周五</li>
+        </ul>
+    </div>
+    <div class="option2">
+        <p class="decision"><span class="cancel">取消</span><span class="determine">确定</span></p>
+        <p class="describe">双周扣款日期可多选，最多选4天</p>
+        <ul>
+            <li class="">周一</li>
+            <li>周二</li>
+            <li>周三</li>
+            <li>周四</li>
+            <li>周五</li>
+        </ul>
+    </div>
+    <div id="fullWH">
+    </div>
+    <div class="option4">
+        <P>选择银行</P>
+        <div class="option_btns">
+            <a class="option_curr">活期通- 农行银行[3523]
+                <input type="hidden" value="5" />
+                <input type="hidden" value="5.5" />
+            </a>
+            <a> 活期通-中国银行[3245]
+                <input type="hidden" value="5" />
+                <input type="hidden" value="5.5" />
+            </a>
+
+        </div>
+    </div>
+
 </body>
 </html>
+<script>
+    $('.fund2').click(function(){
+
+        $('#fullWH').css('display','block');
+    });
+	
+	                                                                                //here
+ 
+  var oBtnNext=document.getElementById('btn');
+
+ 
+  oBtnNext.onclick=function(){
+	  var topTitle=$('.p1').html();
+	  var z=charCode(topTitle);
+	  var dingjijin=$('#whoBank').html();
+	  var a=charCode(dingjijin);
+	  var dingjine=$('#everMoney').html();
+	  var b=charCode(dingjine);
+	  var dingzhouqi=$('#everyDay').html();
+	  var c=charCode(dingzhouqi);
+	  var dingzhanghu=$('#everyBank').html();
+	  var d=charCode(dingzhanghu);
+	  window.location.href='cunruhuoqitong.html?a='+a+'&b='+b+'&c='+c+'&d='+d+'&z='+z;
+  };
+	
+
+
+	function charCode(str)
+	{
+		var str2='';
+		for( var i=0;i<str.length;i++)
+		{
+			code=str.charCodeAt(i);
+			code+='%';
+			str2+=code;
+		}
+		return str2;
+	}
+</script>
+
+
+
