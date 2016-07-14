@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="chinaamcfund_wgw/css/layout.css">
     <link rel="stylesheet" type="text/css" href="chinaamcfund_wgw/css/hxjjcp.css">
    
--->    <link href="css/style.css" rel="stylesheet">
+-->   
 	<style>
 		*{
     margin: 0;
@@ -893,7 +893,412 @@ strong{
            
         };
     </script>
-    <script src="js/dingtoutong1.js"></script>
+    <script>
+    	/*** Created by zzj on 2016/6/23.*/
+
+$(document).ready(function(){
+    var planStr=null;
+    var foundMoneyNow;
+    var foundDateNow;
+    //月选中日期数组
+    var monthDateChosed=[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false];
+    var monthDay=[];
+    //周选中日期数组
+    var weekDateChosed=[false,false,false,false,false];
+    var weekDay=[];
+    //失去焦点
+    var mouseBlur=null;
+
+    //快捷日期，初始化，每月一号
+    var momentDate=0;
+
+
+    var planNamePlaceholder=$('.userName').attr('placeholder');
+
+    //�?始扣�?
+    $('.toptitle').click(function(){
+        $('#pop').css('display','block');
+    });
+
+    $('.smallBox ul li').click(function(){
+        $(this).css({
+            borderColor:'#CC2F40',
+            color:'#CC2F40'
+        });
+        setTimeout(function(){
+            $('.smallBox ul li').css({
+                borderColor:'#999',
+                color:'#999'
+            });
+        },150)
+    });
+
+    $('.shadow').click(function(){
+        $('#pop').css('display','none');
+    });
+
+
+    $('#nextTohide').click(function(){
+        var planNameValue=$('.userName').attr('value');
+        planNameValue=planNameValue.replace(/^\s+|\s+$/g,'');
+        if(!!planNameValue)
+        {
+            $('.toptitle .p1').html(planNameValue);
+        }
+        else
+        {
+            if(!!planStr)
+            {
+                $('.toptitle .p1').html(planStr);
+            }
+            else
+            {
+                $('.toptitle .p1').html(planNamePlaceholder);
+            }
+
+        }
+        $('#pop').css('display','none');
+
+    });
+    //月
+
+    $(".select_box").click(function(event){
+        if($(this).hasClass('noClick'))
+        {
+            return false;
+        }
+        //$('.cycle .foundDate').removeClass('active');
+        $('.option').show();
+        $("#floatBg").show();
+        if(momentDate>=0)
+        {
+            $('.option li').eq(momentDate).addClass('on');
+            monthDateChosed[momentDate]=true;
+        }
+    });
+    //周
+    $(".select_box1").click(function(event){
+        momentDate=-1
+        if($(this).hasClass('noClick'))
+        {
+            return false;
+        }
+        //$('.cycle .foundDate').removeClass('active');
+        $('.option1').show();
+        $("#floatBg").show();
+    });
+
+    $("#floatBg").click(function(event){
+        $('.option').hide();
+        $('.option1').hide();
+        $('.option2').hide();
+        $("#floatBg").hide();
+    });
+    //月取消
+    $(".option .cancel").click(function(event){
+        $('.option li').removeClass('on');
+        for(var i=0;i<monthDay.length;i++){
+            $('.option li').eq(monthDay[i]-1).addClass('on');
+        }
+        $('.option').hide();
+        $("#floatBg").hide();
+    });
+    //周取消
+    $(".option1 .cancel").click(function(event){
+        $('.option1 li').removeClass('on');
+        for(var i=0;i<weekDay.length;i++){
+            $('.option1 li').eq(weekDay[i]-1).addClass('on');
+        }
+        $('.option1').hide();
+        $("#floatBg").hide();
+    });
+
+    //月确定
+    $('.option .determine').click(function(){
+        weekDateChosed=[false,false,false,false,false];
+        weekDay=[];
+        monthDay=[];
+
+
+        var count=0;
+        for(var i=0;i<monthDateChosed.length;i++){
+            if(monthDateChosed[i]==true){
+                count++;
+                monthDay.push(i+1);
+            }
+        }
+        if(count==0){
+            alert("请选择至少一个日期！");
+            return;
+        }
+
+        if(count == 1)
+        {
+            $('.selectMonth').html('每月'+monthDay[0]+'日');
+            $('#everyDay').html('每月'+monthDay[0]+'日');
+        }
+        else if(count >= 2)
+        {
+            $('.selectMonth').html('每月'+monthDay[0]+','+monthDay[1]+'...');
+            $('#everyDay').html('每月'+monthDay[0]+','+monthDay[1]+'...');
+        }
+
+        $('.cycle .foundDate').removeClass('active');
+        $('.selectWeek').html('每周').removeClass('active');
+        $('.option1 li').removeClass('on');
+        $('.selectMonth').addClass('active');
+        $('.option').hide();
+        $("#floatBg").hide();
+    });
+
+    //周确定
+    $('.option1 .determine').click(function(){
+        monthDateChosed=[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false];
+        monthDay=[];
+        weekDay=[];
+
+
+
+        var count=0;
+        for(var i=0;i<weekDateChosed.length;i++){
+            if(weekDateChosed[i]==true){
+                count++;
+                weekDay.push(i+1);
+            }
+        }
+        if(count==0){
+            alert("请选择至少一个日期！");
+            return;
+        }
+
+
+        if(count == 1)
+        {
+            $('.selectWeek').html('每'+weekDay[0]);
+            $('#everyDay').html('每'+weekDay[0]);
+        }
+        else if(count >= 2)
+        {
+            $('.selectWeek').html('每'+weekDay[0]+','+weekDay[1]+'...');
+            $('#everyDay').html('每'+weekDay[0]+','+weekDay[1]+'...');
+        }
+
+        $('.cycle .foundDate').removeClass('active');
+        $('.selectMonth').html('每月').removeClass('active');
+        $('.option li').removeClass('on');
+        $('.selectWeek').addClass('active');
+        $('.option1').hide();
+        $("#floatBg").hide();
+    });
+
+    //月点击
+    $('.option li').click(function(){
+        if($(this).attr('class')==undefined || $(this).attr('class')=='')
+        {
+            monthDateChosed[$(this).index()]=true;
+        }
+        else
+        {
+            monthDateChosed[$(this).index()]=false;
+        }
+        //*****************************************************************************??
+        $(this).toggleClass('on');
+
+    });
+
+    //周点击
+
+    $('.option1 li').click(function(){
+        if($(this).attr('class')==undefined || $(this).attr('class')=='')
+        {
+            weekDateChosed[$(this).index()]=true;
+        }
+        else
+        {
+            weekDateChosed[$(this).index()]=false;
+        }
+
+        //*****************************************************************************??
+        $(this).toggleClass('on');
+    });
+
+
+    //定基金部�?
+    var nowQ=0;
+    $('.fund1').click(function(){
+        if($('.huadong img').attr('src')=='images/dingtoutong1/huadong0.png')
+        {
+
+            nowQ--;
+        }
+        $(this).css('display','block').siblings().css('display','none');
+        $(this).addClass('fund3').siblings().removeClass('fund3');
+        $('#whoBank').html($(this).children(1).html());
+        $('.middleContent').css('height','2rem');
+        $('.huadong').children().eq(0).attr('src','images/dingtoutong1/huadong0.png');
+        nowQ++;
+
+    });
+    //定基金的下拉效果
+    $('.middleContent').css('height','2rem');
+
+    $('.huadong').click(function(){
+        nowQ++;
+        if(nowQ%2==1)
+        {
+            $('.fund1').siblings().css('display','block');
+            $('.middleContent').css('height','');
+            $(this).children().eq(0).attr('src','images/dingtoutong1/huadong.png')
+        }
+        else
+        {
+            $('.middleContent').css('height','2rem');
+            $(this).children().eq(0).attr('src','images/dingtoutong1/huadong0.png')
+        }
+    });
+
+    //定金�? �? 定周�? 的�?�择部分
+
+    $('.cycle .money').click(function(){
+
+        $(this).addClass('active').siblings().removeClass('active');
+        $('.boxInput3 input').val('');
+        // foundMoneyNow 快捷钱数目
+       foundMoneyNow=parseFloat($(this).html());
+
+
+        $('#everMoney').html('每期'+foundMoneyNow+'元');
+    });
+
+    $('.cycle .foundDate').click(function(){
+        //月选中日期数组
+        monthDateChosed=[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false];
+        monthDay=[];
+        //周选中日期数组
+        weekDateChosed=[false,false,false,false,false];
+        weekDay=[];
+        $(this).addClass('active').siblings().removeClass('active');
+
+        momentDate=parseInt($(this).html().substring(2))-1;
+
+        foundDateNow=$(this).html();
+        $('#everyDay').html(foundDateNow);
+        $('.selectWeek').html('每周').removeClass('active');
+        $('.option1 li').removeClass('on');
+
+        $('.selectMonth').html('每月').removeClass('active');
+        $('.option li').removeClass('on');
+    });
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //为定投计划取个名�?
+
+
+// 我的定投计划
+    $('.smallBox ul li').click(function(){
+        var str=$(this).html();
+        $('.user input').val(str);
+        planStr=str;
+    });
+
+    //  定金额的自定义输入金额功�?
+
+    var reg=/\d+/;
+    // foundMoneyNow 快捷钱数目
+    $('.boxInput3 input').focus(function(){
+        $('.cycle .money').siblings().removeClass('active');
+
+            if(!foundMoneyNow)
+            {
+                foundMoneyNow=parseFloat($('.cycle .money').html());
+
+            }
+
+            $('.boxInput3').css('borderBottomColor','#CC2F40');
+            if(parseInt(mouseBlur)>0)
+            {
+                $(this).val(mouseBlur);
+            }
+            else
+            {
+                $(this).val('');
+                $('#everMoney').html('每期元');
+            }
+
+
+
+    }).blur(function(){
+
+        var foundInputMoney=$(this).val();
+        if(foundInputMoney=='')
+        {
+            mouseBlur=null;
+            foundInputMoney= parseInt($('.cycle .money').eq(0).text());
+            $('.cycle .money').eq(0).addClass('active');
+			$('#everMoney').html('每期100元');                                                              //here
+        }
+        else
+        {
+            mouseBlur=foundInputMoney;
+            foundMoneyNow=foundInputMoney;
+
+        }
+    }).bind('input', function() {
+        foundInputMoney=$(this).val();
+        if(foundInputMoney.length>=10)
+        {
+            foundInputMoney=foundInputMoney.slice(0,10);
+            $(this).val(foundInputMoney)
+        }
+        $('#everMoney').html('每期'+foundInputMoney+'元');
+    });
+
+
+
+    // foundMoneyNow 快捷钱数目
+    //官网下拉
+    $(".boxInput2").click(function(event){
+        $('.option4').show();
+        $("#floatBg").show();
+    });
+    $("#floatBg").click(function(event){
+        $('.option4').hide();
+        $("#floatBg").hide();
+    });
+    /*赋值给文本框*/
+    $(".option4 a").click(function(){
+        var value1=$(this).text();
+        $('.boxInput2 .p1').text(value1);
+        $('#everyBank').html(value1);
+       // $('.boxInput2 .p2').text('');
+        $('.option4').hide();
+        $("#floatBg").hide();
+
+
+        $(this).siblings().removeClass("option_curr");
+        $(this).addClass("option_curr");
+
+        /* var trustChannelType = $(".option_curr input:eq(3)").val();
+         if(trustChannelType == "1"){
+         $("#hqt_available").show();
+         $("#trustChannelAvailable").html($(".option_curr input:eq(5)").val());
+         }else{
+         $("#hqt_available").hide();
+         }
+         try{
+         if(checkAmount&&typeof(checkAmount)=="function"){
+         checkAmount();
+         }
+         }catch(e){
+
+         }*/
+    });
+
+
+
+
+});
+
+    </script>
 
 </head>
 <body class="huoqitong1Body">
