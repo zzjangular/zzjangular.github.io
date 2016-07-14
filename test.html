@@ -8,7 +8,884 @@
     <!--<link rel="stylesheet" type="text/css" href="chinaamcfund_wgw/css/global.css">
     <link rel="stylesheet" type="text/css" href="chinaamcfund_wgw/css/layout.css">
     <link rel="stylesheet" type="text/css" href="chinaamcfund_wgw/css/hxjjcp.css">
+   
 -->    <link href="css/style.css" rel="stylesheet">
+	<style>
+		*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration:none;
+    font-family:Verdana, Geneva, sans-serif;
+}
+html{ font-size:50px;}
+body{
+    background: #ddd;
+}
+a{-webkit-tap-highlight-color: rgba(0,0,0,0)}
+.topPic{
+    width: 100%;
+    display: block;
+}
+.bankContent{
+    padding:0.25rem 0.3rem 0;
+    height: 10rem;
+}
+.bankContent .bank{
+    margin-bottom: 0.25rem;
+    background: #ffffff;
+    border-radius:5px;
+	
+}
+.bankContent .bank .bankP{
+    height: 0.9rem;
+    line-height: 0.9rem;
+    font-size: 0.3rem;
+    color: #000;
+    padding:0 0.3rem ;
+}
+.bankContent .bank .bankP a{
+    float: right;
+    vertical-align: middle;
+}
+.bankContent .bank .bankP a img{
+    height: 0.3rem;
+    display:inline-block;
+    vertical-align: middle;
+}
+.bankContent .bank .bankPlan{
+    padding-bottom: 0.3rem;
+    overflow: hidden;
+}
+.bankContent .bank .bankPlan div{
+    float: left;
+    width: 2rem;
+    height: 100%;
+}
+.bankContent .bank .bankPlan div:nth-child(1){
+    width: 2.3rem;
+    padding-left: 0.3rem;
+}
+.bankContent .bank .bankPlan div:nth-child(3){
+    width: 2rem;
+    padding-right: 0.3rem;
+}
+.bankContent .bank .bankPlan div .img1{
+    width: 1rem;
+    display:block;
+}
+.bankContent .bank .bankPlan div p{
+    font-size: 0.24rem;
+    color:#808080;
+}
+.bankContent .bank .bankPlan div .font1,.bankContent .bank .bankPlan div .font2{
+    text-align: center;
+}
+.bankContent .bank .bankPlan div .font2{
+    margin-top: 5px;
+}
+
+
+.bankContent .bank .bankPlan div .img2{
+    width: 2rem;
+    display:block;
+}
+
+
+.bankContent .bank .bankPlan div .img3{
+    width: 1.5rem;
+    display:block;
+    float: right;
+}
+.bankContent .bank .bankPlan ol{
+    clear: both;
+}
+.bankContent .bank .nextFee{
+    height:0.68rem;
+    line-height: 0.68rem;
+    font-size: 0.24rem;
+    padding-left: 0.3rem;
+    border-top: 1px solid #ccc;
+    background: #F8F8F8;
+    color:#808080;
+    border-radius:0 0 5px 5px;
+}
+.middleContent div img,.middleContent1 div img{
+    width:0.7rem;
+    float: left;
+}
+
+.middleContent div p .span1,.middleContent1 div p .span1{
+    margin-left: 20px;
+}
+.middleContent div p .span2,.middleContent1 div p .span2{
+    float: right;
+}
+.bottomButton{
+    padding: 0.8rem 0.4rem 0;
+}
+.cunRuBody{
+    background: #fff;
+}
+.topTimePrompt{
+    height: 2.9rem;
+    border-bottom: 0.2rem solid #eee;
+    background: #fff;
+}
+.topTimePrompt .wealthTitle{
+    text-align:center;
+    font-size: 0.34rem;
+    color:#000;
+    padding-top: 0.4rem ;
+}
+.topTimePrompt .schedule{
+    height: 2.1rem;
+    position: relative;
+}
+.schedule .seatO{
+	width:100%;
+	height:0.6rem;
+	border-bottom:3px solid #eee;
+}
+.schedule .twoAllDiv{
+    width:100%;
+    position: absolute;
+    
+}
+.schedule div{
+    width: 50%;
+    float: left;
+    text-align: center;
+	margin-top:-0.19rem;
+}
+.schedule div img{
+    width:0.38rem;
+    display:block;
+	margin: 0 auto;
+	margin-bottom:10px;
+}
+.schedule div .p1{
+    font-size: 0.2rem;
+    color: #999;
+}
+.schedule div .p2{
+    font-size: 0.28rem;
+    color: #000;
+    margin-top:5px;
+}
+.middleContent{
+    padding: 0.2rem 0.4rem;
+    background: #fff;
+    overflow: hidden;
+}
+.middleContent div{
+    height: 0.7rem;
+    overflow: hidden;
+    margin-bottom: 3px;
+    position: relative;
+
+}
+#forHide,#forHide1{
+    height: auto;
+    margin: 0;
+}
+.middleContent div img{
+    width:0.7rem;
+    float: left;
+}
+.middleContent div p{
+    height:0.7rem;
+    line-height: 0.7rem;
+    font-size: 0.28rem;
+    float: left;
+    width: calc(100% - 0.7rem);
+}
+.middleContent div p .span1{
+    margin-left: 20px;
+}
+
+.middleContent .agreement{
+    font-size: 0.24rem;
+    padding: 0.4rem 0 0 0.3rem;
+    height: 0.3rem;
+}
+.middleContent .agreement img{
+    width: 0.3rem;
+    vertical-align:top;
+    margin-right: 0.21rem;
+    margin-top: 1px;
+}
+.middleContent .agreement span{
+    color:#5B95BA ;
+}
+.bottomButton{
+    padding: 0.4rem 0.4rem 0;
+}
+
+.huoqitong1Body{
+    background: #fff;
+}
+.toptitle{
+    height:1.7rem;
+    padding-top: 0.4rem;
+    border-bottom: 0.2rem solid #eee;
+}
+.toptitle p{
+    text-align: center;
+}
+.toptitle .p1{
+    font-size: 0.36rem;
+    color: #C2374A;
+}
+.toptitle .p2{
+    font-size: 0.26rem;
+    margin-top: 0.28rem;
+    color: #666;
+}
+.middleContent  .fund1{
+    border: 2px solid #eee;
+    height: 1.2rem;
+    border-radius: 0.2rem;
+    margin-top: 0.15rem;
+}
+.middleContent  .fund2{
+    border: 2px solid #eee;
+    border-radius: 0.1rem 0.4rem 0.4rem 0.1rem;
+    margin-top: 0.1rem;
+    background: url(../images/dingtoutong/icon.png) no-repeat 6rem center;
+    background-size: 0.2rem;
+}
+.middleContent  .fund2 p{
+    height: 0.6rem;
+    padding-left: 0.4rem;
+}
+.middleContent  .fund2 .p1{
+    font-size: 0.32rem;
+    color: #000000;
+    line-height: 0.7rem;
+}
+.middleContent  .fund1 p{
+    height: 0.6rem;
+    padding-left: 0.4rem;
+}
+.middleContent  .fund1 .p1{
+    font-size: 0.32rem;
+    color: #000000;
+    line-height: 0.7rem;
+}
+.middleContent  .fund1 .p2{
+    font-size: 0.25rem;
+    color: #999999;
+    line-height: 0.6rem;
+}
+.middleContent  .fund3{
+    border:2px solid #CC2F40;
+}
+.middleContent  .fund3 .p1, .middleContent  .fund3 .p2{
+    color: #CC2F40;
+}
+.reminder{
+    font-size: 0.22rem;
+    color: #EE924F;
+    text-align: right;
+    padding-right: 0.5rem;
+}
+.huadong{
+    height: 0.85rem;
+    text-align: center;
+    margin-top: 0.2rem;
+}
+.huadongBottom{
+    border-bottom: 0.2rem solid #eee;
+}
+.huadong img{
+    vertical-align: text-top;
+    width: 0.3rem;
+}
+.cycle{
+    overflow: hidden;
+    margin-bottom: 3px;
+    padding: 0.4rem 0.4rem 0;
+}
+.cycle img{
+    width: 0.7rem;
+    float: left;
+}
+.cycle p{
+    height: 0.7rem;
+    line-height: 0.7rem;
+    font-size: 0.28rem;
+    float: left;
+    width: calc(100% - 0.7rem);
+}
+.cycle p .span1{
+    margin-left: 20px;
+}
+.cycle p .span2{
+    float: right;
+}
+.cycle .money,.cycle .foundDate{
+    width:2rem;
+    height: 0.9rem;
+    border: 1px solid #999;
+    float: left;
+    font-size: 0.3rem;
+    text-align: center;
+    line-height: 0.9rem;
+    color: #000;
+    border-radius: 10%;
+    margin-left: 0.15rem;
+
+}
+.cycle ol{ clear: both}
+.boxInput, .boxInput3{
+    height: 0.9rem;
+    line-height: 0.9rem;
+    width: 6.4rem;
+    margin-left: 0.15rem;
+    position: relative;
+}
+.boxInput{
+     width:auto;
+    margin: 0;
+}
+.boxInput3{
+    border-bottom: 1px solid #999;
+    border-radius: 3%;
+}
+.myMoney{
+    font-size: 0.3rem;
+    float: left;
+    height: 0.9rem;
+    line-height: 0.9rem;
+    color: #999;
+}
+.boxInput span{
+    border: 1px solid #999;
+    border-radius: 0.2rem;
+    font-size: 0.3rem;
+    height: 0.9rem;
+    line-height: 0.9rem;
+    text-align: center;
+    width: 3.08rem;
+    float: left;
+    background: url(../images/dingtoutong/icon.png) no-repeat  2.6rem center;
+    background-size: 0.2rem;
+    margin-left: 0.15rem;
+}
+.boxInput span:active{
+    border: 1px solid #CC2F40;
+    color: #CC2F40;
+}
+.cycle .ownSelect{
+    height:0.6rem;
+    line-height: 0.6rem;
+    font-size: 0.26rem;
+    clear: both;
+    padding-left: 0.15rem;
+}
+.boxInput a{
+    width:0.3rem;
+    position: absolute;
+    top:50%;
+    margin-top: -0.2rem;;
+}
+.boxInput2{
+    border: 1px solid #CC2F40;
+    height: 1.2rem;
+    margin-top: 0.1rem;
+    width: 6.4rem;
+    margin-left: 0.15rem;
+    border-radius: 0.1rem 0.5rem 0.5rem 0.1rem;
+    position: relative;
+    color:#CC2F40;
+    background: url(../images/dingtoutong/icon.png) no-repeat 6rem center;
+    background-size: 0.2rem;
+}
+.boxInput2 p{
+    height: 0.6rem;
+    padding-left: 0.4rem;
+
+}
+
+.boxInput2 .p1{
+    font-size: 0.32rem;
+    line-height: 0.7rem;
+
+}
+.boxInput2 .p2{
+    font-size: 0.25rem;
+    line-height: 0.6rem;
+}
+.boxInput2 a{
+    width:0.3rem;
+    position: absolute;
+    right: 0.3rem;
+    top:50%;
+    margin-top: -0.2rem;
+}
+.boxInput2 a img{
+    width: 100%;;
+    vertical-align: middle;
+}
+
+.cycle input{
+    width:3.5rem;
+    height:0.9rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+    outline: none;
+    border:none;
+    font-size: 0.3rem;
+    color: #000;
+    text-align: right;
+}
+.cycle .seat{
+    height: 0.2rem;
+}
+.cycle .seat2{
+    clear: both;
+    height: 0.6rem;
+}
+.seat3{
+    border-bottom: 0.2rem solid #eee;
+}
+.cycle .lastP{
+    width: 100%;
+    margin-top: 5px;
+    height: 0.8rem;
+}
+.cycle .a1{
+    color: #5B95BA;
+    font-size: 0.28rem;
+}
+.cycle .span3{
+    float: right;
+    font-size: 0.28rem;
+}
+.seat4{
+    border-bottom: 0.1rem solid #eee;
+}
+strong{
+    color: #CC2F40;
+}
+.btnSeat{
+    height: 1rem;
+}
+#btn{
+    display: block;
+    text-align: center;
+    width: 100%;
+    height: 1rem;
+    line-height: 1rem;
+    font-size: 0.4rem;
+    color: #ffffff;
+    background: #CC2F40;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+#dreamBtn{
+    display: block;
+    text-align: center;
+    width: 100%;
+    height: 1rem;
+    line-height: 1rem;
+    font-size: 0.4rem;
+    color: #ffffff;
+    background: #CC2F40;
+   border-radius: 0.5rem;
+}
+#backDTT{
+    display: inline-block;
+    text-align: center;
+    width:6.7rem;
+    height: 1rem;
+    line-height: 1rem;
+    font-size: 0.4rem;
+    color: #ffffff;
+    background: #CC2F40;
+    border-radius: 0.5rem;
+}
+#pop { position:fixed; top:0; left:0; width:100%; height:100%; }
+.shadow { position:absolute; top:0; left:0; width:100%; height:100%; background:#000; opacity:0.6; }
+.box { position:absolute; left:50%; top:5%; margin-left:-3.3rem; width:6.6rem; background:#fff;border-radius: 2%;overflow: hidden; }
+.box .begin{
+    width: 100%;
+    display: block;
+
+}
+.box .createName{
+    padding-top: 0.4rem;
+    height: 1rem;
+    text-align: center;
+}
+.box .createName h5{
+    font-size: 0.3rem;
+}
+.box .createName p{
+    font-size:0.24rem;
+    color: #999999;
+}
+
+.box .smallBox{
+
+    padding: 0 0.2rem;
+
+}
+.box .smallBox .user{
+    text-align: center;
+    height: 0.6rem;
+    line-height: 0.6rem;
+}
+.box .userName{
+    height: 0.6rem;
+    outline: none;
+    border: 0;
+    width: 60%;
+    font-size: 0.4rem;
+    margin: 0 auto;
+    text-align: center;
+    display: block;
+    color: #CC2F40;
+}
+
+.smallBox ul{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+.smallBox ul li{
+    float: left;
+    border: 1px solid #999;
+    border-radius: 2px;
+    font-size: 0.24rem;
+    height: 0.6rem;
+    line-height: 0.6rem;
+    text-align: center;
+    padding: 0 0.18rem;
+    margin-right: 0.2rem;
+    margin-top: 0.2rem;
+    color:#999;
+}
+
+.smallBox ul ol{
+    clear: both;
+}
+.lastDiv{
+    height: 2rem;
+    width: 100%;
+    float: left;
+    text-align: center;
+}
+#nextTohide{
+    display: inline-block;
+    text-align: center;
+    width: 5rem;
+    height: 1rem;
+    line-height: 1rem;
+    font-size: 0.4rem;
+    color: #ffffff;
+    background: #CC2F40;
+    border-radius: 0.5rem;
+	margin-top: 0.3rem;
+}
+#floatBg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    background: rgba(0,0,0,0.7);
+    display: none;
+}
+.option,.option1,.option2 {
+    width: 100%;
+    margin: 0 auto;
+    position: fixed;
+    z-index: 3;
+    overflow: hidden;
+    display: none;
+    bottom: 0;
+    left: 0;
+    background: #fff;
+    text-align: center;
+}
+
+.option .decision,.option1 .decision,.option2 .decision{
+    height: 0.7rem;
+    line-height: 0.7rem;
+    background: #CB4141;
+    font-size: 0.3rem;
+    color: #fff;
+    padding: 0 0.6rem;
+}
+.option .decision .cancel,.option1 .decision .cancel,.option2 .decision .cancel{
+    float: left;
+}
+.option .decision .determine,.option1 .decision .determine,.option2 .decision .determine{
+    float: right;
+}
+.option .describe,.option1 .describe,.option2 .describe{
+    background: #F2F2F2;
+    height: 0.7rem;
+    line-height: 0.7rem;
+    font-size: 0.28rem;
+    color: #999999;
+}
+.option ul,.option1 ul,.option2 ul{
+    height:2.5rem;
+    padding: 0.42rem 0.48rem;
+}
+.option ul li,.option1 ul li,.option2 ul li{
+    height: 0.58rem;
+    width: 0.54rem;
+    line-height: 0.58rem;
+    text-align: center;
+    font-size: 0.3rem;
+    float: left;
+    margin:0 0.19rem;
+    border-radius: 5px;
+}
+.option1 ul li,.option2 ul li{
+    width: 0.86rem;
+    height: 0.58rem;
+    line-height: 0.58rem;
+    font-size: 0.26rem;
+
+}
+.option ul li.on,.option1 ul li.on,.option2 ul li.on{
+    color: #fff;
+    background:#CB4141 ;
+}
+.cycle .active{
+    border: 1px solid #CC2F40;
+    color: #CC2F40;
+}
+.smileBody{
+    text-align:center;
+    background: #fff;
+}
+.topSmile{
+    height: 5rem;
+    line-height: 5rem;
+    padding-top: 0.4rem;
+}
+.topSmile img{
+    width: 4rem;
+}
+.slogan p{
+    font-size: 0.4rem;
+    color: #EE924F;
+    font-weight: 400;
+    height: 0.6rem;
+    line-height: 0.6rem;
+}
+.prompt{
+    height: 2.2rem;
+    padding-top: 1.2rem;
+}
+.prompt p{
+    font-size: 0.26rem;
+    margin-bottom: 0.3rem;
+}
+.prompt .p1{
+    font-size: 0.32rem;
+}
+
+.cross{
+    height: 1.24rem;
+    border-radius: 5px;
+    border:2px dashed #ccc;
+    background: #E7E7E7;
+    position: relative;
+}
+.cross img{
+    width: 0.5rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -0.25rem;
+    margin-left:-0.25rem;
+}
+.thanBody{
+    background: #eee;
+}
+.firstBox,.secondBox{
+
+    background: #fff;
+    padding:0 0.34rem;
+}
+.oneTypeDiv,.twoTypeDiv{
+    font-size: 0.24rem;
+    background: #fff;
+    height: 0.92rem;
+    line-height: 0.92rem;
+    color: #999;
+    border-bottom: 1px solid #ccc;
+}
+.twoTypeDiv{
+    padding: 0 0.34rem;
+    border-bottom-width: 2px;
+}
+.rightSpan{
+    float: right;
+}
+.fontSizeOne{
+    font-size:  0.32rem;
+}
+.fontSizeTwo{
+    font-size:  0.4rem;
+}
+.finalDirection{
+    text-align: center;
+}
+.finalDirection span{
+    display:inline-block;
+    width: 3.24rem;
+    text-align: center;
+    height: 1rem;
+    line-height: 1rem;
+    font-size: 0.4rem;
+    color: #ffffff;
+    background: #CC2F40;
+    border-radius: 0.2rem;
+}
+#popp{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+#popp .shadow{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.3;
+}
+#popp .box1{
+    width:70%;
+    background-color: white;
+    position: fixed;
+    left: 15%;
+    top: 20%;
+    border-radius: 10px;
+    border: 1px solid #ff8d00;
+    padding-bottom: 20px;
+}
+#popp .box1 img{
+    width: 30%;
+    margin-left: 35%;
+    margin-top: 10px;
+}
+#popp .box1 p{
+    text-align: center;
+}
+#popp .box1 .queren{
+    font-size: 14px;
+    margin-top: 10px;
+}
+#popp .box1 .alert_btn{
+    width: 95px;
+    height: 30px;
+    border: 1px solid #bb332f;
+    border-radius: 5px;
+    font-size: 12px;
+    color: #bb332f;
+    margin-top: 22.5px;
+    text-align: center;
+    line-height: 30px;
+    display: inline-block;
+}
+#fullWH{
+    display:none;
+    position: fixed;
+    left: 0;
+    top:0;
+    width:100%;
+    height: 100%;
+    background: #fff;
+}
+#floatBg {
+    display:none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    background: rgba(0,0,0,0.7);
+
+}
+.option4 {
+    display:none;
+    width: 100%;
+    margin: 0 auto;
+    position: fixed;
+    z-index: 3;
+    overflow: hidden;
+    bottom: 0;
+    left: 0;
+    background: #fff;
+    text-align: center;
+}
+.option4 p {
+    border-bottom: 1px solid #b8b8b8;
+    height: 0.7rem;
+    line-height:0.7rem;
+    background: #CB4141;
+    color: #fff;
+    font-size: 0.3rem;
+}
+.option_btns {
+    max-height: 260px;
+    overflow: auto;
+}
+.option4 .option_curr {
+    background: #fff;
+    color: #bb322e;
+}
+.option4 a {
+    display: block;
+    height: 45px;
+    line-height: 45px;
+    text-align:center;
+    border-bottom: 1px solid #b8b8b8;
+    background: #F2F2F2;
+    font-size: 13px;
+
+}
+.option4 a span {
+    margin-left: 20px;
+}
+.boxInput .noClick{
+    background: #ccc;
+}
+.frontFee{
+    font-size: 0.24rem;
+   color: #999;
+    position: absolute;
+    top:0;
+    right: 0;
+}
+#planBtn{
+    margin-top: 0.5rem;
+}
+#planBtn span{
+    border-radius: 0.6rem;
+    height: 0.8rem;
+    line-height: 0.8rem;
+    font-size: 0.3rem;
+}
+
+	</style>
     <script src="js/jquery-1.8.2.min.js"></script>
     <script>
         window.onload=function(){
