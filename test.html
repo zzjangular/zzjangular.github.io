@@ -26,6 +26,9 @@ border-radius:20px; font-size:1rem; color:white; position:absolute; left:50%; ma
 #money{  width:100%;text-align:center; font-size:1.8rem; color:#EC3F38; font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif; font-weight:bold; position:absolute; top:33%; z-index:16;}
 </style>
 <script>
+	
+	
+	
 	window.onload=function(){
 		document.documentElement.style.fontSize=document.documentElement.clientWidth/16+'px';
 	
@@ -84,6 +87,9 @@ border-radius:20px; font-size:1rem; color:white; position:absolute; left:50%; ma
 	var oPop=document.getElementById('pop');
 	var oShadow=document.getElementsByClassName('shadow')[0];
 	var aBtnActive=document.getElementsByClassName('btnActive')[0];
+	var oMoney=document.getElementById('money');
+	var money=Math.floor(Math.random()*1000*10);
+	oMoney.innerHTML=money+'元';
 	aBtnActive.onclick=function(){
 		oPop.style.display='block';
 		return false;
