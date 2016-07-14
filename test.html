@@ -1,17 +1,13 @@
 <!DOCTYPE html>
-<html><head lang="en">
+<html>
+<head lang="en">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <title>定投通</title>
-    <!--<link rel="stylesheet" type="text/css" href="chinaamcfund_wgw/css/global.css">
-    <link rel="stylesheet" type="text/css" href="chinaamcfund_wgw/css/layout.css">
-    <link rel="stylesheet" type="text/css" href="chinaamcfund_wgw/css/hxjjcp.css">
-   
--->   
-	<style>
-		*{
+    <title>定投通确认</title>
+    <style>
+    	*{
     margin: 0;
     padding: 0;
     list-style: none;
@@ -885,657 +881,138 @@ strong{
     font-size: 0.3rem;
 }
 
-	</style>
+    </style>
     <script src="js/jquery-1.8.2.min.js"></script>
     <script>
         window.onload=function(){
             document.documentElement.style.fontSize=50*document.documentElement.clientWidth/375+'px';
-           
+			
+																							//here
+			var strJson={};
+			var query = window.location.search;
+			var str=query.substring(1);
+			
+			var strArr=str.split('&')
+			for(var i=0;i<strArr.length;i++)
+			{
+				var smallStrArr=strArr[i].split('=');
+			
+				var mostSmallArr=smallStrArr[1].split('%');
+				mostSmallArr.pop();
+				
+				var letter='';
+				for(var j=0;j<mostSmallArr.length;j++)
+				{
+					
+					letter+=String.fromCharCode(mostSmallArr[j])
+				}
+				
+				strJson[smallStrArr[0]]=letter;
+			}
+			var z=document.getElementsByClassName('wealthTitle')[0];
+			var a=document.getElementById('a');
+			var b=document.getElementById('b');
+			var c=document.getElementById('c');
+			var d=document.getElementById('d');
+			z.innerHTML=strJson.z;
+			a.innerHTML=strJson.a;
+			b.innerHTML=strJson.b;
+			c.innerHTML=strJson.c;
+			d.innerHTML=strJson.d;
+			
+			
         };
     </script>
-    <script>
-    	/*** Created by zzj on 2016/6/23.*/
-
-$(document).ready(function(){
-    var planStr=null;
-    var foundMoneyNow;
-    var foundDateNow;
-    //月选中日期数组
-    var monthDateChosed=[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false];
-    var monthDay=[];
-    //周选中日期数组
-    var weekDateChosed=[false,false,false,false,false];
-    var weekDay=[];
-    //失去焦点
-    var mouseBlur=null;
-
-    //快捷日期，初始化，每月一号
-    var momentDate=0;
-
-
-    var planNamePlaceholder=$('.userName').attr('placeholder');
-
-    //�?始扣�?
-    $('.toptitle').click(function(){
-        $('#pop').css('display','block');
-    });
-
-    $('.smallBox ul li').click(function(){
-        $(this).css({
-            borderColor:'#CC2F40',
-            color:'#CC2F40'
-        });
-        setTimeout(function(){
-            $('.smallBox ul li').css({
-                borderColor:'#999',
-                color:'#999'
-            });
-        },150)
-    });
-
-    $('.shadow').click(function(){
-        $('#pop').css('display','none');
-    });
-
-
-    $('#nextTohide').click(function(){
-        var planNameValue=$('.userName').attr('value');
-        planNameValue=planNameValue.replace(/^\s+|\s+$/g,'');
-        if(!!planNameValue)
-        {
-            $('.toptitle .p1').html(planNameValue);
-        }
-        else
-        {
-            if(!!planStr)
-            {
-                $('.toptitle .p1').html(planStr);
-            }
-            else
-            {
-                $('.toptitle .p1').html(planNamePlaceholder);
-            }
-
-        }
-        $('#pop').css('display','none');
-
-    });
-    //月
-
-    $(".select_box").click(function(event){
-        if($(this).hasClass('noClick'))
-        {
-            return false;
-        }
-        //$('.cycle .foundDate').removeClass('active');
-        $('.option').show();
-        $("#floatBg").show();
-        if(momentDate>=0)
-        {
-            $('.option li').eq(momentDate).addClass('on');
-            monthDateChosed[momentDate]=true;
-        }
-    });
-    //周
-    $(".select_box1").click(function(event){
-        momentDate=-1
-        if($(this).hasClass('noClick'))
-        {
-            return false;
-        }
-        //$('.cycle .foundDate').removeClass('active');
-        $('.option1').show();
-        $("#floatBg").show();
-    });
-
-    $("#floatBg").click(function(event){
-        $('.option').hide();
-        $('.option1').hide();
-        $('.option2').hide();
-        $("#floatBg").hide();
-    });
-    //月取消
-    $(".option .cancel").click(function(event){
-        $('.option li').removeClass('on');
-        for(var i=0;i<monthDay.length;i++){
-            $('.option li').eq(monthDay[i]-1).addClass('on');
-        }
-        $('.option').hide();
-        $("#floatBg").hide();
-    });
-    //周取消
-    $(".option1 .cancel").click(function(event){
-        $('.option1 li').removeClass('on');
-        for(var i=0;i<weekDay.length;i++){
-            $('.option1 li').eq(weekDay[i]-1).addClass('on');
-        }
-        $('.option1').hide();
-        $("#floatBg").hide();
-    });
-
-    //月确定
-    $('.option .determine').click(function(){
-        weekDateChosed=[false,false,false,false,false];
-        weekDay=[];
-        monthDay=[];
-
-
-        var count=0;
-        for(var i=0;i<monthDateChosed.length;i++){
-            if(monthDateChosed[i]==true){
-                count++;
-                monthDay.push(i+1);
-            }
-        }
-        if(count==0){
-            alert("请选择至少一个日期！");
-            return;
-        }
-
-        if(count == 1)
-        {
-            $('.selectMonth').html('每月'+monthDay[0]+'日');
-            $('#everyDay').html('每月'+monthDay[0]+'日');
-        }
-        else if(count >= 2)
-        {
-            $('.selectMonth').html('每月'+monthDay[0]+','+monthDay[1]+'...');
-            $('#everyDay').html('每月'+monthDay[0]+','+monthDay[1]+'...');
-        }
-
-        $('.cycle .foundDate').removeClass('active');
-        $('.selectWeek').html('每周').removeClass('active');
-        $('.option1 li').removeClass('on');
-        $('.selectMonth').addClass('active');
-        $('.option').hide();
-        $("#floatBg").hide();
-    });
-
-    //周确定
-    $('.option1 .determine').click(function(){
-        monthDateChosed=[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false];
-        monthDay=[];
-        weekDay=[];
-
-
-
-        var count=0;
-        for(var i=0;i<weekDateChosed.length;i++){
-            if(weekDateChosed[i]==true){
-                count++;
-                weekDay.push(i+1);
-            }
-        }
-        if(count==0){
-            alert("请选择至少一个日期！");
-            return;
-        }
-
-
-        if(count == 1)
-        {
-            $('.selectWeek').html('每'+weekDay[0]);
-            $('#everyDay').html('每'+weekDay[0]);
-        }
-        else if(count >= 2)
-        {
-            $('.selectWeek').html('每'+weekDay[0]+','+weekDay[1]+'...');
-            $('#everyDay').html('每'+weekDay[0]+','+weekDay[1]+'...');
-        }
-
-        $('.cycle .foundDate').removeClass('active');
-        $('.selectMonth').html('每月').removeClass('active');
-        $('.option li').removeClass('on');
-        $('.selectWeek').addClass('active');
-        $('.option1').hide();
-        $("#floatBg").hide();
-    });
-
-    //月点击
-    $('.option li').click(function(){
-        if($(this).attr('class')==undefined || $(this).attr('class')=='')
-        {
-            monthDateChosed[$(this).index()]=true;
-        }
-        else
-        {
-            monthDateChosed[$(this).index()]=false;
-        }
-        //*****************************************************************************??
-        $(this).toggleClass('on');
-
-    });
-
-    //周点击
-
-    $('.option1 li').click(function(){
-        if($(this).attr('class')==undefined || $(this).attr('class')=='')
-        {
-            weekDateChosed[$(this).index()]=true;
-        }
-        else
-        {
-            weekDateChosed[$(this).index()]=false;
-        }
-
-        //*****************************************************************************??
-        $(this).toggleClass('on');
-    });
-
-
-    //定基金部�?
-    var nowQ=0;
-    $('.fund1').click(function(){
-        if($('.huadong img').attr('src')=='images/dingtoutong1/huadong0.png')
-        {
-
-            nowQ--;
-        }
-        $(this).css('display','block').siblings().css('display','none');
-        $(this).addClass('fund3').siblings().removeClass('fund3');
-        $('#whoBank').html($(this).children(1).html());
-        $('.middleContent').css('height','2rem');
-        $('.huadong').children().eq(0).attr('src','images/dingtoutong1/huadong0.png');
-        nowQ++;
-
-    });
-    //定基金的下拉效果
-    $('.middleContent').css('height','2rem');
-
-    $('.huadong').click(function(){
-        nowQ++;
-        if(nowQ%2==1)
-        {
-            $('.fund1').siblings().css('display','block');
-            $('.middleContent').css('height','');
-            $(this).children().eq(0).attr('src','images/dingtoutong1/huadong.png')
-        }
-        else
-        {
-            $('.middleContent').css('height','2rem');
-            $(this).children().eq(0).attr('src','images/dingtoutong1/huadong0.png')
-        }
-    });
-
-    //定金�? �? 定周�? 的�?�择部分
-
-    $('.cycle .money').click(function(){
-
-        $(this).addClass('active').siblings().removeClass('active');
-        $('.boxInput3 input').val('');
-        // foundMoneyNow 快捷钱数目
-       foundMoneyNow=parseFloat($(this).html());
-
-
-        $('#everMoney').html('每期'+foundMoneyNow+'元');
-    });
-
-    $('.cycle .foundDate').click(function(){
-        //月选中日期数组
-        monthDateChosed=[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false];
-        monthDay=[];
-        //周选中日期数组
-        weekDateChosed=[false,false,false,false,false];
-        weekDay=[];
-        $(this).addClass('active').siblings().removeClass('active');
-
-        momentDate=parseInt($(this).html().substring(2))-1;
-
-        foundDateNow=$(this).html();
-        $('#everyDay').html(foundDateNow);
-        $('.selectWeek').html('每周').removeClass('active');
-        $('.option1 li').removeClass('on');
-
-        $('.selectMonth').html('每月').removeClass('active');
-        $('.option li').removeClass('on');
-    });
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    //为定投计划取个名�?
-
-
-// 我的定投计划
-    $('.smallBox ul li').click(function(){
-        var str=$(this).html();
-        $('.user input').val(str);
-        planStr=str;
-    });
-
-    //  定金额的自定义输入金额功�?
-
-    var reg=/\d+/;
-    // foundMoneyNow 快捷钱数目
-    $('.boxInput3 input').focus(function(){
-        $('.cycle .money').siblings().removeClass('active');
-
-            if(!foundMoneyNow)
-            {
-                foundMoneyNow=parseFloat($('.cycle .money').html());
-
-            }
-
-            $('.boxInput3').css('borderBottomColor','#CC2F40');
-            if(parseInt(mouseBlur)>0)
-            {
-                $(this).val(mouseBlur);
-            }
-            else
-            {
-                $(this).val('');
-                $('#everMoney').html('每期元');
-            }
-
-
-
-    }).blur(function(){
-
-        var foundInputMoney=$(this).val();
-        if(foundInputMoney=='')
-        {
-            mouseBlur=null;
-            foundInputMoney= parseInt($('.cycle .money').eq(0).text());
-            $('.cycle .money').eq(0).addClass('active');
-			$('#everMoney').html('每期100元');                                                              //here
-        }
-        else
-        {
-            mouseBlur=foundInputMoney;
-            foundMoneyNow=foundInputMoney;
-
-        }
-    }).bind('input', function() {
-        foundInputMoney=$(this).val();
-        if(foundInputMoney.length>=10)
-        {
-            foundInputMoney=foundInputMoney.slice(0,10);
-            $(this).val(foundInputMoney)
-        }
-        $('#everMoney').html('每期'+foundInputMoney+'元');
-    });
-
-
-
-    // foundMoneyNow 快捷钱数目
-    //官网下拉
-    $(".boxInput2").click(function(event){
-        $('.option4').show();
-        $("#floatBg").show();
-    });
-    $("#floatBg").click(function(event){
-        $('.option4').hide();
-        $("#floatBg").hide();
-    });
-    /*赋值给文本框*/
-    $(".option4 a").click(function(){
-        var value1=$(this).text();
-        $('.boxInput2 .p1').text(value1);
-        $('#everyBank').html(value1);
-       // $('.boxInput2 .p2').text('');
-        $('.option4').hide();
-        $("#floatBg").hide();
-
-
-        $(this).siblings().removeClass("option_curr");
-        $(this).addClass("option_curr");
-
-        /* var trustChannelType = $(".option_curr input:eq(3)").val();
-         if(trustChannelType == "1"){
-         $("#hqt_available").show();
-         $("#trustChannelAvailable").html($(".option_curr input:eq(5)").val());
-         }else{
-         $("#hqt_available").hide();
-         }
-         try{
-         if(checkAmount&&typeof(checkAmount)=="function"){
-         checkAmount();
-         }
-         }catch(e){
-
-         }*/
-    });
-
-
-
-
-});
-
-    </script>
-
 </head>
-<body class="huoqitong1Body">
-    <div class="toptitle">
-        <p class="p1">我的财富之路</p>
-        <p class="p2">根据基金定投排名和您的投资习惯，向您推荐华夏旗下绩优基金</p>
+<body class="cunRuBody">
+    <div class="topTimePrompt">
+        <p class="wealthTitle">我的财富之路</p>
+        <div class="schedule">
+            <div class="twoAllDiv">
+            	<p class="seatO"></p>
+                <div class="div1">
+                    <img src="images/cunruhuoqitong/circle01.png">
+                    <p class="p1">2016-01-28</p>
+                    <p class="p2">定投通发起日</p>
+                </div>
+                <div>
+                    <img src="images/cunruhuoqitong/circle02.png">
+                    <p class="p1">2016-04-26</p>
+                    <p class="p2">下次扣款日期</p>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="middleContent">
         <div>
-            <img src="images/dingtoutong1/circle03.png"/>
-            <p><span class="span1">定基金</span><span class="span2" id="whoBank">华夏收益债券(QDII)A</span></p>
+            <img src="images/global/circle03.png"/>
+            <p><span class="span1">定基金</span><span class="span2" id="a">华夏收益债券(QDII)A</span></p>
         </div>
-        <div id="forHide">
-            <div class="fund1 fund3">
-                <p class="p1">华夏收益债券（QDII）A</p>
-                <p class="p2">“你定，我投”定投排行版人气王</p>
-            </div>
-            <div class="fund1">
-                <p class="p1">华夏收益债券（QDII）B</p>
-                <p class="p2">“你定，我投”定投排行版人气王</p>
-            </div>
-            <div class="fund1">
-                <p class="p1">华夏收益债券（QDII）C</p>
-                <p class="p2">“你定，我投”定投排行版人气王</p>
-            </div>
-
-        </div>
-    </div>
-    <div id="forHide1">
-        <div class="huadong">
-            <img src="images/dingtoutong1/huadong0.png" class="pullDown">
-        </div>
-    </div>
-
-    <p class="huadongBottom"></p>
-    <div class="cycle">
         <div>
-            <img src="images/dingtoutong1/circle05.png"/>
-            <p><span class="span1">定金额</span><span class="span2" id="everMoney">每期1000元</span></p>
-            <ol class="seat"></ol>
-            <a href="javascript:;" class="money active">100元</a>
-            <a href="javascript:;" class="money">300元</a>
-            <a href="javascript:;" class="money">500元</a>
-            <ol class="seat"></ol>
-            <div class="boxInput3">
-                <span class="myMoney">自定义金额(元)</span>
-                <input type="number" placeholder="请在此输入自定义金额" max="10"/>
-            </div>
-            <ol class="seat2"></ol>
+            <img src="images/cunruhuoqitong/pic.png"/>
+            <span class="frontFee">
+                (前收费)
+            </span>
         </div>
-    </div>
-    <div class="seat3"></div>
-    <div class="cycle">
         <div>
-            <img src="images/dingtoutong1/circle04.png"/>
-            <p><span class="span1">定周期</span><span class="span2"  id="everyDay">每月1号</span></p>
-            <ol class="seat"></ol>
-            <a href="javascript:;" class="foundDate active">每月1号</a>
-            <a href="javascript:;" class="foundDate">每月15号</a>
-            <a href="javascript:;" class="foundDate">每月28号</a>
-            <ol class="seat5"></ol>
-
-            <p class="ownSelect">自选：</p>
-            <div class="boxInput">
-                <span class="selectWeek select_box1">每周</span>
-
-                <span class="selectMonth select_box">每月</span>
-            </div>                                  <!--这里等待修改-->
-            <ol class="seat2"></ol>
+            <img src="images/global/circle05.png"/>
+            <p><span class="span1">定金额</span><span class="span2" id="b">1000元</span></p>
         </div>
-    </div>
-    <div class="seat3"></div>
-
-    <div class="cycle">
         <div>
-            <img src="images/dingtoutong1/circle06.png"/>
-            <p><span class="span1">定账户</span><span class="span2" id="everyBank">活期通-建设银行[3425]</span></p>
-            <ol class="seat"></ol>
-            <div class="boxInput2">
-                <p class="p1">活期通-建设银行</p>
-                <p class="p2">余额（元）：3424.23</p>
-                <a href="javascript:;"><img src="images/dingtoutong1/icon2.png"/></a>
-            </div>
+            <img src="images/cunruhuoqitong/pic.png"/>
         </div>
-        <p class="lastP"><a href="javascript:;" class="a1">存入活期通</a><span class="span3">活期通余额支付<strong>1折起</strong></span></p>
+        <div>
+            <img src="images/global/circle04.png"/>
+            <p><span class="span1">定周期</span><span class="span2" id="c">每月15号</span></p>
+        </div>
+        <div>
+            <img src="images/cunruhuoqitong/pic.png"/>
+        </div>
+        <div>
+            <img src="images/global/circle06.png"/>
+            <p><span class="span1">定账户</span><span class="span2" id="d">活期通-建设银行[8888]</span></p>
+        </div>
+        <p class="agreement"><label><img src="images/cunruhuoqitong/yes.png" alt=""/>我已经阅读并接受<span>《定期定额申购协议》</span></label></p>
     </div>
-    <div class="seat4"></div>
-    <p class="btnSeat"></p>
-    
-    																					<!--here-->
-    
-    
-    <a href="javascript:;" id="btn">下一步</a>
-
-    <div id="pop">
+    <div class="bottomButton">
+        <a href="javascript:;" id="dreamBtn">确定</a>
+        <!--<img src="images/cunruhuoqitong/buttom.png"/>-->
+    </div>
+    <div id="popp">
         <div class="shadow"></div>
-        <div class="box">
-           <img src="images/dingtoutong1/kaishikoukuan.png" class="begin">
-            <div class="createName">
-                <h5>我的定投梦想</h5>
-                <p>(20个字以内)</p>
-            </div>
-            <div class="smallBox">
-                <p class="user">
-                     <input type="text" class="userName"  value="我的定投" maxlength="20">
-                </p>
-                <hr/>
-                <ul>
-                    <li>送孩子上剑桥</li>
-                    <li>给媳妇买个貂</li>
-                    <li>一起去巴黎</li>
-                    <li>我想买辆车</li>
-                    <li>不拼颜值拼实力</li>
-                    <li>比老王有钱</li>
-                </ul>
-            </div>
-            <div class="lastDiv">
-                <a href="javascript:;" id="nextTohide">下一步</a>                                              
+        <div class="box1">
+            <img src="images/global/wrong2 .png">
+            <p class="queren">请先阅读并同意协议</p>
+            <p>
 
-            </div>
+                <a class="alert_btn" href="javascript:void(0);" id="sure">确定</a>
+            </p>
         </div>
     </div>
-    <div id="floatBg"></div>
-    <div class="option">
-       <p class="decision"><span class="cancel">取消</span><span class="determine">确定</span></p>
-        <p class="describe">每月扣款日期可多选，最多选28天</p>
-        <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
-            <li>6</li>
-            <li>7</li>
-            <li>8</li>
-            <li>9</li>
-            <li>10</li>
-            <li>11</li>
-            <li>12</li>
-            <li>13</li>
-            <li>14</li>
-            <li>15</li>
-            <li>16</li>
-            <li>17</li>
-            <li>18</li>
-            <li>19</li>
-            <li>20</li>
-            <li>21</li>
-            <li>22</li>
-            <li>23</li>
-            <li>24</li>
-            <li>25</li>
-            <li>26</li>
-            <li>27</li>
-            <li>28</li>
-        </ul>
-    </div>
-    <div class="option1">
-        <p class="decision"><span class="cancel">取消</span><span class="determine">确定</span></p>
-        <p class="describe">每周扣款日期可多选，最多选4天</p>
-        <ul>
-            <li class="">周一</li>
-            <li>周二</li>
-            <li>周三</li>
-            <li>周四</li>
-            <li>周五</li>
-        </ul>
-    </div>
-    <div class="option2">
-        <p class="decision"><span class="cancel">取消</span><span class="determine">确定</span></p>
-        <p class="describe">双周扣款日期可多选，最多选4天</p>
-        <ul>
-            <li class="">周一</li>
-            <li>周二</li>
-            <li>周三</li>
-            <li>周四</li>
-            <li>周五</li>
-        </ul>
-    </div>
-    <div id="fullWH">
-    </div>
-    <div class="option4">
-        <P>选择银行</P>
-        <div class="option_btns">
-            <a class="option_curr">活期通- 农行银行[3523]
-                <input type="hidden" value="5" />
-                <input type="hidden" value="5.5" />
-            </a>
-            <a> 活期通-中国银行[3245]
-                <input type="hidden" value="5" />
-                <input type="hidden" value="5.5" />
-            </a>
-
-        </div>
-    </div>
-
 </body>
 </html>
 <script>
-    $('.fund2').click(function(){
-
-        $('#fullWH').css('display','block');
+    var disable=false;
+    $('.agreement').toggle(function(){
+        $(this).find('img').attr('src','images/cunruhuoqitong/no.png')
+        disable=true;
+    },function(){
+        $(this).find('img').attr('src','images/cunruhuoqitong/yes.png')
+        disable=false;
     });
-	
-	                                                                                //here
- 
-  var oBtnNext=document.getElementById('btn');
+    $('#dreamBtn').click(function(){
+        if(disable)
+        {
+            $('#popp').css('display','block');
+            return;
+        }
 
- 
-  oBtnNext.onclick=function(){
-	  var topTitle=$('.p1').html();
-	  var z=charCode(topTitle);
-	  var dingjijin=$('#whoBank').html();
-	  var a=charCode(dingjijin);
-	  var dingjine=$('#everMoney').html();
-	  var b=charCode(dingjine);
-	  var dingzhouqi=$('#everyDay').html();
-	  var c=charCode(dingzhouqi);
-	  var dingzhanghu=$('#everyBank').html();
-	  var d=charCode(dingzhanghu);
-	  window.location.href='cunruhuoqitong.html?a='+a+'&b='+b+'&c='+c+'&d='+d+'&z='+z;
-  };
-	
+        window.location.href='smile.html';
+    });
 
 
-	function charCode(str)
-	{
-		var str2='';
-		for( var i=0;i<str.length;i++)
-		{
-			code=str.charCodeAt(i);
-			code+='%';
-			str2+=code;
-		}
-		return str2;
-	}
+    $('#sure').click(function(){
+        $('#popp').css('display','none');
+    });
+
 </script>
-
-
-
