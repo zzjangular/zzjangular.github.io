@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>无标题文档</title>
+<title>服务指示</title>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -13,18 +13,19 @@
 		font-family:Verdana, Geneva, sans-serif;
 		height:100%;
 	}
-	body{ padding:0 0.75rem; position:absolute; width: calc(100% - 1.5rem)}
-	.topWhite{ height:2rem;}
+	body{ padding:0 0.75rem; width: calc(100% - 1.5rem); height:100%; position:relative;}
+	.topWhite{ height:1rem;}
 	.title{ font-size:0.7rem; font-weight:bold; text-align:center;}
 	.seat{ height:0.85rem; border-bottom:1px solid #ccc; color:#333;}
 	.seat1{ height:0.5rem;}
-	.start{ font-size:0.65rem; height:1.25rem; line-height:1.25rem; color:#666;}
-	div{ font-size:0.65rem;color:#666; line-height:1.15rem;}
-	div span{ color:#ce1f1a;}
+	.start{ font-size:0.65rem; height:1.25rem; line-height:1.25rem; color:#444;}
+	.div1{ font-size:0.65rem;color:#666; line-height:1.15rem; text-indent:2em;}
+	.div1 span{ color:#ce1f1a;}
 	.Underline{ text-decoration:underline;}
 	.bottomSeat{height:1.6rem;}
-	.Concluding{ font-size:0.6rem;color:#666; line-height:1.15rem; text-align:right;}
-	img{ width:10rem; position:absolute; left:50%; bottom:0.25rem; margin-left:-5rem;}
+	.Concluding{ font-size:0.6rem;color:#444; line-height:1.15rem; text-align:right;}
+	.img1{ width:10rem; position:absolute; left:50%; bottom:1rem; margin-left:-5rem;}
+	.img2{ width:10rem; display:block; margin:1.2rem auto 1rem;}
     </style>
     <script>
 		(function(win,doc){
@@ -34,36 +35,49 @@
 		
 			doc.addEventListener('DOMContentLoaded',change,false);
 			win.addEventListener('resize',change,false);
+			window.onload=function(){
+				var oWrapH=document.getElementById('wrap').offsetHeight;	
+				var clientH=document.documentElement.clientHeight;
+				var oBody=document.getElementsByTagName('body')[0];
+				var oHtml=document.getElementsByTagName('html')[0];
+				var oImg=document.getElementsByTagName('img')[0];
+				if(oWrapH<=( clientH-100))
+				{
+					oImg.className='img1';
+				}
+				else
+				{
+					oImg.className='img2';
+				}
+			};
+
+			
 		})(window,document);
 
     </script>
 </head>
 
 <body>
-	<p class="topWhite"></p>
-    <p class="title">关于暂停浦发银行部分电子交易的服务指示</p>
-    <p class="seat"></p>
-    <p class="seat1"></p>
-    <p class="start">尊敬的客户:</p>
-    <p class="start">您好!</p>
-  
-    <div>
-    
-    <!--这里是正文内容-->
-    水电发送发送的发送发送的说的防守打法说的的发的的是多少务。水电费是电风扇的发送到发送发送的说的防守打法说的的发的的是多少务。水电费是电风发送发送发送到发送发送的说的防守打法说的的发的的是多少务。水电费是电风扇的发送到发送发送的说的防守打法说的的发的的是多少务。水电费是电风发送发送的说的防守打法说的的发的的是多少务。水电费是电风扇的发送到发送发送的说的防守打法说的的发的的是多少务。发送的说的防守打法说的的发的
-。发送的说的防守打法说的的发的
-    的是多少务。
-    
-    
-    
+	<div id="wrap">
+        <p class="topWhite"></p>
+        <p class="title">关于暂停浦发银行部分电子交易的服务指示</p>
+        <p class="seat"></p>
+        <p class="seat1"></p>
+        <p class="start">尊敬的客户:</p>
+        <p class="start">您好!</p>
+      
+        <div class="div1">
+        
+        <!--这里是正文内容-->
+        水电发送发送的发送发送送发发送发送送发送发送到发送发送的说的防守送发送发送到发送发送的说的防守送发送发送到发送发送的说的防守送发送发送到发送发送的说法说的说的的发的的是多少务。水电费是电风扇的发送发送发送送发送发送到发送发送的说的防守送发送发送到发送发送的说的防守送发送发送到发送发送的说的防守送发送发送到发送发送的说法说的说的的发的的是多少务。水电费是电风扇的发送发送发送送发送发送到发送发送的说的防守送发送发送到发送发送的说的防守送发送发送到发送发送的说的防守送发送发送到发送发送的说法说的说的的发的的是多少务。水电费是电风扇的发送发送发送送发送发送到发送发送的说的防守送发送发送到发送发送的说的防守送发送发送到发送发送的说的防守送发送发送到发送发送的说法说的说的的发的的是多少务。水电费是电风扇的发送发送发送送发送发送到发送发送的说的防守送发送发送到发送发送的说的防守送发送发送到发送发送的说的防守送发送发送到发送发送的说法说的说的的发的的是多少务。水电费是电风扇的发送发送发送送发送发送到发送发送的说的防守送发送发送到发送发送的说的防守送发送发送到发送发送的说的防守送发送发送到发送发送的说法说的说的的发的的是多少务。水电费是电风扇的发送发送发送送发送发送到发送发送的说的防守送发送发送到发送发送的说的防守送发送发送到发送发送的说的防守送发送发送到发送发送的说法说的说的的发的的是多少务。水电费是电风扇的发送发送发送送发送发送到发送发送的说的防守送发送发送到发送发送的说的防守送发送发送到发送发送的说的防守送发送发送到发送发送的说法说的说的的发的的是多少务。水电费是电风扇的发送发送发送送发送发送到发送发送的说的防守送发送发送到发送发送的说的防守送发送发送到发送发送的说的防守送发送发送到发送发送的说法说的说的的发的的是多少务。水电费是电风扇的发送发送发送送发送发送到发送发送的说的防守送发送发送到发送发送的说的防守送发送发送到发送发送的说的防守送发送发送到发送发送的说法说的说的的发的的是多少务。水电费是电风扇的发送发送发送送发送发送到发送发送的说的防守送发送发送到发送发送的说的防守送发送发送到发送发送的说的防守送发送发送到发送发送的说法说的说的的发的的是多少务。水电费是电风扇的发送发送发送送发送发送到发送发送的说的防守送发送发送到发送发送的说的防守送发送发送到发送发送的说的防守送发送发送到发送发送的说法说的说的的发的的是多少务。水电费是电风扇的发送发送发送送发送发送到发送发送的说的防守送发送发送到发送发送的说的防守送发送发送到发送发送的说的防守送发送发送到发送发送的说法说的说的的发的的是多少务。水电费是电风扇的发送发送发送送发送发送到发送发送的说的防守送发送发送到发送发送的说的防守送发送发送到发送发送的说的防守送发送发送到发送发送的说法说的说的的发的的是多少务。水电费是电风扇的发送发送发送送发送发送到发送发送的说的防守送发送发送到发送发送的说的防守送发送发送到发送发送的说的防守送发送发送到发送发送的说法说的说的的发的的是多少务。水电费是电风扇的发送发送发送送发送发送到发送发送的说的防守送发送发送到发送发送的说的防守送发送发送到发送发送的说的防守送发送发送到发送发送的说法说的说的的发的的是多少务。水电费是电风扇的发送发送发送送发送发送到发送发送的说的防守送发送发送到发送发送的说的防守送发送发送到发送发送的说的防守送发送发送到发送发送的说法说的说的的发的的是多少务。水电费是电风扇的发送送发送到发送发送的说的防守送发送发送到发送发送的说的防守送发送发送到发送发送的说的防守送发送发送到发送发送的说法说的说的的发的的是多少务。水电费是电风扇的发送到发送发送的说的防守打法说的的发的的是多少务。发送的说的防守打法说的的发的
+    。发送的说的防守打法说的的发的
+        的是多少务。
+        </div>
+        <p class="bottomSeat"></p>
+        <p class="Concluding ">华夏基金管理有限公司</p>
+        <p class="Concluding ">2016年5月10日</p>
     </div>
-    
-    <p class="bottomSeat"></p>
-    <p class="Concluding ">华夏基金管理有限公司</p>
-    <p class="Concluding ">2016年5月10日</p>
-    <p class="bottomSeat"></p>
-    <p class="bottomSeat"></p>
-    <p class="bottomSeat"></p>
     <img src="images/SLOGAN2X.png">
 </body>
 </html>
+
