@@ -890,6 +890,15 @@ strong{
            /*** Created by zzj on 2016/6/23.*/
 
 $(document).ready(function(){
+	  $('.userName').focus(function(){
+				$('.box').css('top','-30%'); 
+			
+			})
+			$('.userName').blur(function(){
+				$('.box').css('top','5%'); 
+			
+			})
+        };
     var planStr=null;
     var foundMoneyNow;
     var foundDateNow;
