@@ -888,7 +888,11 @@ strong{
         window.onload=function(){
             document.documentElement.style.fontSize=50*document.documentElement.clientWidth/375+'px';
            $('.userName').focus(function(){
-				$('.box').css('top','-50%'); 
+			if(ua.indexOf('android')!=-1)
+			   {
+			   	alert(1)
+				   $('.box').css('top','-30%'); 
+				}
 			
 			})
 			$('.userName').blur(function(){
