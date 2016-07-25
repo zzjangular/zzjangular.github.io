@@ -891,13 +891,20 @@ strong{
            $('.userName').focus(function(){
 			   if(ua.indexOf('android')!=-1)
 			   {
-				   $('.box').css('position','absolute'); 
-				}
+			   	$('html,body').css({
+			   		'height':'100%',
+			   		'overflow':'hidden'
+			   	})
+				   
+			}
 				
 			
 			})
 			$('.userName').blur(function(){
-				$('.box').css('position','fixed'); 
+				$('html,body').css({
+			   		'height':'auto',
+			   		'overflow':''
+			   	})
 			
 			})
         };
