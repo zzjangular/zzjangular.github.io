@@ -888,18 +888,19 @@ strong{
         window.onload=function(){
 			var ua = navigator.userAgent.toLowerCase();	
             document.documentElement.style.fontSize=50*document.documentElement.clientWidth/375+'px';
-   //        $('.userName').focus(function(){
-			//    if(ua.indexOf('android')!=-1)
-			//    {
+          $('.userName').focus(function(){
+		   if(ua.indexOf('android')!=-1)
+		   {
+		   	$('.userName').css('position','static')
 			//    	$('html,body').css({
 			//    		'height':'100%',
 			//    		'overflow':'hidden'
 			//    	})
 				   
-			// }
+		}
 				
 			
-			// })
+		 })
 			// $('.userName').blur(function(){
 			// 	$('html,body').css({
 			//    		'height':'auto',
