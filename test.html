@@ -36,6 +36,8 @@
 			doc.addEventListener('DOMContentLoaded',change,false);
 			win.addEventListener('resize',change,false);
 			window.onload=function(){
+				var ua = navigator.userAgent.toLowerCase();
+				alert(ua);
 				var oWrapH=document.getElementById('wrap').offsetHeight;	
 				var clientH=document.documentElement.clientHeight;
 				var oBody=document.getElementsByTagName('body')[0];
