@@ -891,23 +891,37 @@ strong{
           $('.userName').focus(function(){
 		   if(ua.indexOf('android')!=-1)
 		   {
-		   	$('.userName').css('position','static')
-			//    	$('html,body').css({
-			//    		'height':'100%',
-			//    		'overflow':'hidden'
-			//    	})
+		   	
+		   	
+		   	$('.userName').bind('click', function(e) {
+			    var $this = $(this);
+			    e.preventDefault();
+			    setTimeout(function() {
+			      $(window).scrollTop($this.offset().top - 10);
+			    }, 200);
+			  });
+		   	
+		   	
+		   	
+		   	
+		   	
+		//    	$('.userName').css('position','static')
+		// 	//    	$('html,body').css({
+		// 	//    		'height':'100%',
+		// 	//    		'overflow':'hidden'
+		// 	//    	})
 				   
-		}
+		// }
 				
 			
-		 })
-			// $('.userName').blur(function(){
-			// 	$('html,body').css({
-			//    		'height':'auto',
-			//    		'overflow':''
-			//    	})
+		//  })
+		// 	// $('.userName').blur(function(){
+		// 	// 	$('html,body').css({
+		// 	//    		'height':'auto',
+		// 	//    		'overflow':''
+		// 	//    	})
 			
-			// })
+		// 	// })
         };
     </script>
     <script src="js/dingtoutong1.js"></script>
