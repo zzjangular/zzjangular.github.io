@@ -891,7 +891,7 @@ strong{
            $('.userName').focus(function(){
 			   if(ua.indexOf('android')!=-1)
 			   {
-				   
+			   	$('.userName').css('position','fixed');
 			   	$('.userName').bind('click', function(e) {
 				    var $this = $(this);
 				    e.preventDefault();
