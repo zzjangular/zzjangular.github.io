@@ -4,11 +4,11 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <title>定投通6</title>
+    <title>定投通</title>
     <!--<link rel="stylesheet" type="text/css" href="chinaamcfund_wgw/css/global.css">
     <link rel="stylesheet" type="text/css" href="chinaamcfund_wgw/css/layout.css">
     <link rel="stylesheet" type="text/css" href="chinaamcfund_wgw/css/hxjjcp.css">
--->   <style>
+-->    <style>
 	*{
     margin: 0;
     padding: 0;
@@ -479,7 +479,7 @@ strong{
     font-size: 0.4rem;
     color: #ffffff;
     background: #CC2F40;
-
+    position: fixed;
     bottom: 0;
     left: 0;
 }
@@ -505,7 +505,7 @@ strong{
     background: #CC2F40;
     border-radius: 0.5rem;
 }
-#pop { position:absolute; top:0; left:0; width:100%; height:100%; }
+#pop { position:fixed; top:0; left:0; width:100%; height:100%; }
 .shadow { position:absolute; top:0; left:0; width:100%; height:100%; background:#000; opacity:0.6; }
 .box { position:absolute; left:50%; top:5%; margin-left:-3.3rem; width:6.6rem; background:#fff;border-radius: 2%;overflow: hidden; }
 .box .begin{
@@ -888,40 +888,22 @@ strong{
         window.onload=function(){
 			var ua = navigator.userAgent.toLowerCase();	
             document.documentElement.style.fontSize=50*document.documentElement.clientWidth/375+'px';
-          $('.userName').focus(function(){
-		   if(ua.indexOf('android')!=-1)
-		   {
-		   	
-		   	
-		   //	$('.userName').bind('click', function(e) {
-			  //  var $this = $(this);
-			  //  e.preventDefault();
-			  //  setTimeout(function() {
-			  //    $(window).scrollTop($this.offset().top - 10);
-			  //  }, 200);
-			  //});
-		   	
-		   	
-		   	
-		   	
-		   	
-		//    	$('.userName').css('position','static')
-		// 	//    	$('html,body').css({
-		// 	//    		'height':'100%',
-		// 	//    		'overflow':'hidden'
-		// 	//    	})
+           $('.userName').focus(function(){
+			   if(ua.indexOf('android')!=-1)
+			   {
 				   
-		// }
+			   	$('.userName').bind('click', function(e) {
+				    var $this = $(this);
+				    e.preventDefault();
+				    setTimeout(function() {
+				      $(window).scrollTop($this.offset().top - 10);
+				    }, 200);
+				  });
+			   }
 				
 			
-		//  })
-		// 	// $('.userName').blur(function(){
-		// 	// 	$('html,body').css({
-		// 	//    		'height':'auto',
-		// 	//    		'overflow':''
-		// 	//    	})
+			})
 			
-		// 	// })
         };
     </script>
     <script src="js/dingtoutong1.js"></script>
