@@ -34,7 +34,7 @@ body{ background:#000; text-align:center;}
     {
       alert(1)
       var shadow=document.createElement('div');
-      var oBody=document.getElementByTagName('body')[0];
+      var oBody=document.getElementsByTagName('body')[0];
       oBody.appendChild(shadow);
       var b=window.confirm ('再给你一次机会，是不是？');
       if(b)
