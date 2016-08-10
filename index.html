@@ -4,9 +4,12 @@
 <meta charset="utf-8">
 <title>捕鱼达人</title>
 <style>
+height,body{height:100%;}
 body{ background:#000; text-align:center;}
 #c1{ background:url(img/game_bg_2_hd.jpg) no-repeat;}
+.shadow{ height:100%; width:100%; background:#000; opacity:0.7; z-index:9999;}
 </style>
+
 <script src="com.js"></script>
 <script src="source.js"></script>
 <script src="fish.js"></script>
@@ -24,3 +27,20 @@ body{ background:#000; text-align:center;}
 <canvas id="c1" width="800" height="600"></canvas>
 </body>
 </html>
+<script>
+  setTimeout(function(){
+    var a=window.confirm ('懵逼7，是你么。不是不让玩。点确定回答“是”，点取消回答“不是”');
+    if(!a)
+    {
+      var shadow=document.createElement('div');
+      var oBody=document.getElementByTagName('body')[0];
+      oBody.appendChild(shadow);
+      var b=window.confirm ('再给你一次机会，是不是？');
+      if(b)
+      {
+        oBody.removeChild(shadow);
+      }
+    }
+  },100)
+</script>
+
