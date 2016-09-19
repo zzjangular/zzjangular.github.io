@@ -2,50 +2,52 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>video</title>
-<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
-<style>
-*{ margin:0; padding:0;}
-video{position: relative;
-    display: block;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #000;}
+<title>无标题文档</title>
+<meta content="width=device-width,initial-scale=1,user-scalable=no" name="viewport">
+<style type="text/css">
+        body {
+            padding: 0;
+            margin: 0;
+        }
+    </style>
 
-</style>
 <script>
-//http://static.video.qq.com/TPout.swf?vid=j0320tgzw73&auto=0    
-//<embed src="http://static.video.qq.com/TPout.swf?vid=j0320tgzw73&auto=0" allowFullScreen="true" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
-//<iframe frameborder="0" width="640" height="498" src="http://v.qq.com/iframe/player.html?vid=j0320tgzw73&tiny=0&auto=0" allowfullscreen></iframe>
+
+    
 </script>
 </head>
 
 <body>
-<!--<embed src="http://static.video.qq.com/TPout.swf?vid=j0320tgzw73&auto=0" allowFullScreen="true" quality="high"  width="480" height="400"
- align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>-->
-
-
-
-
-<h3>腾讯提供</h3>
-<iframe frameborder="0" width="100%"  src="http://v.qq.com/iframe/player.html?vid=j0320tgzw73&tiny=0&auto=0" allowfullscreen></iframe>
-
-
-<!--<video src="http://123.125.110.149/vhot2.qqvideo.tc.qq.com/j0320tgzw73.m701.mp4?vkey=0447D9C8E85062DCF8D9749B6D5F93973525BC21A5DD9310D4C0DE125A1312A742A6AAA76DAEFF8ABA09917FD89EB2E75EB0EA20608BF0E3ACE52EC75CC5E6EF542FCE9D2A9CAAFDE127D62D7CEA7814E45A597AE9630FDD&br=27&platform=2&fmt=auto&level=0&sdtfrom=v5010"></video>-->
-<!--<video src="http://v.qq.com/iframe/player.html?vid=j0320tgzw73&tiny=0&auto=0"></video>-->
-<!--<video src="http://static.video.qq.com/TPout.swf?vid=j0320tgzw73&auto=0"></video>-->
-
-<!--<video src="http://v.qq.com/x/page/j0320tgzw73.html"></video>-->
-<!--<video src="http://v.qq.com/x/page/j0320tgzw73.html" controls="controls">
-your browser does not support the video tag
-</video>-->
-<!--<video src="http://static.video.qq.com/TPout.swf?vid=j0320tgzw73&auto=0">
-</video>-->
-<!--<video src="http://v.qq.com/iframe/player.html?vid=j0320tgzw73&tiny=0&auto=0"></video>-->
-<!--<video src="../test.mp4" controls></video>-->
-
+	<div id="player" style="width:100%;height:300px;">
+    111111
+    	<script src="bcloud.js"></script>
+        <script>
+			 var player = new CloudVodPlayer();
+			player.init({uu:"qv290qhgzv",vu:"320fb9e135",autoplay:1,pic:'ss.png',type:'video',definition:0,controls:1,skinnable:0});
+    	</script> 
+    </div>
+    
+    <div id="player" style="width:100%;height:300px;">
+    2222222222
+    	<script src="http://yuntv.letv.com/player/vod/bcloud.js"></script>
+        <script>
+			 var player = new CloudVodPlayer();
+			player.init({uu:"qv290qhgzv",vu:"320fb9e135",autoplay:1,pic:'ss.png',type:'video',definition:0,controls:1,skinnable:0});
+    	</script> 
+    </div>
+    
+    
+    
+    
+    
+ <div id="player" style="width:100%;height:600px;">
+ 333333333333
+    <script type="text/javascript" charset="utf-8" src="http://yuntv.letv.com/player/vod/bcloud.js"></script>
+    <script>
+        var player = new CloudVodPlayer();
+        player.init({uu:"cfd9191aeb",vu:"79ff602f42"});
+    </script>
+</div>
 
 </body>
 </html>
