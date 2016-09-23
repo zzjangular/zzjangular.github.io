@@ -2,52 +2,84 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>无标题文档</title>
-<meta content="width=device-width,initial-scale=1,user-scalable=no" name="viewport">
-<style type="text/css">
-        body {
-            padding: 0;
-            margin: 0;
-        }
+<title>服务指示</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <style>
+	*{ margin:0; padding:0; list-style: none; border:0;}
+	html{
+		font-size: 20px;
+		font-family:Verdana, Geneva, sans-serif;
+		height:100%;
+	}
+	body{ padding:0 0.75rem; width: calc(100% - 1.5rem); height:100%; position:relative;}
+	.topWhite{ height:1rem;}
+	.title{ font-size:0.7rem; font-weight:bold; text-align:center;}
+	.seat{ height:0.85rem; border-bottom:1px solid #ccc; color:#333;}
+	.seat1{ height:0.5rem;}
+	.start{ font-size:0.65rem; height:1.25rem; line-height:1.25rem; color:#444;}
+	.div1{ font-size:0.65rem; line-height:1.15rem; text-indent:2em; outline:none; width:100%; resize:none;}
+	.div1 span{ color:#ce1f1a;}
+	.Underline{ text-decoration:underline;}
+	.bottomSeat{height:1.6rem;}
+	.Concluding{ font-size:0.6rem;color:#444; line-height:1.15rem; text-align:right;}
+	.img1{ width:10rem; position:absolute; left:50%; bottom:1rem; margin-left:-5rem; display: block}
+	.img2{ width:10rem; display:block; margin:1.2rem auto 2rem;display: block}
     </style>
+    <script>
+		(function(win,doc){
+			function change(){
+				document.documentElement.style.fontSize=document.documentElement.clientWidth/16+'px';
+			}
+		
+			doc.addEventListener('DOMContentLoaded',change,false);
+			win.addEventListener('resize',change,false);
+			window.onload=function(){
+				var oWrapH=document.getElementById('wrap').offsetHeight;	
+				var clientH=document.documentElement.clientHeight;
+				var oBody=document.getElementsByTagName('body')[0];
+				var oHtml=document.getElementsByTagName('html')[0];
+				var oImg=document.getElementsByTagName('img')[0];
+				if(oWrapH<=( clientH-100))
+				{
+					oImg.className='img1';
+				}
+				else
+				{
+					oImg.className='img2';
+				}
+			};
 
-<script>
+			
+		})(window,document);
 
-    
-</script>
+    </script>
 </head>
 
 <body>
-	<div id="player" style="width:100%;height:300px;">
-    111111
-    	<script src="bcloud.js"></script>
-        <script>
-			 var player = new CloudVodPlayer();
-			player.init({uu:"qv290qhgzv",vu:"320fb9e135",autoplay:1,pic:'ss.png',type:'video',definition:0,controls:1,skinnable:0});
-    	</script> 
+	<div id="wrap">
+        <p class="topWhite"></p>
+        <p class="title">关于暂停浦发银行部分电子交易的服务指示</p>
+        <p class="seat"></p>
+        <p class="seat1"></p>
+        <p class="start">尊敬的客户:</p>
+        <p class="start">您好!</p>
+      
+        <div class="div1">
+        
+        <!--这里是正文内容-->
+      送送发送发送到发送发送的说的的发送发送送发发送发送送发送发送到发送发送的说的的发送发送送发发送发送送发送发送到发送发送的说的的发送发送送发发送发送送发送发送到发送发送的说的的发送发送送发发送发送送发送发送到发送发送的说的的发送发送送发发送发送送发送发送到发送发送的说的的发送发送送发发送发送送发送发送到发送发送的说的送发送发送到发送发送的说的防守送发送发送到发送发送的说的防守送发送发送到发送发送的说的防守送发送发送到发送发送的送发送发送到发送发送
+        </div>
+       
+        <textarea name="yoursuggest" class="div1" readonly>萨达大神颠神颠 师神颠倒师神颠倒倒是非大师神颠倒是非大师神颠倒是非大师神颠倒是非大师倒是非大师傅大神</textarea>
+        
+        
+        <p class="bottomSeat"></p>
+        <p class="Concluding ">华夏基金管理有限公司</p>
+        <p class="Concluding ">2016年5月10日</p>
     </div>
-    
-    <div id="player" style="width:100%;height:300px;">
-    2222222222
-    	<script src="http://yuntv.letv.com/player/vod/bcloud.js"></script>
-        <script>
-			 var player = new CloudVodPlayer();
-			player.init({uu:"qv290qhgzv",vu:"320fb9e135",autoplay:1,pic:'ss.png',type:'video',definition:0,controls:1,skinnable:0});
-    	</script> 
-    </div>
-    
-    
-    
-    
-    
- <div id="player" style="width:100%;height:600px;">
- 333333333333
-    <script type="text/javascript" charset="utf-8" src="http://yuntv.letv.com/player/vod/bcloud.js"></script>
-    <script>
-        var player = new CloudVodPlayer();
-        player.init({uu:"cfd9191aeb",vu:"79ff602f42"});
-    </script>
-</div>
-
+    <img src="images/SLOGAN2X.png">
 </body>
 </html>
+
