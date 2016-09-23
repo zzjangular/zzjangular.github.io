@@ -173,9 +173,14 @@ html{ font-size:50px;}
 
 <body class="container">
 	<div id="wrap">
-    	<div class="banner">
-        	<img src="img/banner.png">
-        </div>
+    	<div id="player" style="width:100%;height:300px;">
+   
+    	<script src="http://yuntv.letv.com/player/vod/bcloud.js"></script>
+        <script>
+			 var player = new CloudVodPlayer();
+			player.init({uu:"qv290qhgzv",vu:"320fb9e135",autoplay:1,pic:'ss.png',type:'video',definition:0,controls:1,skinnable:0});
+    	</script> 
+    </div> 
         <div class="introduce">
         	<img src="img/introduce.png" class="img1">      
           <a href="javascript:;" class="imgFloat" onclick="amcfm_dtt.showIntro();"><img src="img/lion.png"></a>
