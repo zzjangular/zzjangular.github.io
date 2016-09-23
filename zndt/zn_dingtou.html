@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en" ng-app="sliderDemoApp" id="top">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+<title>智能定投</title>
+<style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}.ng-animate-start{clip:rect(0,auto,auto,0);-ms-zoom:1.0001;}.ng-animate-active{clip:rect(-1px,auto,auto,0);-ms-zoom:1;}
+</style>
+<link type="text/css" rel="stylesheet" href="css/bootstrap.css">
+<link type="text/css" rel="stylesheet" href="css/jquery-ui.css">
+<style type="text/css">
+*{ margin:0; padding:0;}
+html{ font-size:50px;}
+#wrap{width:7.5rem;}
+.banner{width:7.5rem;}
+.introduce{ width:7.5rem; position:relative;}
+.banner img,.introduce .img1{ width:100%; display:block;}
+.introduce .imgFloat{ width:2.2rem; position:fixed;right:0; top:50%; z-index: 30;}
+.introduce .imgFloat img{ width:100%;}
+.selectTab{    
+    width: 100%;
+    height: 1rem;
+    line-height: 1.26rem;
+    font-size: 0.3rem;
+    color: #501C0F;
+    background: url(img/bgBar.png) no-repeat 0px 10px;
+    background-size: 100% 0.82rem;
+    display: -webkit-box;}
+.selectTab span{ display:block; -webkit-box-flex:1; text-align:center;}
+.selectTab .active{ background:url(img/active.png) no-repeat bottom left; background-size:100% 100%; color:#501c0f; font-size:0.32rem;}
+.ContentTabDiv{ display:none;}
+.ContentTabDiv img{ display:block; width:100%;} 
+.on{ display:block;}
+.bottonBtn a{ display:block; width:100%; position:fixed; left:0; bottom:-5px; z-index:30;}
+.bottonBtn img{ width:100%;}
+ .sliderExample {
+                width: 66%;
+				float:right;
+				margin-right:0.62rem;
+            }
+			
+            .sliderExample .div1 {
+                margin: 1em 0;
+				height:16px;
+				line-height:16px;
+				border-radius: 10px;
+				background:-webkit-linear-gradient(45deg,#73bfff,#8957a1);
+				border: none;
+            }
+            .vertical-container {
+                width: 15%;
+                display: inline-block;
+            }
+            #swatch {
+                width: 100px;
+                height: 100px;
+                border: 1px solid black;
+            }
+			.ui-widget-header{
+		 		 background:rgba(0,0,0,0);
+			}
+			.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default{
+				height:30px;
+				width:30px;
+				margin:-4px 0 0 -15px;	
+				background:url(img/circular.png);
+				background-size:cover;
+				border:none;
+				outline:none;
+			}
+			
+			.twoP{
+				float:left;
+				padding-top:8px;
+				font-size: 0.45rem;
+				margin-left: 0.2rem;
+			}
+			.twoP p{ 
+				padding:0;
+				margin:0;
+				text-align:center;
+				color:#44A3D3;
+			}
+			ol{
+				clear:both;
+			}
+			.fundContent{
+				border:1px solid #ddd;
+				margin-top:0.5rem;
+				box-shadow:0 0 10px #ccc;
+				padding:0.6rem 0.4rem 0.4rem;
+				color:#999;
+				border-radius:10px;
+				position:relative;
+			}
+			.fundContent p span{
+				color:#000;
+			}
+			.fundContent .bar{
+				width:100%;
+				height:0.18rem;
+				background:#E6E6E6;
+				border-radius:40px;
+				margin-bottom:0.2rem;
+			}
+			.fundContent .bar span{
+				display:block;
+				height:0.18rem;
+				width:40%;
+				background:-webkit-linear-gradient(45deg,#73bfff,#8957a1);
+				border-radius:40px;
+			}
+			.client{
+				padding:0 15px;
+			}
+			.peopleFund{
+			 	text-align:center;
+				width: 105%;
+			}
+			.peopleFund span{
+				border:1px solid #44A3D3;
+				display:inline-block;
+				color:#44A3D3;
+				border-radius:20rem;
+				padding:0.1rem 0.1rem;
+				font-size:0.2rem;
+				margin:0 0.1rem;
+				box-sizing:border-box;
+			}
+			.fundContent p .fundContentSpan{
+				color:#999;
+			}
+			.seatDiv{ height:1.6rem;}
+			#sanjiao{
+				width:0.8rem;
+				position:absolute;
+				left:1.5rem;
+				top:-0.6rem;
+			}
+			.huawoshishi{
+				padding:0; margin:0;height: 0.55rem;
+			}
+			.huawoshishi img{
+				width:1.7rem;
+				margin-left:1.21rem;
+			}
+			#tishi{
+				font-size:0.24rem;
+				margin-top:0.5rem;
+				padding:0 4px;
+				color:#808080;
+			}
+			#tishi p{
+				margin:0;
+				margin-bottom:0.1rem;;
+			}
+			#tishi p img{
+				width:0.3rem;
+				vertical-align:middle;
+				display: inline;
+			}
+			#tishi p span{
+				font-weight:bold;			
+			}
+	
+</style>
+
+<script type="text/javascript">
+	 document.documentElement.style.fontSize=50*document.documentElement.clientWidth/375+'px';	
+</script>
+
+</head>
+
+<body class="container">
+	<div id="wrap">
+    	<div class="banner">
+        	<img src="img/banner.png">
+        </div>
+        <div class="introduce">
+        	<img src="img/introduce.png" class="img1">      
+          <a href="javascript:;" class="imgFloat" onclick="amcfm_dtt.showIntro();"><img src="img/lion.png"></a>
+        </div>
+        <p class="selectTab">
+        	<span class="active">产品介绍</span>
+            <span>智投策略</span>
+            <span>常见问题</span>
+        </p>
+        <!--产品介绍-->
+        <div ng-controller="sliderDemoCtrl" >
+
+            <div class="ContentTabDiv on client">
+        		<div>
+               	
+                <!-----------------------------------开始部分----------------------------------------------->
+                <p class="huawoshishi"><img src="img/huawoshishi.png"></p>
+				<div class="twoP">
+                	<p class="twoP_p1">{{fundDateList.character}}</p>
+                </div>     		
+                <div class="sliderExample"><a name="ex11"></a>
+                    <div id="green" ui-slider="colorpicker.options" ng-model="colorpicker.green" class="div1" ></div>
+                </div>
+                <ol></ol>
+                <div class="fundContent">
+                	<img src="img/sanjiao.png" id="sanjiao">
+                	<p>定投基金：<span>{{fundDateList.name}}</span>  <span class="fundContentSpan">{{fundDateList.code}}</span></p>
+                    <p>参考指数：<span>{{fundDateList.exponential}}</span></p>
+                    <p>均线周期：<span>{{fundDateList.cycle}}</span></p>
+                    <div class="bar">
+                    	<span class="bar1" style="width:{{fundDateList.length[0]}}"></span>
+                    </div>
+                    <p>调整比例：<span>{{fundDateList.ratio}}</span></p>
+                    <div class="bar">
+                    	<span class="bar2" style="width:{{fundDateList.length[1]}}"></span>
+                    </div>
+                    <p>适合人群：</p>
+                    <div class="peopleFund">
+                    	<span ng-repeat="item in fundDateList.people">{{item}}</span>
+                       
+                    </div>
+                
+                	<ol></ol>
+                </div>
+                <div id="tishi">
+                	<p>
+                    	<img src="img/tishi.png">
+                        <span>温馨提示</span>
+                    </p>
+                    <div>
+                    	投资人应当充分了解基金定期不定额投资和零存整取等储蓄方式的区别。但是定期不定额投资无法完全规避基金投资所固有的风险，无法保证投资人获得收益，也并非替代储蓄的等效理财方式。投资有风险，入市需谨慎。
+                    </div>
+                	
+                    
+                </div>
+
+        <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="js/angular.min.js"></script>
+        <script type="text/javascript" src="js/slider.js"></script>
+        <script type="text/javascript" src="js/jquery.ui.touch-punch.min.js"></script>
+        <script type="text/javascript">  
+				    angular.element(window).bind('load', function() {  
+				      		
+								var aDiv=document.querySelectorAll('.ContentTabDiv');
+								var aSpan=document.querySelectorAll('.selectTab span');
+							
+								for (var i=0; i<aSpan.length; i++)
+								{
+									aSpan[i].index=i;
+									
+									aSpan[i].onmouseover=function (){
+										for (var i=0; i<aSpan.length; i++)
+										{
+											
+											aSpan[i].className='';
+											aDiv[i].classList.remove('on');
+										}
+										
+										this.className='active';
+										
+										// 获取下标
+										var n=this.index;
+										aDiv[n].classList.add('on');	
+									};
+									
+									
+								}
+				    });  
+				
+				</script> 
+        <script type="text/javascript">
+		
+		
+		var app = angular.module('sliderDemoApp', ['ui.slider']);
+		
+		app.controller('sliderDemoCtrl', function($scope, $log,$timeout) {
+			$scope.fundDateList={
+				name:'华夏策略混合',
+				code:'002031',
+				exponential:'中证500指数',
+				cycle:'90天',
+				ratio:'10%',
+				people:['保守投资','懒人理财','投资知识有待进阶'],
+				character:'智远',
+				color:'#44A3D3',
+				length:['40%','40%']
+			};
+		
+			function refreshSwatch(ev, ui) {
+				var red = $scope.colorpicker.red,
+						green = $scope.colorpicker.green,
+						blue = $scope.colorpicker.blue;
+						
+						
+						switch(green)
+						{
+							case 0:
+								$('#sanjiao').css('left','1.5rem');
+								$timeout(function(){	
+									$scope.fundDateList={
+										name:'华夏策略混合',
+										code:'002031',
+										exponential:'中证500指数',
+										cycle:'90天',
+										ratio:'10%',
+										people:['保守投资','懒人理财','投资知识有待进阶'],
+										character:'智远',
+										length:['40%','40%']
+									
+									};
+								},10);
+							break;
+								
+							case 50:
+								$('#sanjiao').css('left','3.75rem');
+								$timeout(function(){
+									$scope.fundDateList={
+										name:'华夏策略混合',
+										code:'002031',
+										exponential:'中证500指数',
+										cycle:'240天',
+										ratio:'15%',
+										people:['稳健理财','预期收益比货币高','希望平衡收益与风险'],
+										character:'智衡',
+										length:['50%','50%']
+									};	
+								},10);
+							
+							break;
+							
+							case 100:
+								$('#sanjiao').css('left','6rem');
+								$timeout(function(){
+									$scope.fundDateList={
+										name:'华夏红利混合',
+										code:'002031',
+										exponential:'中证500指数',
+										cycle:'480天',
+										ratio:'20%',
+										people:['高收益追求者','中长期理财','理财风格较为激进'],
+										character:'智锐',
+										length:['100%','100%']
+									};
+								},10);
+							break;
+							default:
+								
+							break;
+						}
+				
+			}
+			function recorrect(ev, ui){
+				
+					$('.huawoshishi img').css('display','none');
+						var red = $scope.colorpicker.red,
+						green = $scope.colorpicker.green,
+						blue = $scope.colorpicker.blue;
+						if(green<25){
+							$timeout(function(){
+									green=0;
+									$scope.colorpicker.green=0;
+								},10);
+						}else if(green>=25&& green<75){
+							$timeout(function(){
+
+									green=50;
+									$scope.colorpicker.green=50;
+								},10);
+						}else{
+							$timeout(function(){
+									green=100;
+									$scope.colorpicker.green=100;
+								},10);
+						}
+						
+			}
+			
+			function removeIcon(ev, ui){
+				var green = $scope.colorpicker.green;
+				$('#sanjiao').css('left',(1.5+green/22.22)+'rem');
+				if(green<=50)
+				{
+					
+					
+					$timeout(function(){
+						$scope.fundDateList.length=[(40+green/5)+'%',(40+green/5)+'%'];
+					},10);
+					
+				}
+				else
+				{
+					$timeout(function(){
+						$scope.fundDateList.length=[(50+(green-50))+'%',(50+(green-50))+'%'];
+					},10);
+				}
+
+			}
+
+			// Slider options with event handlers
+			$scope.slider = {
+				'options': {
+					start: function(event, ui) {
+						$log.info('Event: Slider start - set with slider options', event);
+					},
+					stop: function(event, ui) {
+						$log.info('Event: Slider stop - set with slider options', event);
+					}
+				}
+			};
+		
+			$scope.colorpicker = {
+				
+				red: 0,
+				green: 0,
+				blue: 0,
+				options: {
+					orientation: 'horizontal',
+					min: 0,
+					max: 100,
+					range: 'min',
+					change: refreshSwatch,
+					slide:removeIcon,
+					stop: recorrect
+				}
+			};
+		});
+	
+	
+        </script>
+		<script>$('#widget').draggable();</script>
+                
+                <!--------------------------------------结束位置-------------------------------------------->
+                </div>
+            </div>
+             <!--智能策略-->
+            <div class="ContentTabDiv">
+           		<img src="img/no2.png">
+            </div>
+             <!--常见问题-->
+            <div class="ContentTabDiv">
+          	 	 <img src="img/no3.png">
+            </div>
+        </div>
+        <div class="bottonBtn">
+        	<a href="amcfm://trade/smartDttPackage">
+        		<img src="img/btn.png">
+            </a>
+        </div>
+        <div class="seatDiv">
+        
+        </div>
+    
+    </div>
+</body>
+</html>
