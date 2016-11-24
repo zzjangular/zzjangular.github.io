@@ -27,34 +27,17 @@
 	.img1{ width:10rem; position:absolute; left:50%; bottom:1rem; margin-left:-5rem; display: block}
 	.img2{ width:10rem; display:block; margin:1.2rem auto 2rem;display: block}
     </style>
-    <script>
-		(function(win,doc){
-			function change(){
-				document.documentElement.style.fontSize=document.documentElement.clientWidth/16+'px';
-			}
-		
-			doc.addEventListener('DOMContentLoaded',change,false);
-			win.addEventListener('resize',change,false);
-			window.onload=function(){
-				var oWrapH=document.getElementById('wrap').offsetHeight;	
-				var clientH=document.documentElement.clientHeight;
-				var oBody=document.getElementsByTagName('body')[0];
-				var oHtml=document.getElementsByTagName('html')[0];
-				var oImg=document.getElementsByTagName('img')[0];
-				if(oWrapH<=( clientH-100))
-				{
-					oImg.className='img1';
-				}
-				else
-				{
-					oImg.className='img2';
-				}
-			};
-
-			
-		})(window,document);
-
-    </script>
+	<script>
+	var ua = navigator.userAgent.toLowerCase(); 
+   	if(ua.indexOf('micromessenger')!=-1)
+	{
+		alert('是微信')
+	}else
+	{
+		alert('不是微信')
+	}
+	
+	</script>
 </head>
 
 <body>
