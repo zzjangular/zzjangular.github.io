@@ -1,126 +1,90 @@
-<!DOCTYPE html >
+<!doctype html>
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>华夏可转债增强债券</title>
-<link href="css/css.css" rel="stylesheet" />
-	<meta http-equiv="x-ua-compatible" content="ie=7"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
-	<meta http-equiv="Cache-Control" content="max-age=0" />
-    <meta name="apple-touch-fullscreen" content="yes" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <meta name="Description" content="" />
-    <meta name="Keywords" content="" />
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">  
-<script src="js/jquery-1.7.1.min.js" type="application/javascript"></script>
-
-</head>
-<body>
-
-<script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
-
-<script>
-
-		var wxData = {
-			"imgUrl" : "https://m.chinaamc.com/activity/kzzWX/images/kzz.jpg",
-			"link" : "",
-			"desc" : "股债合一，攻守利器，在财富之间“转”动。用活期通支付可享费率1折优惠！",
-			"title" : "华夏可转债增强债券型证券投资基金，8月29日起发售"
+<meta charset="utf-8">
+<title>用户</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<style>
+*{ margin:0; padding:0; border:0}
+html,body{ height:100%; overflow:hidden; }
+a{text-decoration:none;}
+#main{ height:100%;}
+.titleBar{ height:0.88rem; font-size:0.36rem; background-color:#fff; line-height:1rem; text-align:center; color:#ccc; background:url(img/back.png) no-repeat 20px center; background-size:10px;}
+.titleBar img{ width:3.6rem; display:inline-block; margin:0 auto;}
+.contain{ background:url(img/bg.png) no-repeat; height:calc(100% - 0.88rem); background-size:cover; overflow:hidden; padding:0 0.3rem;}
+.logo{ display:block; width:1.1rem; margin:0.5rem auto;}
+.information{ border:1px solid #fff; border-radius:0.2rem; background:rgba(255,255,255,0.6); height:2rem; font-size:0.32rem; }
+.information .name,.information .idCard{ height:1rem; line-height:1rem; padding-left:0.3rem;color:#4d4d4d;}
+.information div input{ height:99%; width:65%; font-size:0.32rem; padding-left:0.3rem; box-sizing:border-box; background:none; outline:none;}
+.information .name input{ border-bottom:1px solid #c6c6c6;}
+.login{ width:100%; margin-top:0.8rem;}
+.that{ color:#fff; font-size:0.24rem; position:absolute; bottom:0.3rem; left:10%; width:80%; text-align:center;}
+#pop { display:none; position:fixed; top:0; left:0; width:100%; height:100%;}
+.shadow { position:absolute; top:0; left:0; width:100%; height:100%; background:#000; opacity:0.3; }
+.boxContent{ position:absolute; left:5%; top:30%; width:90%; background:#fff; border-radius:0.6rem;  font-size:0.36rem; text-align:center;}
+.boxContent .xxx{ text-align:right; padding-right:0.3rem; padding-top:0.3rem;}
+.boxContent .xxx img{ width:0.4rem;}
+.boxContent .con{ color:#62676d; margin-bottom:0.6rem;}
+.boxContent .okey{ height:1.2rem; line-height:1.2rem; border-top:1px solid #d8dfe6; color:#f03456; margin-top:0.2rem;}
+.boxContent .honey{ margin-bottom:0.3rem; margin-top:0.1rem;}
+</style>
+<script type="text/jscript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/jscript" src="js/global.js"></script>
+<script type="text/jscript">
+	window.onload=function(){
+		document.documentElement.style.fontSize = 50 * document.documentElement.clientWidth / 375 + 'px';
+		showMsgToast('用户页')
+		var oXimg=document.querySelector('.xImg');
+		var oOkey=document.querySelector('.okey');
+		var oPop=document.getElementById('pop');
+		
+		oOkey.onclick=oXimg.onclick=function(){
+			oPop.style.display='none';
 		};
-
-		//加载配置文件
-		var configUrl = "https://m.chinaamc.com/mphone/mp/wxshare/getWXShareConfigInfo/wgw?shareURL=" 
-						+ encodeURIComponent(window.location.href.split('#')[0]);
-		var data = null; 
-		var configJson = null;
-
-		$.ajax({
-            type: "post",
-            async: false,
-            url: "https://m.chinaamc.com/mphone/mp/wxshare/getWXShareConfigInfoForJsonp?shareURL="+ encodeURIComponent(window.location.href.split('#')[0]),
-            dataType: "jsonp",
-           // data:{ "callback": "?"},
-            jsonp: "callback",
-            jsonpCallback:"jsonp",
-
-            success:function(data){
-				if (typeof(data) == "string") {
-					configJson = JSON.parse(data);
-				} else {
-					configJson = data;
-				}
-				wxData.link=configJson.shareURL;
-					
-					wx.config({
-						debug : false,
-						appId : configJson.appId,
-						timestamp : configJson.timestamp,
-						nonceStr : configJson.nonceStr,
-						signature : configJson.signature,
-						jsApiList : [
-							'onMenuShareTimeline', 'onMenuShareAppMessage', 'onMenuShareQQ', 'onMenuShareWeibo'
-						]
-					});
-             
-
-
-
-
-				wx.ready(function () {
-					setMenuShare();
-				});
-
-				function setMenuShare() {
-
-					wx.onMenuShareTimeline({
-						title : wxData.title,
-						link : wxData.link,
-						desc : wxData.desc,
-						imgUrl : wxData.imgUrl,
-						success : function () {},
-						cancel : function () {}
-					});
-
-					wx.onMenuShareAppMessage({
-						title : wxData.title,
-						desc : wxData.desc,
-						link : wxData.link,
-						imgUrl : wxData.imgUrl,
-						type : '',
-						dataUrl : '',
-						success : function () {},
-						cancel : function () {}
-					});
-
-					wx.onMenuShareQQ({
-						title : wxData.title,
-						desc : wxData.desc,
-						link : wxData.link,
-						imgUrl : wxData.imgUrl,
-						success : function () {},
-						cancel : function () {}
-					});
-
-					wx.onMenuShareWeibo({
-						title : wxData.title,
-						desc : wxData.desc,
-						link : wxData.link,
-						imgUrl : wxData.imgUrl,
-						success : function () {},
-						cancel : function () {}
-					});
-				}	
-            }
-        });
-
-
-
-
-
+	};
 
 </script>
 
-
+</head>
+<body>
+	<div id="main">
+    	<div class="titleBar">
+        	<img src="img/titleImg.png">
+        </div>
+        <div class="contain">
+        	<img src="img/logo.png" class="logo">
+            <div class="information">
+            	<div class="name">
+                	<span>真实姓名：</span><input type="text" placeholder="请输入真实姓名">
+                </div>
+                <div class="idCard">
+                	<span>身份证号：</span><input type="text" placeholder="请输入证件号">
+                </div>
+            </div>
+             <div>
+                <a href="javascript:;"><img src="img/next.png" class="login"></a>
+            </div>
+            <div class="that">开通/登录华夏基金账户，才能领取梦想助跑金</div>
+        </div>      
+        
+    	
+        
+        
+        <div id="pop">
+            <div class="shadow"></div>
+            <div class="boxContent">
+                <p class="xxx">
+                    <img src="img/x.png" class="xImg">
+                </p>
+                <p class="honey">尊敬的用户：</p>
+                <div class="con">
+                    <p>您已经领取过助跑金了</p>
+                  
+                </div>
+                <p class="okey">好的</p>
+         </div>
+    </div>
 </body>
 </html>
