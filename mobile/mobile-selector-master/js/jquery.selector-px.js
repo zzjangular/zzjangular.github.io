@@ -12,7 +12,7 @@
                 '.sel-box .ok{float:right;}'+
                 '.sel-box .name{color:white;text-align:center;line-height:22px;font-size:18px;padding:11px 0;}'+
                 '.sel-con{background:white;}'+
-                '.sel-con .border{height:34px;border:solid 1px #fda626;border-width:1px 0;position:fixed;bottom:72px;left:0;right:0;pointer-events:none;}'+
+                '.sel-con .border{height:34px;border:solid 1px #fda626;border-width:1px 0;position:absolute;bottom:72px;left:0;right:0;pointer-events:none;}'+
                 '.sel-con .table{display:table;width:100%;table-layout:fixed;}'+
                 '.sel-con .cell{display:table-cell;vertical-align:middle;text-align:center;overflow:hidden;}'+
                 '.sel-con .scroll{-webkit-overflow-scrolling:touch;height:180px;overflow:auto;box-sizing:border-box;padding:72px 0;width:200%;padding-right:100%;}'+
